@@ -1,3 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:100&subset=latin,latin-ext);
+
+@media (max-width: 500px) {
+	#omega-symbol {
+		display: none;
+	}
+}
+
 table {
 	width: 100%;
 }
@@ -8,4 +16,51 @@ tr {
 td {
 	width: 25%;
 	
+}
+
+.page-header {
+	font-family: 'Roboto', sans-serif;
+}
+
+.nav {
+	text-align: left;
+}
+
+.panel-footer li{
+	list-style-type: none;
+	border-left: 3px solid blue;
+	padding-left: 10px;
+}
+
+#page-text, #book-editions {
+	padding: 50px 0px 20px 0px;
+	width: 70%;
+}
+
+#omega-symbol {
+	opacity: 0.1;
+	height: 70px;
+	width: 100px;
+}
+
+.links, .info {
+	left: 10%;
+}
+
+.panel-body {
+	background-color: grey;
+}
+
+.container .img-responsive {
+	height: 170px;
+	width: 140px;
+	opacity: 0.5;
+	-o-transition:opacity .4s ease-out, background 1.4s ease-in;
+	-ms-transition:opacity .4s ease-out, background 1.4s ease-in;
+	-moz-transition:opacity .4s ease-out, background 1.4s ease-in;
+	-webkit-transition:opacity .4s ease-out, background 1.4s ease-in;
+}
+
+.container .img-responsive:hover {
+	opacity: 1;
 }
