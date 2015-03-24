@@ -33,14 +33,17 @@ td {
 }
 
 #omega-symbol {
-	height: 70px;
-	width: 100px;
+	width: 85px;
+	margin: auto;
+}
+
+#title {
+	margin-top: 10px;
 }
 
 /*** main page text ***/
 #page-text {
 	padding: 30px 0px 20px 0px;
-	width: 70%;
 }
 
 /*** 
@@ -50,19 +53,20 @@ td {
 	text-align: left;
 }
 
+.nav a:hover {
+	cursor: pointer;
+}
+
 /*** 
 	books 
 ***/
 
 #book-editions {
 	padding: 10px 0px 30px 0px;
-	width:70%;
-
 }
 
 #book-editions .img-responsive {
 	height: 160px;
-	width: 140px;
 	opacity: 0.5;
 	-o-transition:opacity .4s ease-out, background 1.4s ease-in;
 	-ms-transition:opacity .4s ease-out, background 1.4s ease-in;
@@ -97,6 +101,7 @@ td {
 #book-editions-img a:hover {
 	text-decoration: none;
 	color: black;
+	cursor: pointer;
 }
 
 #first-edition {
@@ -146,4 +151,17 @@ td {
 ***/
 .errata-fixed {
 	background-color: yellow;
+}
+
+
+/***
+	others
+***/
+.no-select {
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
