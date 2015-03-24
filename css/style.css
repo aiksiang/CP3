@@ -46,6 +46,10 @@ td {
 	padding: 30px 0px 20px 0px;
 }
 
+.book-details {
+	padding: 20px;
+}
+
 /*** 
 	navigation 
 ***/
@@ -126,6 +130,14 @@ td {
 	  width: 16.66666667%;
 	  margin: auto;
 	}
+}
+
+.errata {
+	margin: 20px;
+}
+
+.errataLink {
+	cursor: pointer;
 }
 
 /*** 
