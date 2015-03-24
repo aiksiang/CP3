@@ -28,6 +28,10 @@ td {
 /*** 
 	title 
 ***/
+body {
+	max-width: 1600px;
+}
+
 .page-header {
 	font-family: 'Roboto', sans-serif;
 }
@@ -113,10 +117,10 @@ td {
 
 #book-edition-info {
 	margin-top: 30px;
-	text-align: center;
 	font-size: 13px;
+	text-align: center;
 }
 
 #book-editions-img {
-	margin-left: 5%;
+	
 }
