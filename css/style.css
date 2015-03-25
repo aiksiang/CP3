@@ -1,12 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:100&subset=latin,latin-ext);
-
+@import url(http://fonts.googleapis.com/css?family=Raleway:800);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:700);
 
 /*** 
 	@ media
  ***/
 @media (max-width: 765px) {
-	.nav {
-		display: none;
+
+	body {
+		position: relative;
+		top: 120px;
 	}
 
 	#book-editions .books-jumbo {
@@ -53,11 +56,20 @@ body {
 }
 
 #page-body {
-	background:-webkit-gradient(linear, 0 0, 0 100%, from(white), to(grey));
-  	background:-moz-linear-gradient(white, grey);
-  	background:-o-linear-gradient(white, grey);
-  	background:linear-gradient(white, grey);
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(white), to(dimgrey));
+  	background:-moz-linear-gradient(white, dimgrey);
+  	background:-o-linear-gradient(white, dimgrey);
+  	background:linear-gradient(white, dimgrey);
 }
+#page-body h3 {
+	font-family: 'Source Code Pro' ;
+}
+
+#page-body #start {
+	font-family: 'Source Code Pro' ;
+	font-size: 17px;
+}
+
 /*** 
 	navigation 
 ***/
@@ -143,10 +155,21 @@ body {
 /***
 	errata
 ***/
-.errata-fixed {
-	background-color: yellow;
+.container table {
+	border: none;
 }
 
+#orderby, #select-edition {
+	text-align: center;
+}
+
+.row h5 {
+	font-family: 'Raleway', sans-serif;
+}
+
+#select-edition h3, #orderby h3 {
+	font-family: 'Source Code Pro' ;
+}
 /***
 	third edition
 ***/

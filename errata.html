@@ -16,7 +16,7 @@
 	<title>Competitive Programming</title>
 </head>
 <body>
-	
+
 	<div id="top-link">
 		<ul class="nav nav-pills nav-justified">
 			<li role="presentation"><a href="index.html">Home</a></li>
@@ -26,8 +26,50 @@
 		</ul>
 	</div><br><br><br>
 
-	<div class="container" id="page-text">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" id="select-edition"><h3>Edition Errata</h3></div>
+		</div>
+	
+		<div class="row">
+			<div class="col-md-12" id="select-edition">
+		<div class="btn-group">
+		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Select Edition <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu">
+		    <li><a href="#">First to Second Edition</a></li>
+		    <li><a href="#">Second to Third Edition</a></li>
+		    <li><a href="#">Third to Fourth Edition</a></li>
+		  </ul>
+		</div></div></div>
+	</div>
 
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" id="orderby"><h3>Order by</h3></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"><h5>Date of posting </h5></div>
+			<div class="col-md-2"><input type="checkbox" value="date-most">&nbsp;&nbsp;Most Recent</div>
+			<div class="col-md-2"><input type="checkbox" value="date-less">&nbsp;&nbsp;Least Recent</div>
+	
+			<div class="col-md-2"><h5>Page Number </h5></div>
+			<div class="col-md-2"><input type="checkbox" value="pg-asc">&nbsp;&nbsp;Ascending</div>
+			<div class="col-md-2"><input type="checkbox" value="pg-desc">&nbsp;&nbsp;Descending</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"><h5>Severity </h5></div>
+			<div class="col-md-2"><input type="checkbox" value="sev-most">&nbsp;&nbsp;Most Severe</div>
+			<div class="col-md-2"><input type="checkbox" value="sev-less">&nbsp;&nbsp;Least Severe</div>
+		
+			<div class="col-md-2"><h5>Reporter's Name </h5></div>
+			<div class="col-md-2"><input type="checkbox" value="atoz">&nbsp;&nbsp;A to Z</div>
+			<div class="col-md-2"><input type="checkbox" value="ztoa">&nbsp;&nbsp;Z to A</div>
+		</div>
+	</div><br><br>
+
+<!--
+	<div class="container" id="page-text">
 	<h2>Errata 3rd Edition <span class="glyphicon glyphicon-arrow-right"></span> 4th Edition</h2>
 	<ul>
 		<li>The first edition of this book was released on 9 August 2010.</li>
@@ -61,39 +103,36 @@
 		<li>Page 317. Section 9.2 about Bitonic TSP should be Section 9.3 (off-by-one error).</li>
 	</ul>
 	</div>
-
-	<div class="container">
-		<div class="panel panel-default">
-			<div class="panel-footer row">
-				<ul class="buy-book col-md-6">
-					<h4>Buy Now!</h4>
-					<li><a href="http://www.lulu.com/commerce/index.php?fBuyContent=13872395" target="_blank" rel="nofollow"><img alt="Support independent publishing: Buy this book on Lulu." border="0" src="http://static.lulu.com/images/services/buy_now_buttons/us/blue.gif?20130514083221" width="60" height="26">CP3 (A5 Paperback)</a></li>
-					<a href="http://www.lulu.com/commerce/index.php?fBuyContent=13872302" style="line-height:1.6" target="_blank" rel="nofollow"><img alt="Support independent publishing: Buy this book on Lulu." border="0" src="http://static.lulu.com/images/services/buy_now_buttons/us/orange.gif?20130514083221" width="60" height="26">CP3 (8.25 x 10.75 inch Hard Cover)</a></li>
-					<li><a href="http://www.lulu.com/commerce/index.php?fBuyContent=16107254" style="color:rgb(255,153,0);line-height:1.6" target="_blank" rel="nofollow"><a href="http://www.lulu.com/commerce/index.php?fBuyContent=16107254" style="line-height:1.6;font-size:10pt;background-color:transparent" rel="nofollow"><img alt="Support independent publishing: Buy this e-book on Lulu." border="0" src="http://static.lulu.com/images/services/buy_now_buttons/en/gray.gif?20141120080341" width="60" height="26">CP3 (eBook)</a></li>
-				</ul>
-				<ul class="links col-md-6">
-					<h4>Partner Links</h4>
-					<li><a href="http://www.comp.nus.edu.sg/~stevenha/visualization" target="_blank">Visualgo</a></li>
-					<li><a href="http://felix-halim.net/uva/hunting.php?id=32900" target="_blank">uHunt</a></li>
-					<li><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=118" target="_blank">UVa</a></li>
-					<li><a href="https://www.facebook.com/competitive.programming" target="_blank">Facebook</a></li>
-				</ul>
-				<ul class="info col-md-6">
-					<h4>Information</h4>
-					<li><a href="http://www.lulu.com/spotlight/stevenhalimatgmaildotcom" target="_blank">Author</a></li>
-					<li><a href="https://sites.google.com/site/stevenhalim/home/workshop">IOI Workshop</a></li>
-					<li><a href="https://sites.google.com/site/stevenhalim/home/credits">Credits</a></li>
-				</ul>
-				<ul class="links col-md-6">
-					<h4>Accessibles</h4>
-					<li><a href="http://www.comp.nus.edu.sg/~stevenha/visualization" target="_blank">Errata</a></li>
-					<li><a href="http://felix-halim.net/uva/hunting.php?id=32900" target="_blank">Testimonials</a></li>
-					<li><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=118" target="_blank">Contents</a></li>
-				</ul>
-			</div>
-		</div>
+-->
+	<div id="footer"><br><br>
+		<div class="container row">
+			<ul class="buy-book col-md-6">
+				<h4>Buy Now!</h4>
+				<li><a href="http://www.lulu.com/commerce/index.php?fBuyContent=13872395" target="_blank" rel="nofollow"><img alt="Support independent publishing: Buy this book on Lulu." border="0" src="http://static.lulu.com/images/services/buy_now_buttons/us/blue.gif?20130514083221" width="60" height="26">&nbsp;&nbsp;CP3 (A5 Paperback)</a></li>
+				<a href="http://www.lulu.com/commerce/index.php?fBuyContent=13872302" style="line-height:1.6" target="_blank" rel="nofollow"><img alt="Support independent publishing: Buy this book on Lulu." border="0" src="http://static.lulu.com/images/services/buy_now_buttons/us/orange.gif?20130514083221" width="60" height="26">&nbsp;&nbsp;CP3 (8.25 x 10.75 inch Hard Cover)</a></li>
+				<li><a href="http://www.lulu.com/commerce/index.php?fBuyContent=16107254" style="color:rgb(255,153,0);line-height:1.6" target="_blank" rel="nofollow"><a href="http://www.lulu.com/commerce/index.php?fBuyContent=16107254" style="line-height:1.6;font-size:10pt;background-color:transparent" rel="nofollow"><img alt="Support independent publishing: Buy this e-book on Lulu." border="0" src="http://static.lulu.com/images/services/buy_now_buttons/en/gray.gif?20141120080341" width="60" height="26">&nbsp;&nbsp;CP3 (eBook)</a></li>
+			</ul>
+			<ul class="links col-md-6">
+				<h4>Partner Links</h4>
+				<li><a href="http://www.comp.nus.edu.sg/~stevenha/visualization" target="_blank">Visualgo</a></li>
+				<li><a href="http://felix-halim.net/uva/hunting.php?id=32900" target="_blank">uHunt</a></li>
+				<li><a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=118" target="_blank">UVa</a></li>
+				<li><a href="https://www.facebook.com/competitive.programming" target="_blank">Facebook</a></li>
+			</ul>
+			<ul class="info col-md-6">
+				<h4>Information</h4>
+				<li><a href="http://www.lulu.com/spotlight/stevenhalimatgmaildotcom" target="_blank">Author</a></li>
+				<li><a href="https://sites.google.com/site/stevenhalim/home/workshop">IOI Workshop</a></li>
+				<li><a href="https://sites.google.com/site/stevenhalim/home/credits">Credits</a></li>
+			</ul>
+			<ul class="links col-md-6">
+				<h4>Accessibles</h4>
+				<li><a href="errata.html">Errata</a></li>
+				<li><a href="testimonials.html">Testimonials</a></li>
+				<li><a href="content.html">Contents</a></li>
+			</ul>
+		</div><br><br>
 	</div>
-
 <!--
 	<ul>
 		<li>The first edition of this book was released on 9 August 2010.</li>
