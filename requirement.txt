@@ -1,0 +1,10 @@
+1. Being able to display erratas in catagories (time/type/serverity level etc)
+2. Being able to have a better submission procedure for errata raising
+3. Being able to check whether a user is human while submitting an errata
+4. Being able to update Steven when there is a new errata raised
+5. Being able to re-organize the webpage content so that it will not look so messy
+6. Being able to have better recommendation mechanism as well as human verification
+7. Being able to display recommenders' information(Name? Photo? Location? Nationality?) + recommendations
+8. Being able to beautify the website (Quote from steven "Clean and Profession" style)
+9. Possibly, merge all the functionality on the original website to become a community/society of CPBOOK
+10.Buy a domain name for that website. 

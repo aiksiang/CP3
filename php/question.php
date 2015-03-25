@@ -1,5 +1,7 @@
 <?php
-$question = array {
+header('Content-type: application/json');
+
+$question = array(
 					"How many answers are there in page 27 Exercise 1.2.2?",
 					"What is the tips number in page 78?",
 					"What is the first underlined Uva question on page 25?",
@@ -30,9 +32,8 @@ $question = array {
 					"What is the largest Uva number on page 421?",
 					"How many pages are there in the Content part of this book?",
 					"How many distinct First Letters (e.g ABC, A is the first letter) are there in the Abbreviation of this book?"
-					
-			};
-$answers = array {
+);
+$answers = array(
 					"9",
 					"6",
 					"00403",
@@ -62,7 +63,26 @@ $answers = array {
 					"423",
 					"11984",
 					"5",
-					"17,"
-};
+					"17"
+);
+
+
+if ($_GET['action'] == 'getRandomQuestion') {
+	$randomNumber = rand(0, count($question) - 1);
+	$randomQuestion = $question[$randomNumber];
+	$reply = array("questionNumber" => $randomNumber,
+					"question" => $randomQuestion
+					);
+	echo json_encode($reply);
+}
+
+if ($_GET['action'] == 'checkAnswer') {
+	$questionNumber = $_GET['questionNumber'];
+	$userAnswer = $_GET['answer'];
+	$realAnswer = $answers[$questionNumber];
+	//TODO algorithm for checking answer
+	$reply = array($realAnswer, $userAnswer);
+	echo json_encode($reply);
+}
 
 ?>
