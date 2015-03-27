@@ -38,6 +38,7 @@ $sql = "CREATE TABLE Testimonial (id INT PRIMARY KEY AUTO_INCREMENT,
 								  author VARCHAR(100),
 								  content VARCHAR(3000),
 								  nationality VARCHAR(100),
+								  region VARCHAR(100),
 								  credit VARCHAR(200),
 								  imgURL VARCHAR(500));";
 if (mysqli_query($db, $sql)) 
