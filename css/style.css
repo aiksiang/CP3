@@ -235,7 +235,7 @@ body {
 	border: none;
 }
 
-#orderby, #select-edition {
+#orderby, #select-edition, #report-error {
 	text-align: center;
 }
 
@@ -254,6 +254,14 @@ body {
 #select-edition h3, #orderby h3 {
 	font-family: 'Source Code Pro' ;
 }
+
+hr {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+textarea { resize:vertical ; }
 
 /***
 	others

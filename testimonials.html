@@ -27,6 +27,54 @@
 	</div><br><br><br>
 
 	<div class="container">
+		<div class="col-md-12" id="report-error">
+			<div class="row">
+				<div class="col-md-12" id="select-edition"><h3>Review Book</h3></div>
+				<p>This page contains comments and reviews for this book, Competitive Programming, edition one to three by Steven Halim and Felix Halim. <br>Please let us hear your opinions if this book has help you by reinforcing your understanding of data structures and algorithms in the past.</p>
+			</div>
+
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#review-submit">Review</button>
+  		</div>
+  	</div>
+
+  	<div class="modal fade" id="review-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        		<h4 class="modal-title" id="myModalLabel">Review</h4>
+	      		</div>
+	      		<div class="modal-body">
+	        		<div class="form-group">
+			    		<label for="reviewer-name">Name</label>
+			    		<input type="text" class="form-control" id="reviewer-name" placeholder="Steven Halim">
+			  		</div>
+
+			  		<div class="form-group">
+			    		<label for="reviewer-country">Country</label>
+			    		<input type="text" class="form-control" id="reviewer-country" placeholder="Singapore">
+			  		</div>
+
+			  			<div class="form-group">
+			    		<label for="reviewer-credibility">Credibility</label>
+			    		<input type="text" class="form-control" id="reviewer-credibility" placeholder="Professor at NUS and ICPC coach">
+			  		</div>
+
+			  		<label for="reviewer-comment">Comment</label>
+					<textarea class="form-control" row="5" placeholder="Input reviews and comments here"></textarea>
+
+		    	</div>
+		      	<div class="modal-footer">
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        	<button type="button" class="btn btn-primary">Confirm</button>
+		      	</div>
+		    </div>
+		</div>
+	</div>
+
+	<hr/>
+
+	<div class="container">
 		<div class="row">
 			<div class="col-md-12" id="orderby"><h3>Order by</h3></div>
 		</div>
@@ -40,6 +88,10 @@
 			<div class="col-md-2"><input type="checkbox" value="rev-ztoa">&nbsp;&nbsp;Z to A</div>
 		</div>
 	</div><br><br>
+
+	<div class="container" id="testimonials">
+		
+	</div>
 
 <!--
 	<div class="container" id="page-text">
@@ -135,8 +187,10 @@
 		<li>Page 317. Section 9.2 about Bitonic TSP should be Section 9.3 (off-by-one error).</li>
 	</ul>
 -->	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script src="bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 	<script src="js/script.js"></script>
+
 </body>
 </html>

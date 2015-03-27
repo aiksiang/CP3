@@ -33,20 +33,82 @@
 	
 		<div class="row">
 			<div class="col-md-12" id="select-edition">
-		<div class="btn-group">
-		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Select Edition <span class="caret"></span>
-		  </button>
-		  <ul class="dropdown-menu" role="menu">
-		    <li><a href="#">First to Second Edition</a></li>
-		    <li><a href="#">Second to Third Edition</a></li>
-		    <li><a href="#">Third to Fourth Edition</a></li>
-		  </ul>
-		</div></div></div>
+				<div class="btn-group">  
+				  	<select class="form-control">
+						<option>Select Edition</option>
+						<option value="cp1">1</option>
+						<option value="cp2">2</option>
+						<option value="cp3">3</option>
+					</select>
+				</div>
+			</div>
+		</div>
 	</div>
 
+	<hr/>
+	<div class="container">
+		<div class="col-md-12" id="report-error">
+			<div class="row">
+				<div class="col-md-12" id="select-edition"><h3>Report Error</h3></div>
+				<p>This page contains all the known errors and bugs for <span id="edition">CP</span>. <br>Please report any sightings of bugs, errors or misprints here.</p>
+			</div>
+
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#errata-submit">Report</button>
+  		</div>
+  	</div>
+
+  	<div class="modal fade" id="errata-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        		<h4 class="modal-title" id="myModalLabel">Report Error</h4>
+	      		</div>
+	      		<div class="modal-body">
+	        		<div class="form-group">
+			    		<label for="reporter-name">Name</label>
+			    		<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Steven Halim">
+			  		</div>
+
+				  	<form class="form-inline">
+				  		<div class="form-group">
+				    		<label for="page-number">Page</label>
+				    		<input type="text" class="form-control" id="page-number" placeholder="1-449">
+				  		</div>
+
+				  		<div class="form-group">
+				  			<label for="severity">Severity</label>
+					    	<input type="text" class="form-control" id="severity" placeholder="1-4">
+				  		</div>
+					</form>
+
+					<br>
+					<div class="row">
+						<div class="col-xs-4">
+							<div class="input-group"><div class="input-group-addon">Line</div><input type="text" class="form-control" id="severity" placeholder="1.1"></div></div>
+						<div class="col-xs-4">
+							<div class="input-group"><div class="input-group-addon">Figure</div><input type="text" class="form-control" id="severity" placeholder="1.1"></div></div>
+						<div class="col-xs-4">
+							<div class="input-group"><div class="input-group-addon">Problem</div><input type="text" class="form-control" id="severity" placeholder="1.1"></div></div>
+					</div>
+
+					<br>
+					<label for="reporter-report">Report</label>
+					<textarea class="form-control" row="5" placeholder="Input report here"></textarea>
+
+		    	</div>
+		      	<div class="modal-footer">
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        	<button type="button" class="btn btn-primary">Confirm</button>
+		      	</div>
+		    </div>
+		</div>
+	</div>
+	
+  	<hr/>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12" id="orderby"><h3>Order by</h3></div>
+			<div class="col-md-12" id="orderby"><h3>View Errata by Order</h3></div>
 		</div>
 		<div class="row">
 			<div class="col-md-2"><h5>Date of posting </h5></div>
@@ -67,6 +129,9 @@
 			<div class="col-md-2"><input type="checkbox" value="ztoa">&nbsp;&nbsp;Z to A</div>
 		</div>
 	</div><br><br>
+
+	<div class="container" id="testimonials">
+	</div>
 
 <!--
 	<div class="container" id="page-text">
@@ -162,8 +227,10 @@
 		<li>Page 317. Section 9.2 about Bitonic TSP should be Section 9.3 (off-by-one error).</li>
 	</ul>
 -->	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script src="bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 	<script src="js/script.js"></script>
+
 </body>
 </html>
