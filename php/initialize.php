@@ -6,8 +6,8 @@ $db = new mysqli(db_host, db_uid, db_pwd, db_name);
 if ($db->connect_errno) 
 	echo("Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error);
 
- require_once 'question.php';
-//include_file 'errata_store.php';
+require_once 'question.php';
+require_once 'errata_store.php';
 //Create Question Table
 
 $sql = "CREATE TABLE QandA (id INT PRIMARY KEY, 
@@ -57,7 +57,7 @@ if (mysqli_query($db, $sql)) {}
 else {
     echo("Error creating table: " . $db->error);
 }
-
+//Insertion QandA
 for($i = 0;$i<count($question);$i++){
 	$sql = "INSERT INTO QandA (id,question,answer) VALUES (".($i+1).",\"".$question[$i]."\",\"".$answers[$i]."\")";
 
@@ -67,5 +67,13 @@ for($i = 0;$i<count($question);$i++){
     echo( "Error: " . $sql . "<br>" . $db->error);
 	}
 }
-
+//Insertion Errata
+for($i = 0;$i<count($errata_content);$i++){
+	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,raise_time) VALUES (1,".$errata_type[$i].",".$errata_page[$i].",\"".$errata_content[$i]."\",".$errata_status[$i].", now());";
+	if ($db->query($sql) === TRUE) {
+    
+	} else {
+    echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
 ?>
