@@ -132,6 +132,7 @@ body {
 #book-editions .books-jumbo:hover {
 	opacity: 1;
 	transform: scale(1.1);
+	cursor: pointer;
 }
 
 /*
@@ -351,4 +352,14 @@ textarea { resize:vertical ; }
 	color: white;
 	text-align: center;
 	font-family: 'Source Code Pro' 
+}
+
+.glyphicon {
+	font-size: 50px;
+	opacity: 0.3;
+}
+
+.glyphicon:hover {
+	opacity: 1;
+	cursor: pointer;
 }
