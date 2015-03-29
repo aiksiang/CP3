@@ -62,7 +62,8 @@
 	    	<div class="modal-content">
 	      		<div class="modal-header">
 	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        		<h4 class="modal-title" id="myModalLabel">Report Error</h4>
+	        		
+	       			<h2 class="modal-title" id="myModalLabel">Report Error</h2>
 	      		</div>
 	      		<div class="modal-body">
 	        		<div class="form-group">
@@ -83,19 +84,15 @@
 					</form>
 
 					<br>
-					<div class="row">
-						<div class="col-xs-4">
-							<div class="input-group"><div class="input-group-addon">Line</div><input type="text" class="form-control" id="severity" placeholder="1.1"></div></div>
-						<div class="col-xs-4">
-							<div class="input-group"><div class="input-group-addon">Figure</div><input type="text" class="form-control" id="severity" placeholder="1.1"></div></div>
-						<div class="col-xs-4">
-							<div class="input-group"><div class="input-group-addon">Problem</div><input type="text" class="form-control" id="severity" placeholder="1.1"></div></div>
-					</div>
-
-					<br>
 					<label for="reporter-report">Report</label>
 					<textarea class="form-control" row="5" placeholder="Input report here"></textarea>
 
+
+					<hr/>
+					<div class="form-group">
+			    		<label for="reporter-name"><span id="verify-human">What is the name of the book?</span></label><br>
+			    		<input type="text" class="form-control" id="exampleInputEmail1" placeholder="CP">
+			  		</div>
 		    	</div>
 		      	<div class="modal-footer">
 		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
