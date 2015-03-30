@@ -2,8 +2,16 @@ function populatePage(edition, callback) {
 	var DOM_bookDetails = $(".book-details");
 	DOM_bookDetails.html("");
 	DOM_bookDetails.append('\
-		<div class="row">\
-			<img src="img/cp' + edition + '.png" id="book-editions-img" class="img-responsive">\
+		<div class="col-xs-2 col-xs-offset-2">\
+			<br><br>\
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>\
+		</div>\
+		<div class="col-xs-4">\
+			<span class="edition"><img src="img/cp' + edition + '.png" class="center-block"></span>\
+		</div>\
+		<div class="col-xs-2 col-xs-offset-2">\
+			<br><br>\
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>\
 		</div>\
 	');
 	switch (edition) {
