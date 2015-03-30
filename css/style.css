@@ -41,12 +41,12 @@ body {
 	/*max-width: 1600px;*/
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, dt {
 	font-family: 'Roboto', sans-serif !important;
-	  font-weight: bold !important;
+	font-weight: bold !important;
 }
 
-p, a, li {
+p, a, li, dd, input {
 	font-family: 'Merriweather', serif;
 	font-size: 17px;
 }
@@ -55,7 +55,7 @@ p, a, li {
 	position: absolute;
 	right: 0px;
 	left: 0px;
-	top: 145px;
+	top: 62px;
 	font-weight: bold;
 	background: rgba(255,255,255,0.6);
 	z-index: 1;
@@ -77,8 +77,9 @@ p, a, li {
 
 #main-jumbo {
 	/*background: white url("../img/cp3-test.png") no-repeat scroll center;*/
-	min-width: 700px;
+	/*min-width: 700px;*/
 	margin-bottom: 0px;
+	padding-top: 0px;
 }
 
 /*** main page text ***/
@@ -169,6 +170,10 @@ p, a, li {
 	transition: all .2s ease-in-out;
 }
 
+.fullOpacity {
+	opacity: 1 !important;
+}
+
 #book-editions .books-jumbo:hover {
 	opacity: 1;
 	transform: scale(1.1);
@@ -189,9 +194,10 @@ p, a, li {
 
 #book-editions-img a img {
 	margin: auto;
+	display: block;
 }
 
-#book-editions-img a div {
+#book-editions-img div {
 	text-decoration: none;
 	text-align: center;
 	margin-bottom: 10px;
@@ -201,6 +207,21 @@ p, a, li {
 	text-decoration: none;
 	color: black;
 	cursor: pointer;
+}
+
+.testimonial input {
+	vertical-align: middle;
+}
+
+.testimonial input[type=radio] {
+	margin: 0px;
+}
+
+.testimonial span {
+	vertical-align: middle;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	display: inline-block;
 }
 
 /*#first-edition {
