@@ -38,17 +38,48 @@ td {
 	title 
 ***/
 body {
-	max-width: 1600px;
+	/*max-width: 1600px;*/
+}
+
+h1, h2, h3, h4, h5, dt {
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: bold !important;
+}
+
+p, a, li, dd, input {
+	font-family: 'Merriweather', serif;
+	font-size: 17px;
 }
 
 .title {
-	font-family: 'Roboto', sans-serif;
+	position: absolute;
+	right: 0px;
+	left: 0px;
+	top: 62px;
+	font-weight: bold;
+	background: rgba(255,255,255,0.6);
+	z-index: 1;
+	padding: 10px;
+}
+
+#book-editions h1 {
+	font-size: 50px;
+	color: black;
+}
+
+#logo {
+	margin: auto;
+	display: block;
+	height: 200px;
+	opacity: 0.8;
 }
 
 
 #main-jumbo {
-	background: white url("../img/cp3-test.png") no-repeat scroll center;
-	min-width: 700px;
+	/*background: white url("../img/cp3-test.png") no-repeat scroll center;*/
+	/*min-width: 700px;*/
+	margin-bottom: 0px;
+	padding-top: 0px;
 }
 
 /*** main page text ***/
@@ -63,34 +94,35 @@ body {
 }
 
 #page-body {
-	background:-webkit-gradient(linear, 0 0, 0 100%, from(white), to(dimgrey));
-  	background:-moz-linear-gradient(white, dimgrey);
-  	background:-o-linear-gradient(white, dimgrey);
-  	background:linear-gradient(white, dimgrey);
+/*	background:-webkit-gradient(linear, 0 0, 0 100%, from(white), to(rgb(246, 170, 60)));
+  	background:-moz-linear-gradient(white, rgb(246, 170, 60));
+  	background:-o-linear-gradient(white, rgb(246, 170, 60));
+  	background:linear-gradient(white, rgb(246, 170, 60));*/
+  	background: #e5dacf;
 }
-#page-body h3 {
+/*#page-body h3 {
 	font-family: 'Source Code Pro' ;
-}
+}*/
 
-#page-body #start {
+/*#page-body #start {
 	font-family: 'Merriweather', serif;
 	font-size: 20px;
-}
+}*/
 
 /*** 
 	navigation 
 ***/
 .nav {
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(110, 110, 110, 1);
 	position: fixed;
-	z-index: 1;
+	z-index: 2;
 }
 
 #top-link {
 	min-width: 800px;
 }
 
-#top-link a:link, #top-link a:visited {
+#top-link a, #top-link a:link {
 	color: white;
 }
 
@@ -98,8 +130,17 @@ body {
 	color: black;
 }
 
+.nav a {
+	border-radius: 0px !important;
+}
 .nav a:hover {
 	cursor: pointer;
+}
+
+.nav img {
+	height: 17px;
+	width: initial;
+	margin-right: 5px;
 }
 
 /*** 
@@ -113,7 +154,7 @@ body {
 }
 
 #book-editions .books-jumbo {
-	height: 180px;
+	/*height: 180px;*/
     width: 150px;
 /*	height: 200px;
 	width: 100px;
@@ -129,16 +170,21 @@ body {
 	transition: all .2s ease-in-out;
 }
 
+.fullOpacity {
+	opacity: 1 !important;
+}
+
 #book-editions .books-jumbo:hover {
 	opacity: 1;
 	transform: scale(1.1);
 	cursor: pointer;
 }
 
-/*
+
 #book-edition-info {
 	margin-top: 30px;
 	text-align: center;
+	clear:left;
 }
 
 #book-editions-img {
@@ -148,9 +194,10 @@ body {
 
 #book-editions-img a img {
 	margin: auto;
+	display: block;
 }
 
-#book-editions-img a div {
+#book-editions-img div {
 	text-decoration: none;
 	text-align: center;
 	margin-bottom: 10px;
@@ -162,7 +209,22 @@ body {
 	cursor: pointer;
 }
 
-#first-edition {
+.testimonial input {
+	vertical-align: middle;
+}
+
+.testimonial input[type=radio] {
+	margin: 0px;
+}
+
+.testimonial span {
+	vertical-align: middle;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	display: inline-block;
+}
+
+/*#first-edition {
 	display: none;
 }
 
@@ -174,9 +236,9 @@ body {
 	padding: 40px 0px 30px 0px;
 	width: 70%;
 	display: none;
-}
+}*/
 
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {
 	#book-editions-img {
 		display: flex;
 	}
@@ -200,9 +262,14 @@ body {
 ***/
 .links li, .info li{
 	list-style-type: none;
-	border-left: 3px solid blue;
+	border-left: 3px solid #C4B39D;
 	padding-left: 10px;
 }
+
+.links li:hover, .info li:hover{
+	border-left: 3px solid white;
+}
+
 
 .links, .info, .buy-book {
 	left: 10%;
@@ -215,19 +282,22 @@ body {
 }
 
 #footer {
-	background-color: black;
+	background-color: rgb(35, 35, 35);
 }
 
 #footer h4 {
-	color: blue;
-}
-
-.links a, .info a, .buy-book a {
 	color: white;
 }
 
-.links a:hover, .info a:hover, .buy-book a:hover {
+#footer a {
+	color: #C4B39D;
 	text-decoration: none;
+}
+
+#footer a:hover {
+	text-decoration: none;
+	color: white;
+	border-color: black;
 }
 
 /***
@@ -254,7 +324,7 @@ body {
 }
 
 #select-edition h3, #orderby h3 {
-	font-family: 'Source Code Pro' ;
+	/*font-family: 'Source Code Pro' ;*/
 }
 
 hr {
