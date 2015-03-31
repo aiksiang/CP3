@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, dt {
 	font-weight: bold !important;
 }
 
-p, a, li, dd, input {
+p, a, li, dd, input, label, form, .btn, .form-control {
 	font-family: 'Merriweather', serif;
 	font-size: 17px;
 }
@@ -414,14 +414,14 @@ textarea { resize:vertical ; }
 }
 
 #content-title h2 {
-	font-family: 'Source Code Pro';
+	/*font-family: 'Source Code Pro';*/
 }
 
 .modal-header, .modal-footer{
 	background-color: brown;
 	color: white;
 	text-align: center;
-	font-family: 'Source Code Pro' 
+	/*font-family: 'Source Code Pro' */
 }
 
 .glyphicon {
