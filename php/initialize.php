@@ -26,7 +26,7 @@ $sql = "CREATE TABLE Errata (id INT PRIMARY KEY AUTO_INCREMENT,
 							isFixed BOOLEAN,
 							authorName VARCHAR(50),
 							raise_time TIMESTAMP,
-							fix_time TIMESTAMP);";
+							version INT);";
 
 if (mysqli_query($db, $sql)) {} 
 else {
@@ -69,12 +69,30 @@ for($i = 0;$i<count($question);$i++){
 	}
 }
 //Insertion Errata
+$v_index = 0;
+$version = 3;
+$a_index = 0;
 for($i = 0;$i<count($errata_content);$i++){
-	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,raise_time) VALUES (1,".$errata_type[$i].",".$errata_page[$i].",\"".$errata_content[$i]."\",".$errata_status[$i].", now());";
+	if($i==$version_index[$v_index]) {
+		$v_index =$v_index+1;
+		$version = $version -1;
+	}
+	if($i = $author_index[$a_index]){
+		$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (1,".$errata_type[$i].",".$errata_page[$i].",\"".$errata_content[$i]."\",".$errata_status[$i].",\"".$authors[$a_index]."\", now(),".$version.");";
+		$a_index = $a_index+1;
+		if ($db->query($sql) === TRUE) {
+    
+		} else {
+    	echo( "Error: " . $sql . "<br>" . $db->error);
+		}
+	}
+
+	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,raise_time,version) VALUES (1,".$errata_type[$i].",".$errata_page[$i].",\"".$errata_content[$i]."\",".$errata_status[$i].", now(),".$version.");";
 	if ($db->query($sql) === TRUE) {
     
 	} else {
     echo( "Error: " . $sql . "<br>" . $db->error);
+	}
 	}
 }
 ?>
