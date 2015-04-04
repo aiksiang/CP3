@@ -77,7 +77,7 @@ for($i = 0;$i<count($errata_content);$i++){
 		$v_index =$v_index+1;
 		$version = $version -1;
 	}
-	if($i = $author_index[$a_index]){
+	if($i == $author_index[$a_index]){
 		$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (1,".$errata_type[$i].",".$errata_page[$i].",\"".$errata_content[$i]."\",".$errata_status[$i].",\"".$authors[$a_index]."\", now(),".$version.");";
 		$a_index = $a_index+1;
 		if ($db->query($sql) === TRUE) {
@@ -86,13 +86,14 @@ for($i = 0;$i<count($errata_content);$i++){
     	echo( "Error: " . $sql . "<br>" . $db->error);
 		}
 	}
-
-	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,raise_time,version) VALUES (1,".$errata_type[$i].",".$errata_page[$i].",\"".$errata_content[$i]."\",".$errata_status[$i].", now(),".$version.");";
-	if ($db->query($sql) === TRUE) {
+	else {
+		$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (1,".$errata_type[$i].",".$errata_page[$i].",\"".$errata_content[$i]."\",".$errata_status[$i].",\""."NULL\", now(),".$version.");";
+		if ($db->query($sql) === TRUE) {
     
-	} else {
-    echo( "Error: " . $sql . "<br>" . $db->error);
-	}
+		} else {
+    	echo( "YError: " . $sql . "<br>" . $db->error);
+		}
 	}
 }
+
 ?>

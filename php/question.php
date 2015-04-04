@@ -66,7 +66,7 @@ $answers = array(
 					"17"
 );
 
-
+/*
 if ($_GET['action'] == 'getRandomQuestion') {
 	$randomNumber = rand(0, count($question) - 1);
 	$randomQuestion = $question[$randomNumber];
@@ -83,6 +83,6 @@ if ($_GET['action'] == 'checkAnswer') {
 	//TODO algorithm for checking answer
 	$reply = array($realAnswer, $userAnswer);
 	echo json_encode($reply);
-}
+}*/
 
 ?>
