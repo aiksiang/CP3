@@ -18,6 +18,7 @@ define("grammatical_error",2); //sentence structure and grammatical error
 define("content_mismatch_error",3); //e.g refer to (a) but the expected should be refer to (b) OR calling function f(a,b) but it should be f(b,a) or even f(a,c)
 define("expression_error",4);//O(n) becomes O(1) etc
 define("logic_error",5); //The algorithm is wrong in certain cases or the sample code has problems
+define("new_feature", 6); //Possible improvement in later CP version
 
 $errata_content = array(
 					//CP3
@@ -141,24 +142,65 @@ $errata_content = array(
 					"MAP LA 4643 to UVA 1252 Title Twenty Questions",
 					"MAP LA 4106 to UVA 1231 Title ACORN",
 					"MAP LA 4143 to UVA 1238 Title Free Parentheses",
-					"MAP LA 4146 to UVA 1240 Title ICPC Team Strategy"
+					"MAP LA 4146 to UVA 1240 Title ICPC Team Strategy",
+					
 					//CP1
 					"Bellman Ford's code shown there has a minor bug (does not affect its correctness though). The correct one is: REP (i, 0, V - 2) // relax all E edges V-1 times, O(V)",
 					"the intersect test is buggy, it cannot handle special cases (code dropped).",
 					"\"Solutoin\" -> \"Solution\".",
 					"UVa 10001 should be UVa 10101.",
-
-
-
-
+					"UVa 11277 should be UVa 11227.",
+					"UVa 10401 should be UVa 11401.",
+					"Opening page should start with page number i, not ii.",
+					"Table 1.2: UVa 10911 discussed in the early part of Chapter 1 will be inserted in this table.",
+					"Question 2: The question must be rephrased, otherwise a trivial linear scan is already sufficient.",
+					"Figure 2.1; BST/left. Node '20' must be changed to '50' as '20' does not satisfy the BST property... :(",
+					"UVa 11790 is not in the sorted position.",
+					"UVa 507 and UVa 10684 are not in the sorted position.",
+					"Japan09 should be written as Tokyo09.",
+					"bottom: There is an unused white space.",
+					"Rephrase \"Standard Application (for MST)\" to \"Kruskal's Standard Application (for MST)\"",
+					"UVa 11015 is not in the sorted position.",
+					"UVa 10029 is not in the sorted position.",
+					"Japan05 should be written as Tokyo05.",
+					"The name \"Fibonacci\" should be in italic.",
+					"UVa 10551 and UVa 10814 are not in the sorted position.",
+					"UVa 10551 and UVa 10814 are not in the sorted position.",
+					"bottom: There is an unused white space.",
+					"UVa 11048 is not in the sorted position. ",
+					"In various places: The term \"World Final\" should be written as \"World Finals\".",
+					"We will add a figure to illustrate the discussion of UVa 10911.",
+					"Figure 3.13: This blurry figure will be enhanced.",
+					"Page 97, 111, and in many other pages with programming exercises: We will try to have one liner hints for each problem. The hints are from Steven's 'Methods to Solve' website (in progress, almost done).",
+					"Some examples in the first edition are using old programming problems. In the second edition, we will use more newer examples (if necessary).",
+					"Explanation of some data structures and algorithms will be expanded.",
+					"All example codes have more meaningful comments to help readers understand the code.",
+					"Existing figures in ch4/6/7 are re-drawn and enhanced. Many new figures are added.",
+					"The second edition is written with a more balanced ICPC and IOI viewpoint. After IOI 2010, both Steven and Felix can say that both have experienced IOI and ICPC World Finals.",
+					"Problem credits will be given to all problem authors that we manage to contact.",
+					"More information density per page: using single line spacing instead of one half line spacing on the same A4 sheet.\nMore number of pages for almost all chapters even though the line spacing is smaller.\nHere is the statistics of number of pages in the 1st edition versus the 2nd edition.(+image URL)",
+					"Much more programming exercises (more than 600 are new).\nThese are the programming exercises that Steven/Felix have solved in UVa online judge within 9 August 2010 - publication date of the 2nd edition,\nincluding some problems from recent ICPC World Finals 2010 and IOI 2010-2011.\n(note: references to other online judges other than UVa/LA/SPOJ/TopCoder are removed to keep the exercises focused).\nHere is the statistics of programming problems mentioned in 1st edition versus in 2nd edition (final).(+image URL) Here is the current classification of programming problems in 2nd edition, not up to date... (click to enlarge)(+image URL)",
+					"Problem index. If you want to look for solution for a certain UVa online judge problem, just browse through the book's index page in binary search fashion :).",
+					"Java support is substantially enhanced. We will provide sample codes using both C++ (our default choice) and Java.",
+					"More usage of programming problems in UVa online judge that are inspired from real-life CS problems (to further promote CS to younger generations) (listed in ch1 Ad Hoc problems).",
+					"Profile of data structure/algorithm inventors (done: Bayer, Adelson-Velskii, Landis, Fenwick, Kruskal, Prim, Jarnik, Tarjan, Hopcroft, Dijkstra, Bellman, Ford, Floyd, Warshall, Fulkerson, Edmonds, Karp, Fibonacci, Zeckendorf, Pascal, Catalan, Erasthotenes, Euler, Goldbach, Diophantus, Knuth, Morris, Pratt, Needleman, Wunsch, Smith, Waterman, Manber, Myers, Phytagoras, Euclid, Heron, Graham).",
+					"New sections Chapter 2: Fenwick Tree;",
+					"New sections Chapter 3: New insights on bottom up DP technique, DP 0-1 Knapsack/Subset Sum; DP TSP, More explanation on non classical DP problems.",
+					"New sections Chapter 4: Special Graph: New insights of DP and implicit DAG, Eulerian Graph; Alternating Path algorithm for Bipartite Matching.",
+					"New sections Chapter 5: New ad hoc section, enhanced Combinatorics section (Fibonacci/Binomial Theorem/Catalan Numbers), More Number Theory (Factorial/Prime Factors/Modulo Arithmetic); Probability Theory; Game Theory; Powers of a (Square) Matrix",
+					"New sections Chapter 6: New basic string processing skills/list of problems, String Matching (KMP), updated write up on Suffix Array and its applications.",
+					"New sections Chapter 7: Major update on geometric library routines.",
+					"New sections Chapter 8: More Advanced Techniques.",
+					"More conceptual exercises throughout the book (a LOT of them) with hints/short solutions as appendix (almost done)."
 );
 $errata_page = array(127,2,6,9,10,27,28,28,29,141,204,229,231,317, //CP3
 					//CP2
 					 9,36,46,59,77,117,117,148,169,176,0,0,0,0,1,10,11,88,99,100,102,107,129,147,188,208,221,
 					 6,9,11,12,12,14,17,23,24,27,32,32,36,40,40,41,44,61,57,75,77,82,93,99,108,110,112,122,
 					 140,144,144,149,158,185,190,193,203,205,207,209,213,221,222,36,73,87,28,32,50,142,206,227,
-					 0,0,0,18,25,28,45,46,89,89,94,94,118,128,162,181,194,202,202,202,210,210,210,211,211,211
-
+					 0,0,0,18,25,28,45,46,89,89,94,94,118,128,162,181,194,202,202,202,210,210,210,211,211,211,
+					 //CP1
+					 76,130, 9,107,121,105, 0,4,8,17,55,56,59,71,73,80,88,93,101,104,105,107,111,0, 2,54, 0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0
 					);
 $errata_status = array(1,1,1,0,0,0,0,0,0,0,1,1,1,0,//CP3
 						1,1,1,1,1,1,1,1,1,1,1,
@@ -171,7 +213,12 @@ $errata_status = array(1,1,1,0,0,0,0,0,0,0,1,1,1,0,//CP3
 						1,1,1,1,1,1,0,1,1,1,
 						1,1,1,1,1,1,1,1,1,1,
 						1,1,1,1,1,1,1,1,1,1,
-						1,1,1,1 //CP2
+						1,1,1,1, //CP2
+						1,1,1,1,1,1,1,1,1,1,
+						1,1,1,1,1,1,1,1,1,1,
+						1,1,1,1,1,1,1,1,1,1,
+						1,1,1,1,1,1,1,1,1,1,
+						1,1,1,1,1,1,1 //CP1
 					);
 $errata_type = array(5,2,1,1,3,3,3,5,5,1,4,3,1,3, //CP3
 					 1,5,5,5,1,1,3,5,5,5,//CP2 (A)
@@ -179,8 +226,13 @@ $errata_type = array(5,2,1,1,3,3,3,5,5,1,4,3,1,3, //CP3
 					 3,4,5,//CP2(C)
 					 5,5,5,3,3,2,//CP2(D)
 					 4,4,4,//CP2(E)
-					 3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3//CP2(F)
-
+					 3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,//CP2(F)
+					 5,5, //CP1(A)
+					 2,3,3,3, //CP1(B)
+					 1,3,5,5,1,1,2,2,2,1,1,2,2,1,1,1,1,2, //CP1(C)
+					 6,6, //CP1(D)
+					 6,6,6,6,6,6,6, //CP1(E)
+					 6,6,6,6,6,6,6,6,6,6,6,6,6,6 //CP1(F)
 					);
 $version_index = array(14,119);
 $author_index = array(40,45,74,77);
