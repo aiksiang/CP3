@@ -237,6 +237,7 @@ $errata_type = array(5,2,1,1,3,3,3,5,5,1,4,3,1,3, //CP3
 $version_index = array(14,119);
 $author_index = array(40,45,74,77);
 $authors = array("Derek Kisman","Josephus","Derek Kisman","Derek Kisman");
+
 /*if ($_GET['action'] == 'getErrata') {
 	$reply = array();
 	for ($x = 0; $x < count($errata_content); $x++) {
@@ -251,6 +252,5 @@ $authors = array("Derek Kisman","Josephus","Derek Kisman","Derek Kisman");
 
 	echo json_encode($reply);
 }*/
-
 
 ?>

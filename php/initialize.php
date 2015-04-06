@@ -1,6 +1,6 @@
 <?php
 //connect MYSQL
-require_once '../config.php'; // your PHP script(s) can access this, but the rest cannot
+require_once 'config.php'; // your PHP script(s) can access this, but the rest cannot
 
 $db = new mysqli(db_host, db_uid, db_pwd, db_name);
 if ($db->connect_errno) 
