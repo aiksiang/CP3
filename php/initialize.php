@@ -8,6 +8,7 @@ if ($db->connect_errno)
 
 require_once 'question.php';
 require_once 'errata_store.php';
+require_once 'download.php';
 //Create Question Table
 
 $sql = "CREATE TABLE QandA (id INT PRIMARY KEY, 
@@ -53,7 +54,9 @@ else {
 $sql = "CREATE TABLE Download (id INT PRIMARY KEY AUTO_INCREMENT,
 							   name VARCHAR(200),
 							   count INT,
-							   URL VARCHAR(500));";
+							   URL VARCHAR(500),
+							   Remark VARCHAR(500),
+							   LastUpdate TIMESTAMP);";
 if (mysqli_query($db, $sql)) {} 
 else {
     echo("Error creating table: " . $db->error);
@@ -96,4 +99,12 @@ for($i = 0;$i<count($errata_content);$i++){
 	}
 }
 
+for($i = 0;$i<count($datalinks);$i++){
+	$sql = "INSERT INTO Download(name,count,URL,remark,LastUpdate) VALUES (\"".$datalinks[$i]."\",0,\"".$datapath.$datalinks[$i]."\",\"".$data_remarks[$i]."\",now());";
+	if ($db->query($sql) === TRUE) {
+    
+		} else {
+    	echo( "YError: " . $sql . "<br>" . $db->error);
+		}
+}
 ?>
