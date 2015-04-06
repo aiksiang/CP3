@@ -14,9 +14,21 @@ function populatePage(edition, callback) {
 	// 		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>\
 	// 	</div>\
 	// ');
+	
+	HTMLtoBeInserted = '\
+	<div class="row" id="book-nav">\
+			<ul class="nav nav-tabs">\
+				<li id="details" class="active" role="presentation"><a class="details-button">Details</a></li>\
+				<li id="content" role="presentation"><a class="content-button">Content</a>\
+   				</li>\
+   			</ul>\
+   		</div>\
+   	';
+	
+
 	switch (edition) {
 		case FIRST_EDITION:
-						HTMLtoBeInserted = '\
+						HTMLtoBeInserted += '\
 				<div class="row" id="book-edition-info">\
 					<dl class="row">\
 						<div class="col-md-4">\
@@ -115,7 +127,7 @@ function populatePage(edition, callback) {
 			break;
 
 		case SECOND_EDITION:
-			HTMLtoBeInserted = '\
+			HTMLtoBeInserted += '\
 				<div class="row" id="book-edition-info">\
 					<dl class="row">\
 						<div class="col-md-4">\
@@ -209,7 +221,7 @@ function populatePage(edition, callback) {
 			break;
 
 		case THIRD_EDITION:
-			HTMLtoBeInserted = '\
+			HTMLtoBeInserted += '\
 				<div class="row" id="book-edition-info">\
 					<dl class="row">\
 						<div class="col-md-4">\
@@ -298,6 +310,25 @@ function populatePage(edition, callback) {
 	}
 	DOM_bookDetails.append(HTMLtoBeInserted);
 	callback();
+
+	$(".content-button").on('click', function() {
+		$(".errata").fadeOut(400);
+		//$("#book-editions-img").fadeOut(400);
+		$("#book-edition-info").fadeOut(400);
+		$(".content").fadeIn(800);
+		$("#content").addClass("active");
+		$("#details").removeClass("active");
+		showContent(edition);
+	});
+
+	$(".details-button").on('click', function() {
+		$(".errata").fadeOut(400);
+		//$("#book-editions-img").fadeOut(400);
+		$("#book-edition-info").fadeIn(800);
+		$(".content").fadeOut(400);
+		$("#details").addClass("active");
+		$("#content").removeClass("active");
+	});
 }
 
 

@@ -8,8 +8,12 @@ $(document).ready(function(){
 		$(".errata").fadeOut(400);
 		$(".testimonial").fadeOut(400);
 		$(".content").fadeOut(400);
+		$(".downloads").fadeOut(400);
 		$("#book-editions-img").fadeIn(800);
 		$("#page-text").fadeIn(800);
+		$("#cp1-img img").removeClass("fullOpacity");
+		$("#cp2-img img").removeClass("fullOpacity");
+		$("#cp3-img img").removeClass("fullOpacity");
 	});
 
 	$("#cp1-img").on('click', function() {
@@ -18,6 +22,7 @@ $(document).ready(function(){
 		$("#page-text").fadeOut(400);
 		$(".testimonial").fadeOut(400);
 		$(".content").fadeOut(400);
+		$(".downloads").fadeOut(400);
 		$("#cp1-img img").addClass("fullOpacity");
 		$("#cp2-img img").removeClass("fullOpacity");
 		$("#cp3-img img").removeClass("fullOpacity");
@@ -34,6 +39,7 @@ $(document).ready(function(){
 		$("#page-text").fadeOut(400);
 		$(".testimonial").fadeOut(400);
 		$(".content").fadeOut(400);
+		$(".downloads").fadeOut(400);
 		$("#cp1-img img").removeClass("fullOpacity");
 		$("#cp2-img img").addClass("fullOpacity");
 		$("#cp3-img img").removeClass("fullOpacity");
@@ -51,6 +57,7 @@ $(document).ready(function(){
 		$("#page-text").fadeOut(400);
 		$(".testimonial").fadeOut(400);
 		$(".content").fadeOut(400);
+		$(".downloads").fadeOut(400);
 		$("#cp1-img img").removeClass("fullOpacity");
 		$("#cp2-img img").removeClass("fullOpacity");
 		$("#cp3-img img").addClass("fullOpacity");
@@ -62,25 +69,26 @@ $(document).ready(function(){
 		});
 	});
 
-	$("#testimonial-button").on('click', function() {
+	$(".testimonial-button").on('click', function() {
 		$(".errata").fadeOut(400);
 		$("#book-editions-img").fadeOut(400);
 		$("#page-text").fadeOut(400);
 		$(".book-details").fadeOut(400);
 		$(".content").fadeOut(400);
+		$(".downloads").fadeOut(400);
 		$(".testimonial").fadeIn(800);
 		showTestimonial();
 	});
 
-	$("#content-button").on('click', function() {
+	$(".download-button").on('click', function() {
 		$(".errata").fadeOut(400);
 		$("#book-editions-img").fadeOut(400);
 		$("#page-text").fadeOut(400);
 		$(".book-details").fadeOut(400);
 		$(".testimonial").fadeOut(400);
-		$(".content").fadeIn(800);
-		showContent();
-	});
+		$(".content").fadeOut(400);
+		$(".downloads").fadeIn(800);
+	}); 
 });
 
 function initializeErrata(edition) {
