@@ -15,14 +15,13 @@ function populatePage(edition, callback) {
 	// 	</div>\
 	// ');
 	
-	HTMLtoBeInserted = '\
+	var HTMLtoBeInserted = '\
 	<div class="row" id="book-nav">\
-			<ul class="nav nav-tabs">\
-				<li id="details" class="active" role="presentation"><a class="details-button">Details</a></li>\
-				<li id="content" role="presentation"><a class="content-button">Content</a>\
-   				</li>\
-   			</ul>\
-   		</div>\
+		<ul class="nav nav-tabs">\
+			<li id="details" class="active" role="presentation"><a class="details-button">Details</a></li>\
+			<li id="content" role="presentation"><a class="content-button">Content</a></li>\
+		</ul>\
+   	</div>\
    	';
 	
 

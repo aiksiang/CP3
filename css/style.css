@@ -113,7 +113,7 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 	navigation 
 ***/
 #top-link .nav {
-	background-color: rgba(110, 110, 110, 1);
+	background-color: rgba(110, 110, 110, 0.9);
 	position: fixed;
 	z-index: 2;
 }
@@ -147,15 +147,6 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 ul .dropdown-menu {
 	background-color: rgba(255, 255, 255, 0.7);
 }
-
-ul li ul {
-	display: none;
-}
-
-ul li:hover ul {
-	display: block;
-}
-
 
 
 /*** 

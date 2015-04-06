@@ -5,6 +5,17 @@ function showContent(edition) {
 	switch(edition) {
 		case FIRST_EDITION:
 			HTMLtoBeInserted += '\
+				<div class="row" id="book-nav">\
+					<ul class="nav nav-tabs">\
+						<li class="chp1" role="presentation"><a href="#chap1">Chapter 1</a></li>\
+						<li class="chp2" role="presentation"><a href="#chap2">Chapter 2</a></li>\
+						<li class="chp3" role="presentation"><a href="#chap3">Chapter 3</a></li>\
+						<li class="chp4" role="presentation"><a href="#chap4">Chapter 4</a></li>\
+						<li class="chp5" role="presentation"><a href="#chap5">Chapter 5</a></li>\
+						<li class="chp6" role="presentation"><a href="#chap6">Chapter 6</a></li>\
+						<li class="chp7" role="presentation"><a href="#chap7">Chapter 7</a></li>\
+					</ul>\
+   				</div>\
 				<div class="row">\
 					<a name="chap1"></a>\
 				    <div class="col-md-7 col-md-offset-1">\
@@ -136,6 +147,20 @@ function showContent(edition) {
 		  	break;
 		case SECOND_EDITION:
 			HTMLtoBeInserted += '\
+				<div class="row" id="book-nav">\
+					<ul class="nav nav-tabs">\
+						<li class="chp1" role="presentation"><a href="#chap1">Chapter 1</a></li>\
+						<li class="chp2" role="presentation"><a href="#chap2">Chapter 2</a></li>\
+						<li class="chp3" role="presentation"><a href="#chap3">Chapter 3</a></li>\
+						<li class="chp4" role="presentation"><a href="#chap4">Chapter 4</a></li>\
+						<li class="chp5" role="presentation"><a href="#chap5">Chapter 5</a></li>\
+						<li class="chp6" role="presentation"><a href="#chap6">Chapter 6</a></li>\
+						<li class="chp7" role="presentation"><a href="#chap7">Chapter 7</a></li>\
+						<li class="chp8" role="presentation"><a href="#chap8">Chapter 8</a></li>\
+						<li class="app-A" role="presentation"><a href="#appendix-A">Appendix A</a></li>\
+						<li class="ind" role="presentation"><a href="#index">Index</a></li>\
+					</ul>\
+   				</div>\
 				<div class="row">\
 					<a name="chap1"></a>\
 				    <div class="col-md-7 col-md-offset-1">\
@@ -284,7 +309,7 @@ function showContent(edition) {
 				</div>\
 				\
 				<div class="row">\
-					<a name="chap6"></a>\
+					<a name="chap8"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/matching.gif" alt="matching" class="img-responsive"></div></div>\
 					</div>\
@@ -304,7 +329,7 @@ function showContent(edition) {
 				</div>\
 				\
 				<div class="row">\
-					<a name="chap7"></a>\
+					<a name="appendix-A"></a>\
 					<div class="col-md-6 col-md-offset-1">\
 						<div class="classWithPad well">\
 							<h4 name="chap7">Appendix A: Hints/Brief Solutions</h4>\
@@ -319,7 +344,7 @@ function showContent(edition) {
 				</div>\
 				\
 				<div class="row">\
-					<a name="chap6"></a>\
+					<a name="index"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/heap.gif" alt="heap" class="img-responsive"></div></div>\
 					</div>\
@@ -340,6 +365,20 @@ function showContent(edition) {
 			break;
 		case THIRD_EDITION:
 			HTMLtoBeInserted += '\
+				<div class="row" id="book-nav">\
+					<ul class="nav nav-tabs">\
+						<li class="chp1" role="presentation"><a href="#chap1">Chapter 1</a></li>\
+						<li class="chp2" role="presentation"><a href="#chap2">Chapter 2</a></li>\
+						<li class="chp3" role="presentation"><a href="#chap3">Chapter 3</a></li>\
+						<li class="chp4" role="presentation"><a href="#chap4">Chapter 4</a></li>\
+						<li class="chp5" role="presentation"><a href="#chap5">Chapter 5</a></li>\
+						<li class="chp6" role="presentation"><a href="#chap6">Chapter 6</a></li>\
+						<li class="chp7" role="presentation"><a href="#chap7">Chapter 7</a></li>\
+						<li class="chp8" role="presentation"><a href="#chap8">Chapter 8</a></li>\
+						<li class="chp9" role="presentation"><a href="#chap9">Chapter 9</a></li>\
+						<li class="ind" role="presentation"><a href="#index">Index</a></li>\
+					</ul>\
+   				</div>\
 				<div class="row">\
 					<a name="chap1"></a>\
 				    <div class="col-md-7 col-md-offset-1">\
@@ -472,7 +511,7 @@ function showContent(edition) {
 				</div>\
 				\
 				<div class="row">\
-					<a name="chap6"></a>\
+					<a name="chap8"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/matching.gif" alt="matching" class="img-responsive"></div></div>\
 					</div>\
@@ -491,7 +530,7 @@ function showContent(edition) {
 				</div>\
 				\
 				<div class="row">\
-					<a name="chap7"></a>\
+					<a name="chap9"></a>\
 					<div class="col-md-6 col-md-offset-1">\
 						<div class="classWithPad well">\
 							<h4 name="chap7">Chapter 9: Rare Topics</h4>\
@@ -506,7 +545,7 @@ function showContent(edition) {
 				</div>\
 				\
 				<div class="row">\
-					<a name="chap6"></a>\
+					<a name="index"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/heap.gif" alt="heap" class="img-responsive"></div></div>\
 					</div>\
