@@ -127,6 +127,14 @@ while($row = mysqli_fetch_row($sth)) {
 
 
 fclose($myfile2);
+$sth = $db->query("SELECT * from Testimonial;");
+
+while($row = mysqli_fetch_row($sth)) {
+    fwrite($myfile2,json_encode($row)."\n");
+}
+
+
+fclose($myfile2);
 
 $sth = $db->query("SELECT * from Download;");
 
