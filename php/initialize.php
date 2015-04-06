@@ -1,6 +1,6 @@
 <?php
 //connect MYSQL
-require_once '../config.php'; // your PHP script(s) can access this, but the rest cannot
+require_once 'config.php'; // your PHP script(s) can access this, but the rest cannot
 
 $db = new mysqli(db_host, db_uid, db_pwd, db_name);
 if ($db->connect_errno) 
@@ -8,6 +8,7 @@ if ($db->connect_errno)
 
 require_once 'question.php';
 require_once 'errata_store.php';
+require_once 'download.php';
 //Create Question Table
 
 $sql = "CREATE TABLE QandA (id INT PRIMARY KEY, 
@@ -26,7 +27,7 @@ $sql = "CREATE TABLE Errata (id INT PRIMARY KEY AUTO_INCREMENT,
 							isFixed BOOLEAN,
 							authorName VARCHAR(50),
 							raise_time TIMESTAMP,
-							fix_time TIMESTAMP);";
+							version INT);";
 
 if (mysqli_query($db, $sql)) {} 
 else {
@@ -53,7 +54,9 @@ else {
 $sql = "CREATE TABLE Download (id INT PRIMARY KEY AUTO_INCREMENT,
 							   name VARCHAR(200),
 							   count INT,
-							   URL VARCHAR(500));";
+							   URL VARCHAR(500),
+							   Remark VARCHAR(500),
+							   LastUpdate TIMESTAMP);";
 if (mysqli_query($db, $sql)) {} 
 else {
     echo("Error creating table: " . $db->error);
@@ -69,12 +72,39 @@ for($i = 0;$i<count($question);$i++){
 	}
 }
 //Insertion Errata
+$v_index = 0;
+$version = 3;
+$a_index = 0;
 for($i = 0;$i<count($errata_content);$i++){
-	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,raise_time) VALUES (1,".$errata_type[$i].",".$errata_page[$i].",\"".$errata_content[$i]."\",".$errata_status[$i].", now());";
+	if($i==$version_index[$v_index]) {
+		$v_index =$v_index+1;
+		$version = $version -1;
+	}
+	if($i == $author_index[$a_index]){
+		$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (1,".$errata_type[$i].",".$errata_page[$i].",\"".$errata_content[$i]."\",".$errata_status[$i].",\"".$authors[$a_index]."\", now(),".$version.");";
+		$a_index = $a_index+1;
+		if ($db->query($sql) === TRUE) {
+    
+		} else {
+    	echo( "Error: " . $sql . "<br>" . $db->error);
+		}
+	}
+	else {
+		$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (1,".$errata_type[$i].",".$errata_page[$i].",\"".$errata_content[$i]."\",".$errata_status[$i].",\""."NULL\", now(),".$version.");";
+		if ($db->query($sql) === TRUE) {
+    
+		} else {
+    	echo( "YError: " . $sql . "<br>" . $db->error);
+		}
+	}
+}
+
+for($i = 0;$i<count($datalinks);$i++){
+	$sql = "INSERT INTO Download(name,count,URL,remark,LastUpdate) VALUES (\"".$datalinks[$i]."\",0,\"".$datapath.$datalinks[$i]."\",\"".$data_remarks[$i]."\",now());";
 	if ($db->query($sql) === TRUE) {
     
-	} else {
-    echo( "Error: " . $sql . "<br>" . $db->error);
-	}
+		} else {
+    	echo( "YError: " . $sql . "<br>" . $db->error);
+		}
 }
 ?>

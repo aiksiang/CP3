@@ -1,7 +1,7 @@
 var errata;
 
 function showErrata(edition) {
-	$.get("php/errata_store.php", {action: "getErrata", edition: "third"}).done(function(result) {
+	$.get("php/retrieval.php", {action: "getErrata", edition: "third"}).done(function(result) {
 		console.log(result);
 		errata = result;
 
