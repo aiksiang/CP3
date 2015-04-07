@@ -31,12 +31,6 @@ $questions = array (
 					"UVa 10610 - Gopher and Hawks",
 					"UVa 10940 - Throwing cards away II",
 					"UVa 11130 - Billiard bounces",
-					"UVa 10551 - Basic Remains",
-					"UVa 10408 - Farey sequences",
-					"UVa 10405 - Longest Common Subsequence",
-					"UVa 10902 - Pick-up Sticks",
-					"UVa 10171 - Meeting Prof. Miguel...",
-					"UVa 10394 - Twin Primes",
 					
 					);
 
