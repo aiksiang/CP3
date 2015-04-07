@@ -1,7 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:100&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=Raleway:800);
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:700);
-@import url(http://fonts.googleapis.com/css?family=Merriweather);
 
 /*** 
 	@ media
@@ -51,6 +49,10 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 	font-size: 17px;
 }
 
+#book-editions .title {
+	font-size: 45px;
+}
+
 .title {
 	position: absolute;
 	right: 0px;
@@ -62,11 +64,6 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 	padding: 10px;
 }
 
-#book-editions h1 {
-	font-size: 50px;
-	color: black;
-}
-
 #logo {
 	margin: auto;
 	display: block;
@@ -76,11 +73,10 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 
 
 #main-jumbo {
-	/*background: white url("../img/cp3-test.png") no-repeat scroll center;*/
-	/*min-width: 700px;*/
 	margin-bottom: 0px;
 	padding-top: 0px;
 }
+
 
 /*** main page text ***/
 #page-text {
@@ -94,26 +90,14 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 }
 
 #page-body {
-/*	background:-webkit-gradient(linear, 0 0, 0 100%, from(white), to(rgb(246, 170, 60)));
-  	background:-moz-linear-gradient(white, rgb(246, 170, 60));
-  	background:-o-linear-gradient(white, rgb(246, 170, 60));
-  	background:linear-gradient(white, rgb(246, 170, 60));*/
-  	background: #e5dacf;
+  	background: #152737;
 }
-/*#page-body h3 {
-	font-family: 'Source Code Pro' ;
-}*/
-
-/*#page-body #start {
-	font-family: 'Merriweather', serif;
-	font-size: 20px;
-}*/
 
 /*** 
 	navigation 
 ***/
 #top-link .nav {
-	background-color: rgba(110, 110, 110, 0.9);
+	/*background-color: rgba(110, 110, 110, 0.9);*/
 	position: fixed;
 	z-index: 2;
 }
@@ -123,11 +107,12 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 }
 
 #top-link a, #top-link a:link {
-	color: white;
+	transition: background-color .2s ease;
 }
 
 #top-link a:hover {
-	color: black;
+	transition: background-color .2s ease;
+	transition: color .4s ease;
 }
 
 #top-link .nav a {
@@ -138,16 +123,12 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 	cursor: pointer;
 }
 
+
 .nav img {
 	height: 17px;
 	width: initial;
 	margin-right: 5px;
 }
-
-ul .dropdown-menu {
-	background-color: rgba(255, 255, 255, 0.7);
-}
-
 
 /*** 
 	books 
@@ -160,14 +141,7 @@ ul .dropdown-menu {
 }
 
 #book-editions .books-jumbo {
-	/*height: 180px;*/
     width: 150px;
-/*	height: 200px;
-	width: 100px;
-	padding: 10px 0px 30px 0px;
-}
-
-#book-editions .img-responsive {*/
 	opacity: 0.5;
 	-o-transition:opacity .4s ease-out, background 1.4s ease-in;
 	-ms-transition:opacity .4s ease-out, background 1.4s ease-in;
@@ -230,38 +204,6 @@ ul .dropdown-menu {
 	display: inline-block;
 }
 
-/*#first-edition {
-	display: none;
-}
-
-#second-edition {
-	display: none;
-}
-
-#third-edition {
-	padding: 40px 0px 30px 0px;
-	width: 70%;
-	display: none;
-}*/
-
-/*@media (min-width: 992px) {
-	#book-editions-img {
-		display: flex;
-	}
-	.col-md-2 {
-	  width: 16.66666667%;
-	  margin: auto;
-	}
-}
-
-.errata {
-	margin: 20px;
-}
-
-.errataLink {
-	cursor: pointer;
-}
-*/
 
 /*** 
 	footer 
@@ -287,23 +229,12 @@ ul .dropdown-menu {
 	padding-left: 10px;
 }
 
-#footer {
-	background-color: rgb(35, 35, 35);
-}
-
-#footer h4 {
-	color: white;
-}
-
 #footer a {
-	color: #C4B39D;
 	text-decoration: none;
 }
 
 #footer a:hover {
 	text-decoration: none;
-	color: white;
-	border-color: black;
 }
 
 /***
@@ -327,10 +258,6 @@ ul .dropdown-menu {
 
 .row h5 {
 	font-family: 'Raleway', sans-serif;
-}
-
-#select-edition h3, #orderby h3 {
-	/*font-family: 'Source Code Pro' ;*/
 }
 
 hr {
@@ -359,24 +286,6 @@ textarea { resize:vertical ; }
 /***
 	quote
 ***/
-
-#quote-one .well {
-	background:-webkit-gradient(linear, 0 0, 0 100%, from(mediumaquamarine), to(midnightblue));
-  	background:-moz-linear-gradient(mediumaquamarine, midnightblue);
-  	background:-o-linear-gradient(mediumaquamarine, midnightblue);
-  	background:linear-gradient(mediumaquamarine, midnightblue);
-}
-
-#quote-two .well {
-	background:-webkit-gradient(linear, 0 0, 0 100%, from(mediumseagreen), to(darkgreen));
-  	background:-moz-linear-gradient(mediumseagreen, darkgreen);
-  	background:-o-linear-gradient(mediumseagreen, darkgreen);
-  	background:linear-gradient(mediumseagreen, darkgreen);
-}
-
-#quote-one a:hover, #quote-two a:hover {
-	color: maroon;
-} 
 
 .no-select {
 	-webkit-touch-callout: none;
@@ -413,21 +322,15 @@ textarea { resize:vertical ; }
 }
 
 #content-infographic {
-	background-color: brown;
 	margin-bottom: 40px;
 	margin-top: 10px;
 	padding: 20px;
-}
-
-#content-title h2 {
-	/*font-family: 'Source Code Pro';*/
 }
 
 .modal-header, .modal-footer{
 	background-color: brown;
 	color: white;
 	text-align: center;
-	/*font-family: 'Source Code Pro' */
 }
 
 .glyphicon {
@@ -438,4 +341,58 @@ textarea { resize:vertical ; }
 .glyphicon:hover {
 	opacity: 1;
 	cursor: pointer;
+}
+
+/***
+	color schemes
+***/
+
+#main-jumbo {
+	background-color: #c9e1c1;
+}
+
+#top-link a:hover {
+	color: black;
+	background-color: #0f9fb4;
+}
+
+#page-text {
+	color: white;
+}
+
+#page-body {
+  	background: #152737;
+}
+
+#top-link a, #top-link a:link {
+	color: white;
+}
+
+#top-link .nav {
+	background-color: #1d2f3e;
+}
+
+#footer {
+	background-color: rgb(35, 35, 35);
+}
+
+#footer h4 {
+	color: white;
+}
+
+#footer a {
+	color: white;
+}
+
+#footer a:hover {
+	color: #0f9fb4;
+	border-color: black;
+}
+
+#page-text .well {
+	color: black;
+}
+
+.book-details, .errata, .testimonial, .downloads {
+	color: white;
 }
