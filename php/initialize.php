@@ -63,6 +63,17 @@ if (mysqli_query($db, $sql)) {}
 else {
     echo("Error creating table: " . $db->error);
 }
+//Create Question Credit Table
+$sql = "CREATE TABLE Credit (id INT PRIMARY KEY AUTO_INCREMENT,
+							 name VARCHAR(150),
+							 setter VARCHAR(100),
+							 appearance VARCHAR(20));";
+$myfile5 = fopen("QuestionCredit.json", "w") or die("Unable to open file!");
+if (mysqli_query($db, $sql)) {} 
+else {
+    echo("Error creating table: " . $db->error);
+}
+
 //Insertion QandA
 for($i = 0;$i<count($question);$i++){
 	$sql = "INSERT INTO QandA (id,question,answer) VALUES (".($i+1).",\"".$question[$i]."\",\"".$answers[$i]."\")";
@@ -73,6 +84,8 @@ for($i = 0;$i<count($question);$i++){
     echo( "Error: " . $sql . "<br>" . $db->error);
 	}
 }
+
+
 //Insertion Errata
 $v_index = 0;
 $version = 3;
