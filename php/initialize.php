@@ -92,7 +92,9 @@ $version = 3;
 $a_index = 0;
 for($i = 0;$i<count($errata_content);$i++){
 	if($i==$version_index[$v_index]) {
-		$v_index =$v_index+1;
+		if($v_index<count($version_index)-1){
+			$v_index =$v_index+1;
+		}
 		$version = $version -1;
 	}
 	if($i == $author_index[$a_index]){
@@ -123,23 +125,36 @@ for($i = 0;$i<count($datalinks);$i++){
     	echo( "YError: " . $sql . "<br>" . $db->error);
 		}
 }
+
+fwrite($myfile1,"{\"QandAs\":[");
 $sth = $db->query("SELECT * from QandA;");
 
 while($row = mysqli_fetch_row($sth)) {
-    fwrite($myfile1,json_encode($row)."\n");
+   	fwrite($myfile1, "\n {\"id\":\"".$row[0]."\",");
+    fwrite($myfile1, "\n \"question\":\"".$row[1]."\",");
+    fwrite($myfile1, "\n \"answer\":\"".$row[2]."\"},");
 }
-
+fwrite($myfile1, "]}");
 
 fclose($myfile1);
 
 $sth = $db->query("SELECT * from Errata;");
-
+fwrite($myfile2,"{\"Erratas\":[");
 while($row = mysqli_fetch_row($sth)) {
-    fwrite($myfile2,json_encode($row)."\n");
+    fwrite($myfile2, "\n {\"id\":\"".$row[0]."\",");
+    fwrite($myfile2, "\n \"severity\":\"".$row[1]."\",");
+    fwrite($myfile2, "\n \"type\":\"".$row[2]."\",");
+    fwrite($myfile2, "\n \"pageNum\":\"".$row[3]."\",");
+    fwrite($myfile2, "\n \"content\":\"".$row[4]."\",");
+    fwrite($myfile2, "\n \"isFixed\":\"".$row[5]."\",");
+    fwrite($myfile2, "\n \"authorName\":\"".$row[6]."\",");
+    fwrite($myfile2, "\n \"raise_time\":\"".$row[7]."\",");
+    fwrite($myfile2, "\n \"version\":\"".$row[8]."\"},");
 }
 
-
+fwrite($myfile2, "]}");
 fclose($myfile2);
+
 $sth = $db->query("SELECT * from Testimonial;");
 
 while($row = mysqli_fetch_row($sth)) {
@@ -150,11 +165,16 @@ while($row = mysqli_fetch_row($sth)) {
 fclose($myfile2);
 
 $sth = $db->query("SELECT * from Download;");
-
+fwrite($myfile4,"{\"Downloads\":[");
 while($row = mysqli_fetch_row($sth)) {
-    fwrite($myfile4,json_encode($row)."\n");
+    fwrite($myfile4, "\n {\"id\":\"".$row[0]."\",");
+    fwrite($myfile4, "\n \"name\":\"".$row[1]."\",");
+    fwrite($myfile4, "\n \"count\":\"".$row[2]."\",");
+    fwrite($myfile4, "\n \"URL\":\"".$row[3]."\",");
+    fwrite($myfile4, "\n \"Remark\":\"".$row[4]."\",");
+    fwrite($myfile4, "\n \"LastUpdate\":\"".$row[5]."\"},");
 }
 
-
+fwrite($myfile4, "]}");
 fclose($myfile4);
 ?>
