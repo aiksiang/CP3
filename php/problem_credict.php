@@ -6,7 +6,7 @@
 //4. Appearance Varchar (20) : e.g section X.Y
 
 //86 questions
-$questions = array (
+$problems = array (
 					"UVa 10082 - WERTYU",
 					"UVa 10812 - Beat the Spread!",
 					"UVa 10901 - Ferry Loading III",

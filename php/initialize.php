@@ -9,6 +9,7 @@ if ($db->connect_errno)
 require_once 'question.php';
 require_once 'errata_store.php';
 require_once 'download.php';
+require_once 'problem_credict.php';
 //Create Question Table
 
 $sql = "CREATE TABLE QandA (id INT PRIMARY KEY, 
@@ -116,7 +117,7 @@ for($i = 0;$i<count($errata_content);$i++){
 		}
 	}
 }
-
+//Insertion Download
 for($i = 0;$i<count($datalinks);$i++){
 	$sql = "INSERT INTO Download(name,count,URL,remark,LastUpdate) VALUES (\"".$datalinks[$i]."\",0,\"".$datapath.$datalinks[$i]."\",\"".$data_remarks[$i]."\",now());";
 	if ($db->query($sql) === TRUE) {
@@ -124,6 +125,24 @@ for($i = 0;$i<count($datalinks);$i++){
 		} else {
     	echo( "YError: " . $sql . "<br>" . $db->error);
 		}
+}
+//Insertion Credit
+$s_index = 0;
+for($i = 0;$i<count($problems);$i++) {
+	if($i == $setters_indexes[$s_index]) {
+		$sql = "INSERT INTO Credit(name,setter,appearance) VALUES (\"".$problems[$i]."\",\"".$setters[$s_index]."\",\"".$locations[$i]."\");";
+		if($s_index<count($setters_indexes)-1){
+			$s_index = $s_index+1;
+		}
+	} else {
+		$sql = "INSERT INTO Credit(name,setter,appearance) VALUES (\"".$problems[$i]."\",\"\",\"".$locations[$i]."\");";
+	}
+	if ($db->query($sql) === TRUE) {
+    
+		} else {
+    	echo( "Error: " . $sql . "<br>" . $db->error);
+		}
+	
 }
 
 fwrite($myfile1,"{\"QandAs\":[");
@@ -177,4 +196,16 @@ while($row = mysqli_fetch_row($sth)) {
 
 fwrite($myfile4, "]}");
 fclose($myfile4);
+
+$sth = $db->query("SELECT * from Credit;");
+fwrite($myfile5,"{\"Credits\":[");
+while($row = mysqli_fetch_row($sth)) {
+    fwrite($myfile5, "\n {\"id\":\"".$row[0]."\",");
+    fwrite($myfile5, "\n \"Problem name\":\"".$row[1]."\",");
+    fwrite($myfile5, "\n \"Setter name\":\"".$row[2]."\",");
+    fwrite($myfile5, "\n \"Location\":\"".$row[3]."\"},");
+}
+
+fwrite($myfile5, "]}");
+fclose($myfile5);
 ?>
