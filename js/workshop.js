@@ -24,13 +24,13 @@ function showWorkshop() {
 				<p>History:</p>\
 				<ul>\
 					<li>The first Competitive Programming workshop (outside Singapore) was conducted @ Institut Teknologi Sepuluh Nopember (ITS), Surabaya, Indonesia on 22-23 Feb 2011 for top-18 Indonesian students preparing for IOI 2011.\
-					<img class="img-responsive center-block" src="https://sites.google.com/site/stevenhalim/_/rsrc/1371195918713/home/workshop/IMG_0961.JPG?height=148&amp;width=200"/></li>\
+					<img class="img-responsive center-block" src="img/malaysia.jpg"/></li>\
 					<li>Mongolian IOI team (3 students, 3 coaches) visited School of Computing on 8-15 September 2012 for IOI 2012 preparation.\
-					<img class="img-responsive center-block" src="https://sites.google.com/site/stevenhalim/_/rsrc/1371195918714/home/workshop/mongolia.jpg?height=149&amp;width=200"/></li>\
+					<img class="img-responsive center-block" src="img/mongolia.jpg"/></li>\
 					<li>Malaysian IOI team (4 students, 1 coach) visited School of Computing on 1-4 July 2013 for IOI 2013 preparation.</li>\
 					<li>Philippines OI team (1 student) visited School of Computing on 21-26 April 2014 for APIO 2014 preparation.</li>\
-					<li>Steven has successfully conducted the second Competitive Programming workshop outside Singapore in a country that is totally antipodal (50 hours flight... times two) with Singapore: La Paz, Bolivia on 19-23 May 2014. A total of 48 Bolivian (including about 10 Peruvian) ACM ICPC students (minimal conflict of interest as they compete in Latin America region) and 5 Bolivian IOI students (they will compete in Taiwan for IOI in July 2014) joined this camp (a total of 53 camp participants). The camp information (in Spanish) can be found in <a href="http://olimpiada.icpc-bolivia.edu.bo/node/49" rel="nofollow">http://olimpiada.icpc-bolivia.edu.bo/node/49</a>.\
-					<img class="img-responsive col-md-3 col-md-offset-2" src="https://sites.google.com/site/stevenhalim/_/rsrc/1401263869718/home/workshop/CP.jpg?height=148&amp;width=200"/><img class="img-responsive col-md-3 col-md-offset-1" src="https://sites.google.com/site/stevenhalim/_/rsrc/1401263981998/home/workshop/La%20Paz.jpg?height=150&amp;width=200"/></li>\
+					<li>Steven has successfully conducted the second Competitive Programming workshop outside Singapore in a country that is totally antipodal (50 hours flight... times two) with Singapore: La Paz, Bolivia on 19-23 May 2014. A total of 48 Bolivian (including about 10 Peruvian) ACM ICPC students (minimal conflict of interest as they compete in Latin America region) and 5 Bolivian IOI students (they will compete in Taiwan for IOI in July 2014) joined this camp (a total of 53 camp participants). The camp information (in Spanish) can be found in <a href="http://olimpiada.icpc-bolivia.edu.bo/node/49" target="_blank" rel="nofollow">http://olimpiada.icpc-bolivia.edu.bo/node/49</a>.\
+					<img class="img-responsive col-md-3 col-md-offset-2" src="img/CP.jpg"/><img class="img-responsive col-md-3 col-md-offset-1" src="img/La_Paz.jpg"/></li>\
 				</ul>\
 			</div>\
 		</div>\

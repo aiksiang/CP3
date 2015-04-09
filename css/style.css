@@ -229,7 +229,7 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 	padding-left: 10px;
 }
 
-#footer a {
+a {
 	text-decoration: none;
 }
 
@@ -394,5 +394,9 @@ textarea { resize:vertical ; }
 }
 
 .book-details, .errata, .testimonial, .downloads {
+	color: white;
+}
+
+.credits {
 	color: white;
 }
