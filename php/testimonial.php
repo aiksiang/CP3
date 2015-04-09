@@ -9,6 +9,8 @@
 //6. Continent
 //7. imageURL
 //8. Maplocation(x,y)
+//45 ENTRIES
+
 $authors = array (
 					"Brian C. Dean",
 					"Amanda Sturgill",
@@ -49,11 +51,14 @@ $authors = array (
 					"Bina Nusantara University",
 					"Teddy Mantoro",
 					"Invited observer from Malaysia new IOI team",
-					"several students in Thailand (notably students from Chulalongkorn University, Kasetsart University, and Prince of Songkla University)",
+					"several students in Thailand (notably students from Chulalongkorn University)",
+					"several students in Thailand (notably students from Kasetsart University)",
+					"several students in Thailand (notably students from Prince of Songkla University)",
 					"a few Indians/Vietnamese/Bangladeshi students",
 					"Mongolian IOI team",
-					"some Australians",
+					"some Australians"
 				);
+$entries = count($authors);
 $content = array (
 					"Competitive Programming is a unique resource that I recommend to any student interested in raising their algorithmic programming skills to the next level. It is packed with insightful tips and techniques that are hard to find elsewhere, and remarkably thorough in its use of examples and references to sample problems.",
 					"There are books providing coaching on various contest problems, but they aren't accessible to everyone because they are written in Russian or Chinese, according to Steven Halim, coach of the National University of Singapore team and author of 'Competitive Programming,' a book on the various types of problems found in the World Finals. 'I purposely wrote this book for everyone else,' Halim said of his decision to publish a book in English. The book covers problems contained in 40 percent of the ACM problem archive (edit: the new URL for ACM problem archive is: UVa online judge) Halim said. It contains problem descriptions, suggested algorithms for solving the problem with explanations, sample implementations and a list of examples implementations. The book is for sale at lulu.com", 
@@ -95,6 +100,8 @@ $content = array (
 					"We will likely set up a competitive programming course using 'Competitive Programming 2'",
 					"A good book to help us start our IOI training",
 					"This book is definitely owned and read by several students in Thailand",
+					"This book is definitely owned and read by several students in Thailand",
+					"This book is definitely owned and read by several students in Thailand",
 					"We know at least a few Indians/Vietnamese/Bangladeshi who own this book.",
 					"Mongolian IOI team 2012 visited Steven in September 2012.",
 					"This book is owned by some Australian whom we meet in IOI and ICPC"
@@ -119,7 +126,7 @@ $Nationality = array (
 						"SINGAPORE","SINGAPORE",
 						"INDONESIA","INDONESIA","INDONESIA",
 						"MALAYSIA","MALAYSIA",
-						"THAILAND",
+						"THAILAND","THAILAND","THAILAND",
 						"INDIA/VIETNAM/BANGLADESH",
 						"MONGOLIA",
 						"AUSTRALIA",
@@ -130,7 +137,7 @@ $Region = array (
 						"South America","South America","South America","South America","South America","South America","South America","South America","South America",
 						"Africa",
 						"Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe","Europe",
-						"Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia",
+						"Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia","Asia",
 						"Australia / Oceania"
 						
 				);
@@ -177,10 +184,13 @@ $Credit = array (
 						"",
 						"",
 						"",
+						"",
+						"",
 						""
 				);
 $imgURL = array(
-					"https://sites.google.com/site/stevenhalim/_/rsrc/1371100861873/home/testimonials/200px-Clemson_University_Seal.svg.png?height=200&amp;width=200",
+
+"https://sites.google.com/site/stevenhalim/_/rsrc/1371100861873/home/testimonials/200px-Clemson_University_Seal.svg.png?height=200&amp;width=200",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371110814685/home/testimonials/NorthAmerica-SouthwestBaptistUniversity.jpg",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371100999713/home/testimonials/Florida_International_University_Seal.png?height=200&amp;width=200",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371110867063/home/testimonials/NorthAmerica-LeTourneauUniversity.jpg",
@@ -205,7 +215,13 @@ $imgURL = array(
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371111705747/home/testimonials/Europe-Spain-UniversidadDeValladolid.jpg",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371111852453/home/testimonials/Europe-Spain-UniversidadComplutenseDeMadrid.jpg",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371111944639/home/testimonials/Europe-Germany-Karlsruhe%20InstituteofTechnology.png",
-					"","","","","","","",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
+					"",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371112439691/home/testimonials/Asia-Singapore-NationalUniversityOfSingapore.gif",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371112452151/home/testimonials/Asia-Singapore-NanyangTechnologicalUniversity.png",
 					"",
@@ -213,11 +229,12 @@ $imgURL = array(
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371112196730/home/testimonials/Asia-Indonesia-BinaNusantaraUniversity.jpg",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371112530005/home/testimonials/Asia-Malaysia-InternationalIslamicUniversityMalaysia.jpg",
 					"",
-					"3 URL here",
+					"https://sites.google.com/site/stevenhalim/_/rsrc/1371115230464/home/testimonials/Asia-Thailand-ChulalongkornUniversity.png",
+					"https://sites.google.com/site/stevenhalim/_/rsrc/1371115243577/home/testimonials/Asia-Thailand-KasetsartUniversity.jpg",
+					"https://sites.google.com/site/stevenhalim/_/rsrc/1371115258792/home/testimonials/Asia-Thailand-PrinceOfSongklaUniversity.jpg",
 					"",
 					"",
 					""
-
 
 
 				);

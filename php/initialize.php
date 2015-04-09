@@ -8,6 +8,7 @@ if ($db->connect_errno)
 
 require_once 'question.php';
 require_once 'errata_store.php';
+require_once 'testimonial.php';
 require_once 'download.php';
 require_once 'problem_credict.php';
 //Create Question Table
@@ -117,6 +118,16 @@ for($i = 0;$i<count($errata_content);$i++){
 		}
 	}
 }
+//Insertion Testimonial
+for($i = 0;$i<$entries;$i++){
+	
+	$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) VALUES (\"".$authors[$i]."\",\"".$content[$i]."\",\"".$Nationality[$i]."\",\"".$Region[$i]."\",\"".$Credit[$i]."\",\"".$imgURL[$i]."\");";
+	if ($db->query($sql) === TRUE) {
+    
+		} else {
+    	echo( "YError: " . $sql . "<br>" . $db->error);
+		}
+}
 //Insertion Download
 for($i = 0;$i<count($datalinks);$i++){
 	$sql = "INSERT INTO Download(name,count,URL,remark,LastUpdate) VALUES (\"".$datalinks[$i]."\",0,\"".$datapath.$datalinks[$i]."\",\"".$data_remarks[$i]."\",now());";
@@ -175,13 +186,19 @@ fwrite($myfile2, "]}");
 fclose($myfile2);
 
 $sth = $db->query("SELECT * from Testimonial;");
-
+fwrite($myfile3,"{\"Testimonials\":[");
 while($row = mysqli_fetch_row($sth)) {
-    fwrite($myfile2,json_encode($row)."\n");
+    fwrite($myfile3, "\n {\"id\":\"".$row[0]."\",");
+    fwrite($myfile3, "\n \"author\":\"".$row[1]."\",");
+    fwrite($myfile3, "\n \"content\":\"".$row[2]."\",");
+    fwrite($myfile3, "\n \"nationality\":\"".$row[3]."\",");
+    fwrite($myfile3, "\n \"region\":\"".$row[4]."\",");
+    fwrite($myfile3, "\n \"credit\":\"".$row[5]."\",");
+    fwrite($myfile3, "\n \"imgURL\":\"".$row[6]."\"},");
 }
 
-
-fclose($myfile2);
+fwrite($myfile3, "]}");
+fclose($myfile3);
 
 $sth = $db->query("SELECT * from Download;");
 fwrite($myfile4,"{\"Downloads\":[");
