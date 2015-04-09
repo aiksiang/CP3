@@ -1,19 +1,6 @@
 function populatePage(edition, callback) {
 	var DOM_bookDetails = $(".book-details");
 	DOM_bookDetails.html("");
-	// DOM_bookDetails.append('\
-	// 	<div class="col-xs-2 col-xs-offset-2">\
-	// 		<br><br>\
-	// 		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>\
-	// 	</div>\
-	// 	<div class="col-xs-4">\
-	// 		<span class="edition"><img src="img/cp' + edition + '.png" class="center-block"></span>\
-	// 	</div>\
-	// 	<div class="col-xs-2 col-xs-offset-2">\
-	// 		<br><br>\
-	// 		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>\
-	// 	</div>\
-	// ');
 	
 	var HTMLtoBeInserted = '\
 	<div class="row" id="book-nav">\
@@ -27,10 +14,7 @@ function populatePage(edition, callback) {
 
 	switch (edition) {
 		case FIRST_EDITION:
-<<<<<<< HEAD
-			HTMLtoBeInserted = '';
-=======
-						HTMLtoBeInserted += '\
+				HTMLtoBeInserted += '\
 				<div class="row" id="book-edition-info">\
 					<dl class="row">\
 						<div class="col-md-4">\
@@ -126,12 +110,8 @@ function populatePage(edition, callback) {
 					</dl>\
 				</div>\
 			';
->>>>>>> origin/Eric_Ewe
 			break;
 		case SECOND_EDITION:
-<<<<<<< HEAD
-			HTMLtoBeInserted = '';
-=======
 			HTMLtoBeInserted += '\
 				<div class="row" id="book-edition-info">\
 					<dl class="row">\
@@ -223,7 +203,6 @@ function populatePage(edition, callback) {
 					</dl>\
 				</div>\
 				';
->>>>>>> origin/Eric_Ewe
 			break;
 		case THIRD_EDITION:
 			HTMLtoBeInserted += '\
@@ -334,6 +313,99 @@ function populatePage(edition, callback) {
 		$("#details").addClass("active");
 		$("#content").removeClass("active");
 	});
+}
+
+
+var firstEdition = {
+	noOfPages: "152 (76 double-sided) + 4 pages cover",
+	totalChapters: "7",
+	samplePages: "Removed, just download the entire e-book below",
+	sellingPricePrinted:[	
+		{
+			description: "lulu",
+			price: "Now only 8.91 USD -> 7.13 USD (i.e. the printing + shipping cost only)",
+			link: "#"
+		},
+	],
+	sellingPriceEbook:[
+		{
+			description: "here",
+			price: "Project retired from lulu.com",
+			link: "#"
+		},
+	],
+	saleStatus: [
+		{
+			number: "668",
+			sinceDate: "13 June 2012",
+			type: ""
+		},
+		
+	],
+	eBookReleaseDate: {
+		date: "16 July 2011",
+		buyLink: "#"
+	},
+	hundredCopiesMark: {
+		date: "30 November 2010",
+		remarks: "~113 days after release"
+	},
+	printedReleaseDate: {
+		date: "9 August 2010",
+		remarks: "Before IOI 2010"
+	}
+}
+
+
+var secondEdition = {
+	noOfPages: "262 (131 double-sided sheets) + 4 pages cover",
+	totalChapters: "8",
+	samplePages: " Click this link (27 from 262 pages)",
+	sellingPricePrinted:[	
+		{
+			description: "Regular Edition",
+			price: "Now 18.05 -> 14.86 USD (+ shipping cost)",
+			link: "#"
+		},
+		{
+			description: "Large Edition",
+			price: "Now 20.96 -> 17.26 USD (+ shipping cost)",
+			link: "#"
+		}
+	],
+	sellingPriceEbook: "Just 14.32 USD",
+	saleStatus: [
+		{
+			number: "1005",
+			sinceDate: "27 July 2012",
+			type: "A5"
+		},
+		{
+			number: "153",
+			sinceDate: "22 Dec 2012",
+			type: "A4"
+		},
+	],
+	eBookReleaseDate: {
+		date: "22 December 2012",
+		buyLink: "#"
+	},
+	hundredCopiesMark: {
+		date: "11 August 2011",
+		remarks: "Just 11 Days after release :D"
+	},
+	printedReleaseDate: [
+		{
+			type: "A5",
+			date: "1 August 2011",
+			remarks: "After IOI 2011"
+		},
+		{
+			type: "A4",
+			date: "24 May 2012",
+			remarks: "the day Steven turned 30"
+		},
+	],
 }
 
 

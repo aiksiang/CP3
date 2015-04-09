@@ -8,6 +8,7 @@ $(document).ready(function(){
 		$(".errata").fadeOut(400);
 		$(".testimonial").fadeOut(400);
 		$(".content").fadeOut(400);
+		$(".workshop").fadeOut(400);
 		$(".downloads").fadeOut(400);
 		$("#book-editions-img").fadeIn(800);
 		$("#page-text").fadeIn(800);
@@ -40,6 +41,7 @@ $(document).ready(function(){
 		$(".testimonial").fadeOut(400);
 		$(".content").fadeOut(400);
 		$(".downloads").fadeOut(400);
+		$(".workshop").fadeOut(400);
 		$("#cp1-img img").removeClass("fullOpacity");
 		$("#cp2-img img").addClass("fullOpacity");
 		$("#cp3-img img").removeClass("fullOpacity");
@@ -58,6 +60,7 @@ $(document).ready(function(){
 		$(".testimonial").fadeOut(400);
 		$(".content").fadeOut(400);
 		$(".downloads").fadeOut(400);
+		$(".workshop").fadeOut(400);
 		$("#cp1-img img").removeClass("fullOpacity");
 		$("#cp2-img img").removeClass("fullOpacity");
 		$("#cp3-img img").addClass("fullOpacity");
@@ -76,6 +79,7 @@ $(document).ready(function(){
 		$(".book-details").fadeOut(400);
 		$(".content").fadeOut(400);
 		$(".downloads").fadeOut(400);
+		$(".workshop").fadeOut(400);
 		$(".testimonial").fadeIn(800);
 		showTestimonial();
 	});
@@ -87,7 +91,20 @@ $(document).ready(function(){
 		$(".book-details").fadeOut(400);
 		$(".testimonial").fadeOut(400);
 		$(".content").fadeOut(400);
+		$(".workshop").fadeOut(400);
 		$(".downloads").fadeIn(800);
+	}); 
+
+	$(".workshop-button").on('click', function() {
+		$(".errata").fadeOut(400);
+		$("#book-editions-img").fadeOut(400);
+		$("#page-text").fadeOut(400);
+		$(".book-details").fadeOut(400);
+		$(".testimonial").fadeOut(400);
+		$(".content").fadeOut(400);
+		$(".downloads").fadeOut(400);
+		$(".workshop").fadeIn(800);
+		showWorkshop();
 	}); 
 });
 
