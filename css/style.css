@@ -215,7 +215,7 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 }
 
 .links li:hover, .info li:hover{
-	border-left: 3px solid white;
+	border-left: 3px solid #0f9fb4;
 }
 
 
