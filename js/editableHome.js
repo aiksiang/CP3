@@ -9,8 +9,6 @@ function enableEdit(type) {
 	DOM_editable_objective.html("");
 	DOM_editable_tgtaud.html("");
 	
-	var HTMLtoBeInserted = '';
-	
 	if(type == INTRO) {
 		DOM_editable_intro.append('\
 			<div>\
@@ -57,22 +55,26 @@ function enableEdit(type) {
 	}
 
 	$(".close-intro").on('click', function() {
-		$("#intro").fadeIn(800);
-		$(".intro-text").fadeOut(400);
+		$(".intro-text").fadeOut(400, function() {
+			$("#intro").fadeIn(800);
+		});
 	});
 
 	$(".close-about").on('click', function() {
-		$("#about").fadeIn(800);
-		$(".about-text").fadeOut(400);
+		$(".about-text").fadeOut(400, function() {
+			$("#about").fadeIn(400);
+		});
 	});
 
 	$(".close-objective").on('click', function() {
-		$("#objective").fadeIn(800);
-		$(".objective-text").fadeOut(400);
+		$(".objective-text").fadeOut(400, function() {
+			$("#objective").fadeIn(800);
+		});
 	});
 	
 	$(".close-target-audience").on('click', function() {
-		$("#target-audience").fadeIn(800);
-		$(".target-audience-text").fadeOut(400);
+		$(".target-audience-text").fadeOut(400, function() {
+			$("#target-audience").fadeIn(800);
+		});
 	});
 }
