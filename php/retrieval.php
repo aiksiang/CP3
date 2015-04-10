@@ -54,4 +54,16 @@ if ($_GET['action'] == 'checkAnswer') {
 	echo json_encode((strcmp(strtolower((string)$answer),strtolower((string)$userAnswer)) == 0) ? true : false);
 }
 
+if ($_GET['action'] == 'getTestimonials') {
+	global $db;
+	$query = "SELECT * FROM `testimonial` ORDER BY `region`,`nationality`,`author`";
+	$result = array();
+	if ($queryResult = $db->query($query)) {
+		while ($entry = $queryResult->fetch_assoc()) {
+			array_push($result, $entry);
+		}
+	}
+	echo json_encode($result);
+}
+
 ?>

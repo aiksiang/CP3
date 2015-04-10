@@ -1,3 +1,20 @@
+var testimonials = {};
+
+$(function() {
+	$.get("php/retrieval.php", {action: "getTestimonials"}).done(function(data) {
+		for (var i in data) {
+			if (!testimonials.hasOwnProperty(data[i].region)) {
+				testimonials[data[i].region] = {};
+			}
+			if (!testimonials[data[i].region].hasOwnProperty(data[i].nationality)) {
+				testimonials[data[i].region][data[i].nationality] = [];
+			}
+			testimonials[data[i].region][data[i].nationality].push(data[i]);
+		}
+		console.log(testimonials);
+	});
+});
+
 function showTestimonial() {
 	$(".testimonial").html("");
 	var HTMLtoBeInserted = "";
@@ -10,26 +27,70 @@ function showTestimonial() {
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#review-submit" onClick="getQuestion();">Review</button>\
   		</div>\
   	';
-  	HTMLtoBeInserted += '\
-  		<div class="row">\
-			<div class="col-md-12" id="orderby"><h3>Order by</h3></div>\
-		</div>\
-		<div class="row">\
-			<div class="row">\
-			<div class="col-md-3"><div class="row"><div class="classWithPad"></div></div></div>\
-			<div class="col-md-2"><h5>Country </h5></div>\
-			<div class="col-md-2"><input checked type="radio" value="country-atoz" name="check"><span>&nbsp;&nbsp;A to Z</span></div>\
-			<div class="col-md-2"><input type="radio" value="country-ztoa" name="check"><span>&nbsp;&nbsp;Z to A</span></div>\
-			<div class="col-md-3"><div class="row"><div class="classWithPad"></div></div></div>\
-			</div>\
-			<div class="row">\
-			<div class="col-md-3"><div class="row"><div class="classWithPad"></div></div></div>\
-			<div class="col-md-2"><h5>Reviewer\'s Name </h5></div>\
-			<div class="col-md-2"><input type="radio" value="rev-atoz" name="check"><span>&nbsp;&nbsp;A to Z</span></div>\
-			<div class="col-md-2"><input type="radio" value="rev-ztoa" name="check"><span>&nbsp;&nbsp;Z to A</span></div>\
-			<div class="col-md-3"><div class="row"><div class="classWithPad"></div></div></div>\
-			</div>\
-		</div>\
-  	';
+  // 	HTMLtoBeInserted += '\
+  // 		<div class="row">\
+		// 	<div class="col-md-12" id="orderby"><h3>Order by</h3></div>\
+		// </div>\
+		// <div class="row">\
+		// 	<div class="row">\
+		// 	<div class="col-md-3"><div class="row"><div class="classWithPad"></div></div></div>\
+		// 	<div class="col-md-2"><h5>Country </h5></div>\
+		// 	<div class="col-md-2"><input checked type="radio" value="country-atoz" name="check"><span>&nbsp;&nbsp;A to Z</span></div>\
+		// 	<div class="col-md-2"><input type="radio" value="country-ztoa" name="check"><span>&nbsp;&nbsp;Z to A</span></div>\
+		// 	<div class="col-md-3"><div class="row"><div class="classWithPad"></div></div></div>\
+		// 	</div>\
+		// 	<div class="row">\
+		// 	<div class="col-md-3"><div class="row"><div class="classWithPad"></div></div></div>\
+		// 	<div class="col-md-2"><h5>Reviewer\'s Name </h5></div>\
+		// 	<div class="col-md-2"><input type="radio" value="rev-atoz" name="check"><span>&nbsp;&nbsp;A to Z</span></div>\
+		// 	<div class="col-md-2"><input type="radio" value="rev-ztoa" name="check"><span>&nbsp;&nbsp;Z to A</span></div>\
+		// 	<div class="col-md-3"><div class="row"><div class="classWithPad"></div></div></div>\
+		// 	</div>\
+		// </div>\
+  // 	';
+  	for (var region in testimonials) {
+  		HTMLtoBeInserted += '\
+			<h1 class="row">\
+				' + region + '\
+			</h1>\
+		';
+  		for (var country in testimonials[region]) {
+  			HTMLtoBeInserted += '\
+				<h4 class="row">\
+					' + country + '\
+				</h4>\
+			';
+  			for (var i in testimonials[region][country]) {
+  			  	HTMLtoBeInserted += '\
+					<div class="row">\
+				';
+				
+
+  			  	HTMLtoBeInserted += '\
+							<blockquote class="well">\
+								<p>' + testimonials[region][country][i].content + '</p>\
+								<footer><span>' + testimonials[region][country][i].author + '</span>\
+				';
+				if (testimonials[region][country][i].credit != "")
+					HTMLtoBeInserted += ', <cite title="Source Title">'+ testimonials[region][country][i].credit +'</cite></footer>';
+				HTMLtoBeInserted += '\
+							</blockquote>\
+		  		';
+		  		if (testimonials[region][country][i].imgURL != "") {
+					HTMLtoBeInserted += '\
+						<div class="testimonialImage"><img src=' + testimonials[region][country][i].imgURL + '></div>\
+						</div>\
+					';
+		  		}
+				else {
+					HTMLtoBeInserted += '\
+						<div class="testimonialImage"></div>\
+						</div>\
+					';
+				}
+  			}
+  		}
+  	}
+  	
 	$(".testimonial").html(HTMLtoBeInserted);
 }

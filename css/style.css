@@ -222,6 +222,34 @@ p, a, li, dd, dl, input, label, form, .btn, .form-control {
 	display: inline-block;
 }
 
+.testimonial blockquote p {
+	color: black;
+}
+
+.testimonial img {
+	max-height: 110px;
+	float: right;
+}
+
+.testimonialImage {
+	display:inline-block;
+	max-width: 19%;
+	width: 20%;
+	margin: 10px 0 10px 0;
+}
+
+.testimonial .well {
+	width: 79%;
+	display: inline-block;
+	margin: 10px 0 10px 0;
+	vertical-align: middle;
+	float: right;
+}
+
+.testimonial blockquote {
+	margin: 10px 0 10px 0;
+}
+
 /***
 	Errata
 ***/
