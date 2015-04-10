@@ -1,21 +1,11 @@
-function populatePage(edition, callback) {
-	var DOM_bookDetails = $(".book-details");
-	DOM_bookDetails.html("");
-	
-	var HTMLtoBeInserted = '\
-	<div class="row" id="book-nav">\
-		<ul class="nav nav-tabs">\
-			<li id="details" class="active" role="presentation"><a class="details-button">Details</a></li>\
-			<li id="content" role="presentation"><a class="content-button">Content</a></li>\
-		</ul>\
-   	</div>\
-   	';
-	
 
+function showInfo(edition){
+	var HTMLtoBeInserted = '';
+	DOM_bookInfo = $(".book-edition-info");
+	DOM_bookInfo.html("");
 	switch (edition) {
 		case FIRST_EDITION:
 				HTMLtoBeInserted += '\
-				<div class="row" id="book-edition-info">\
 					<dl class="row">\
 						<div class="col-md-4">\
 					  		<dt>Number of Pages</dt>\
@@ -98,22 +88,10 @@ function populatePage(edition, callback) {
 	 						</dd>\
 						</div>\
 					</dl>\
-					<dl class="row">\
-						<div class="col-md-5 col-md-offset-3">\
-							<dt>Errata and Plan</dt>\
-							<dd>\
-								<a class="errataLink" id="errata1">\
-									Errata of 1st edition to 2nd edition\
-								</a>\
-							</dd>\
-						</div>\
-					</dl>\
-				</div>\
 			';
 			break;
 		case SECOND_EDITION:
 			HTMLtoBeInserted += '\
-				<div class="row" id="book-edition-info">\
 					<dl class="row">\
 						<div class="col-md-4">\
 					  		<dt>Number of Pages</dt>\
@@ -191,22 +169,10 @@ function populatePage(edition, callback) {
 			HTMLtoBeInserted += '\
 						</div>\
 					</dl>\
-					<dl class="row">\
-						<div class="col-md-5 col-md-offset-3">\
-							<dt>Errata and Plan</dt>\
-							<dd>\
-								<a class="errataLink" id="errata2">\
-									Errata of 2nd edition to 3rd edition\
-								</a>\
-							</dd>\
-						</div>\
-					</dl>\
-				</div>\
 				';
 			break;
 		case THIRD_EDITION:
 			HTMLtoBeInserted += '\
-				<div class="row" id="book-edition-info">\
 					<dl class="row">\
 						<div class="col-md-4">\
 					  		<dt>Number of Pages</dt>\
@@ -278,43 +244,11 @@ function populatePage(edition, callback) {
 	 						</dd>\
 						</div>\
 					</dl>\
-					<dl class="row">\
-						<div class="col-md-5 col-md-offset-3">\
-							<dt>Errata and Plan</dt>\
-							<dd>\
-								<a class="errataLink" id="errata3">\
-									Errata of 3rd edition and plan for the 4th edition\
-								</a>\
-							</dd>\
-						</div>\
-					</dl>\
-				</div>\
 			';
 			break;
 	}
-	DOM_bookDetails.append(HTMLtoBeInserted);
-	callback();
-
-	$(".content-button").on('click', function() {
-		$(".errata").fadeOut(400);
-		//$("#book-editions-img").fadeOut(400);
-		$("#book-edition-info").fadeOut(400);
-		$(".content").fadeIn(800);
-		$("#content").addClass("active");
-		$("#details").removeClass("active");
-		showContent(edition);
-	});
-
-	$(".details-button").on('click', function() {
-		$(".errata").fadeOut(400);
-		//$("#book-editions-img").fadeOut(400);
-		$("#book-edition-info").fadeIn(800);
-		$(".content").fadeOut(400);
-		$("#details").addClass("active");
-		$("#content").removeClass("active");
-	});
+	DOM_bookInfo.append(HTMLtoBeInserted);
 }
-
 
 var firstEdition = {
 	noOfPages: "152 (76 double-sided) + 4 pages cover",

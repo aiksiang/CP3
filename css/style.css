@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, dt {
 	font-weight: bold !important;
 }
 
-p, a, li, dd, input, label, form, .btn, .form-control {
+p, a, li, dd, dl, input, label, form, .btn, .form-control {
 	font-family: 'Merriweather', serif;
 	font-size: 17px;
 }
@@ -119,6 +119,7 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 	border-radius: 0px !important;
 }
 
+#book-nav .nav:hover,
 #top-link .nav a:hover {
 	cursor: pointer;
 }
@@ -161,10 +162,18 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 }
 
 
-#book-edition-info {
-	margin-top: 30px;
-	text-align: center;
+.book-edition-info {
 	clear:left;
+}
+
+.book-edition-info .row{
+	margin: 0px;
+}
+.book-edition-info .row div {
+	padding-left:50px;
+	padding-right:50px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 #book-editions-img {
@@ -189,6 +198,15 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 	cursor: pointer;
 }
 
+.book-edition-content .well {
+	color: #337ab7;
+}
+
+.book-edition-content .book-content a {
+	min-height: 44px;
+	display: block;
+}
+
 .testimonial input {
 	vertical-align: middle;
 }
@@ -204,6 +222,39 @@ p, a, li, dd, input, label, form, .btn, .form-control {
 	display: inline-block;
 }
 
+/***
+	Errata
+***/
+td, th {
+	width: 1px;
+}
+
+.errataColumn {
+	width: 48%;
+}
+
+#errataTable th {
+	padding: 5px;
+}
+
+#errataTable td {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#errataTable tbody tr:hover {
+	background:grey;
+}
+
+#errataTable tbody {
+	border-top: none;
+}
+
+#errataTable th:hover {
+	cursor: pointer;
+	background: white;
+	color: black;
+}
 
 /*** 
 	footer 
@@ -275,12 +326,6 @@ textarea { resize:vertical ; }
 #third-edition {
 	padding: 40px 0px 30px 0px;
 	width: 70%;
-}
-
-#book-edition-info {
-	margin-top: 30px;
-	font-size: 13px;
-	text-align: center;
 }
 
 /***

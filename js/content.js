@@ -1,5 +1,5 @@
 function showContent(edition) {
-	$(".content").html("");
+	$(".book-edition-content").html("");
 	var HTMLtoBeInserted = "";
 
 	switch(edition) {
@@ -16,7 +16,7 @@ function showContent(edition) {
 						<li class="chp7" role="presentation"><a href="#chap7">Chapter 7</a></li>\
 					</ul>\
    				</div>\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap1"></a>\
 				    <div class="col-md-7 col-md-offset-1">\
 				    	<div class="classWithPad well">\
@@ -33,7 +33,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap2"></a>\
 					<div class="col-md-3 col-md-offset-2">\
 				    	<div class="row"><div class="classWithPad"><img src="img/list.gif" alt="list" class="img-responsive"></div></div>\
@@ -50,7 +50,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap3"></a>\
 				    <div class="col-md-6">\
 				    	<div class="classWithPad well">\
@@ -75,7 +75,7 @@ function showContent(edition) {
 				    </div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap4"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/maxflow.gif" alt="maxflow" class="img-responsive"></div></div>\
@@ -94,7 +94,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap5"></a>\
 					<div class="col-md-6 col-md-offset-1">\
 						<div class="classWithPad well">\
@@ -109,7 +109,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap6"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/suffixarray.gif" alt="suffixarray" class="img-responsive"></div></div>\
@@ -129,7 +129,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap7"></a>\
 					<div class="col-md-6 col-md-offset-1">\
 						<div class="classWithPad well">\
@@ -161,7 +161,7 @@ function showContent(edition) {
 						<li class="ind" role="presentation"><a href="#index">Index</a></li>\
 					</ul>\
    				</div>\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap1"></a>\
 				    <div class="col-md-7 col-md-offset-1">\
 				    	<div class="classWithPad well">\
@@ -180,7 +180,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap2"></a>\
 					<div class="col-md-3 col-md-offset-2">\
 				    	<div class="row"><div class="classWithPad"><img src="img/list.gif" alt="list" class="img-responsive"></div></div>\
@@ -198,7 +198,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap3"></a>\
 				    <div class="col-md-6">\
 				    	<div class="classWithPad well">\
@@ -223,7 +223,7 @@ function showContent(edition) {
 				    </div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap4"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/maxflow.gif" alt="maxflow" class="img-responsive"></div></div>\
@@ -250,7 +250,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap5"></a>\
 					<div class="col-md-6 col-md-offset-1">\
 						<div class="classWithPad well">\
@@ -270,7 +270,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap6"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/suffixarray.gif" alt="suffixarray" class="img-responsive"></div></div>\
@@ -291,7 +291,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap7"></a>\
 					<div class="col-md-6 col-md-offset-1">\
 						<div class="classWithPad well">\
@@ -308,7 +308,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap8"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/matching.gif" alt="matching" class="img-responsive"></div></div>\
@@ -328,7 +328,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="appendix-A"></a>\
 					<div class="col-md-6 col-md-offset-1">\
 						<div class="classWithPad well">\
@@ -343,7 +343,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="index"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/heap.gif" alt="heap" class="img-responsive"></div></div>\
@@ -379,7 +379,7 @@ function showContent(edition) {
 						<li class="ind" role="presentation"><a href="#index">Index</a></li>\
 					</ul>\
    				</div>\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap1"></a>\
 				    <div class="col-md-7 col-md-offset-1">\
 				    	<div class="classWithPad well">\
@@ -394,7 +394,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap2"></a>\
 					<div class="col-md-3 col-md-offset-2">\
 				    	<div class="row"><div class="classWithPad"><img src="img/list.gif" alt="list" class="img-responsive"></div></div>\
@@ -412,7 +412,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap3"></a>\
 				    <div class="col-md-6">\
 				    	<div class="classWithPad well">\
@@ -435,7 +435,7 @@ function showContent(edition) {
 				    </div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap4"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/maxflow.gif" alt="maxflow" class="img-responsive"></div></div>\
@@ -456,7 +456,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap5"></a>\
 					<div class="col-md-6 col-md-offset-1">\
 						<div class="classWithPad well">\
@@ -474,7 +474,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap6"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/suffixarray.gif" alt="suffixarray" class="img-responsive"></div></div>\
@@ -494,7 +494,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap7"></a>\
 					<div class="col-md-6 col-md-offset-1">\
 						<div class="classWithPad well">\
@@ -510,7 +510,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap8"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/matching.gif" alt="matching" class="img-responsive"></div></div>\
@@ -529,7 +529,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="chap9"></a>\
 					<div class="col-md-6 col-md-offset-1">\
 						<div class="classWithPad well">\
@@ -544,7 +544,7 @@ function showContent(edition) {
 					</div>\
 				</div>\
 				\
-				<div class="row">\
+				<div class="row book-content">\
 					<a name="index"></a>\
 					<div class="col-md-3">\
 						<div class="row"><div class="classWithPad"><img src="img/heap.gif" alt="heap" class="img-responsive"></div></div>\
@@ -566,6 +566,6 @@ function showContent(edition) {
 			break;	 
 	}
 
-	$(".content").html(HTMLtoBeInserted);
+	$(".book-edition-content").html(HTMLtoBeInserted);
 }
 

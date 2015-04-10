@@ -26,7 +26,7 @@ function showDownloads() {
 		$("#page-text").fadeOut(400);
 		$(".book-details").fadeOut(400);
 		$(".testimonial").fadeOut(400);
-		$(".content").fadeOut(400);
+		$(".book-edition-content").fadeOut(400);
 		$(".downloads").fadeOut(400);
 		$(".credits").fadeOut(400);
 		$(".workshop").fadeIn(800);
