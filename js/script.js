@@ -1,6 +1,7 @@
 var FIRST_EDITION = 1;
 var SECOND_EDITION = 2;
 var THIRD_EDITION = 3;
+var selectedEdition = 0;
 
 $(document).ready(function(){
 	$("#home-button").on('click', function() {
@@ -33,6 +34,7 @@ $(document).ready(function(){
 				$(".book-details").fadeIn(400);
 			});
 		});
+		selectedEdition = FIRST_EDITION;
 	});
 	$("#cp2-img").on('click', function() {
 		// $("#book-editions-img").fadeOut(400);
@@ -51,7 +53,7 @@ $(document).ready(function(){
 				$(".book-details").fadeIn(400);
 			});
 		});
-		
+		selectedEdition = SECOND_EDITION;
 	});
 	$("#cp3-img").on('click', function() {
 		// $("#book-editions-img").fadeOut(400);
@@ -70,6 +72,7 @@ $(document).ready(function(){
 				$(".book-details").fadeIn(400);
 			});
 		});
+		selectedEdition = THIRD_EDITION;
 	});
 
 	$(".testimonial-button").on('click', function() {

@@ -3,7 +3,6 @@ var clickedHeader;
 
 $(function getErrata(edition) {
 	$.get("php/retrieval.php", {action: "getErrata"}).done(function(result) {
-		console.log(result);
 		errata = result;
 		displayErrata(edition);
 	});	
@@ -20,7 +19,7 @@ function displayErrata(edition) {
 					<p>This page contains all the known errors and bugs for <span id="edition">CP</span>. <br>Please report any sightings of bugs, errors or misprints here.</p>\
 				</div>\
 				\
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#errata-submit">Report</button>\
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#errata-submit" onClick="getQuestion();">Report</button>\
 	  		</div>\
 	  	</div>\
 	  	<hr/>\

@@ -128,18 +128,19 @@
 
 					<br>
 					<label for="reporter-report">Report</label>
-					<textarea class="form-control" row="5" placeholder="Input report here"></textarea>
+					<textarea id="errorReportContent" class="form-control" row="5" placeholder="Input report here"></textarea>
 
 
 					<hr/>
-					<div class="form-group">
-			    		<label for="reporter-name"><span id="verify-human">What is the name of the book?</span></label><br>
-			    		<input type="text" class="form-control" id="exampleInputEmail1" placeholder="CP">
-			  		</div>
+					<div class="modal-body humanCheck">
+						<label>Are You Human?</label>
+			    		<div class="humanQuestion"></div>
+			    		<input type="text" class="form-control" id="humanAnswerError" placeholder="">
+		    		</div>
 		    	</div>
 		      	<div class="modal-footer">
 		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        	<button type="button" class="btn btn-primary">Confirm</button>
+		        	<button type="button" class="btn btn-primary" data-dismiss="modal" id="submitError">Confirm</button>
 		      	</div>
 		    </div>
 		</div>
@@ -169,22 +170,32 @@
 			  		</div>
 
 			  		<label for="reviewer-comment">Comment</label>
-					<textarea class="form-control" row="5" placeholder="Input reviews and comments here"></textarea>
+					<textarea id="testimonialContent" class="form-control" row="5" placeholder="Input reviews and comments here"></textarea>
 
 					<hr/>
-					<div class="form-group">
-			    		<label for="reporter-name"><span id="verify-human">What is the name of the book?</span></label><br>
-			    		<input type="text" class="form-control" id="exampleInputEmail1" placeholder="CP">
-			  		</div>
 
+		    	</div>
+		    	<div class="modal-body humanCheck">
+					<label>Are You Human?</label>
+		    		<div class="humanQuestion"></div>
+		    		<input type="text" class="form-control" id="humanAnswerTestimonial" placeholder="">
 		    	</div>
 		      	<div class="modal-footer">
 		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        	<button type="button" class="btn btn-primary">Confirm</button>
+		        	<button type="button" class="btn btn-primary" data-dismiss="modal" id="submitTestimonial">Confirm</button>
 		      	</div>
 		    </div>
 		</div>
 	</div>
+
+	<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-body" id="alertContent">
+		      	</div>
+		    </div>
+		</div>
+    </div>
 
 	<div id="footer"><br><br>
 		<div class="container">
@@ -341,5 +352,7 @@
 	<script src="js/workshop.js"></script>
 	<script src="js/download.js"></script>
 	<script src="js/credits.js"></script>
+	<script src="js/submitError.js"></script>
+	<script src="js/submitTestimonial.js"></script>
 </body>
 </html>

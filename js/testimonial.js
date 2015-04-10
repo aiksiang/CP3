@@ -7,7 +7,7 @@ function showTestimonial() {
 				<div class="col-md-12" id="select-edition"><h3>Testimonials</h3></div>\
 				<p>This page contains comments and reviews for this book, Competitive Programming, edition one to three by Steven Halim and Felix Halim. <br>Please let us hear your opinions if this book has help you by reinforcing your understanding of data structures and algorithms in the past.</p>\
 			</div>\
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#review-submit">Review</button>\
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#review-submit" onClick="getQuestion();">Review</button>\
   		</div>\
   	';
   	HTMLtoBeInserted += '\

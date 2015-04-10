@@ -22,7 +22,7 @@ if ($_GET['action'] == 'getErrata') {
 
 if ($_GET['action'] == 'getRandomQuestion') {
 	global $db;
-	$query = "SELECT `id`,`question` FROM `QandA`";
+	$query = "SELECT `id`,`question`,`answer` FROM `QandA`";
 	$result = array();
 	if ($queryResult = $db->query($query)) {
 		while ($entry = $queryResult->fetch_assoc()) {
@@ -51,7 +51,7 @@ if ($_GET['action'] == 'checkAnswer') {
 			$answer = $result[$i]['answer'];
 		}
 	}
-	echo json_encode($answer == $userAnswer);
+	echo json_encode((strcmp(strtolower((string)$answer),strtolower((string)$userAnswer)) == 0) ? true : false);
 }
 
 ?>
