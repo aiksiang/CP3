@@ -11,7 +11,7 @@ $(document).ready(function(){
 		$(".workshop").fadeOut(400);
 		$(".downloads").fadeOut(400);
 		$(".credits").fadeOut(400);
-		$("#book-editions-img").fadeIn(800);
+		$("#book-editions-img").slideDown(800);
 		$("#page-text").fadeIn(800);
 		$("#cp1-img img").removeClass("fullOpacity");
 		$("#cp2-img img").removeClass("fullOpacity");
@@ -78,7 +78,7 @@ $(document).ready(function(){
 
 	$(".testimonial-button").on('click', function() {
 		$(".errata").fadeOut(400);
-		$("#book-editions-img").fadeOut(400);
+		$("#book-editions-img").slideUp(400);
 		$("#page-text").fadeOut(400);
 		$(".book-details").fadeOut(400);
 		$(".content").fadeOut(400);
@@ -91,7 +91,7 @@ $(document).ready(function(){
 
 	$(".download-button").on('click', function() {
 		$(".errata").fadeOut(400);
-		$("#book-editions-img").fadeOut(400);
+		$("#book-editions-img").slideUp(400);
 		$("#page-text").fadeOut(400);
 		$(".book-details").fadeOut(400);
 		$(".testimonial").fadeOut(400);
@@ -104,7 +104,7 @@ $(document).ready(function(){
 
 	$(".workshop-button").on('click', function() {
 		$(".errata").fadeOut(400);
-		$("#book-editions-img").fadeOut(400);
+		$("#book-editions-img").slideUp(400);
 		$("#page-text").fadeOut(400);
 		$(".book-details").fadeOut(400);
 		$(".testimonial").fadeOut(400);
@@ -117,7 +117,7 @@ $(document).ready(function(){
 
 	$(".credits-button").on('click', function() {
 		$(".errata").fadeOut(400);
-		$("#book-editions-img").fadeOut(400);
+		$("#book-editions-img").slideUp(400);
 		$("#page-text").fadeOut(400);
 		$(".book-details").fadeOut(400);
 		$(".testimonial").fadeOut(400);
@@ -132,7 +132,7 @@ $(document).ready(function(){
 function initializeErrata(edition) {
 	$(".errataLink").on('click', function() {
 		$(".book-details").fadeOut(400);
-		$("#book-editions-img").fadeOut(400);
+		$("#book-editions-img").slideUp(400);
 		$("#page-text").fadeOut(400);
 		$(".errata").fadeIn(800);
 		showErrata(edition);
