@@ -6,7 +6,7 @@ require_once 'config.php';
 $db = new mysqli(db_host, db_uid, db_pwd, db_name);
 if ($db->connect_errno) 
 	echo("Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error);
-
+$tables = array("QandA","Errata","ErrataP","Testimonial","TestimonialP","Download","Credit");
 $command = $_POST['command']; //EITHER "new_errata", "new_testimonial" or "add","modify","approve","remove" (these 3 are from the adminstration side)
 
 if($command == "new_errata") {
@@ -55,16 +55,16 @@ else if ($command == "approve") {
 		$sth = $db->query("SELECT * from ErrataP WHERE id =".$entry_id.";");
 		while($row = mysqli_fetch_row($sth)) {
         //$row_array['id'] = $row[0];
-        $row_array2['severity'] = $row[1];
-        $row_array2['type'] = $row[2];
-        $row_array2['pageNum'] = $row[3];
-        $row_array2['content'] = $row[4];
-        $row_array2['authorName'] = $row[5];
-        $row_array2['raise_time'] = $row[6];
-        $row_array2['version'] = $row[7];
+        $row_array['severity'] = $row[1];
+        $row_array['type'] = $row[2];
+        $row_array['pageNum'] = $row[3];
+        $row_array['content'] = $row[4];
+        $row_array['authorName'] = $row[5];
+        $row_array['raise_time'] = $row[6];
+        $row_array['version'] = $row[7];
 
     	}
-    	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (".$row_array2['severity'].",".$row_array2['type'].",".$row_array2['pageNum'].",\"".$row_array2['content']."\",".$status.",\"".$row_array2['authorName']."\", \"".$row_array2['raise_time']."\",".$row_array2['version'].");";
+    	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (".$row_array['severity'].",".$row_array['type'].",".$row_array['pageNum'].",\"".$row_array['content']."\",".$status.",\"".$row_array['authorName']."\", \"".$row_array['raise_time']."\",".$row_array['version'].");";
 
 		if ($db->query($sql) === TRUE) {
     
@@ -100,7 +100,9 @@ else if ($command == "approve") {
 
 }
 else if ($command == "remove") {
-
+	$table_id = $_POST['table_id']; //0-6
+	$entry_id = $POST['entry_id'];
+	$sql = "DELETE FROM ".$tables[$table_id]." WHERE id = ".$entry_id.";";
 }
 //adding new content
 else if ($command == "add") {
