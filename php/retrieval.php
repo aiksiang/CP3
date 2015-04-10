@@ -56,7 +56,7 @@ if ($_GET['action'] == 'checkAnswer') {
 
 if ($_GET['action'] == 'getTestimonials') {
 	global $db;
-	$query = "SELECT * FROM `testimonial` ORDER BY `region`,`nationality`,`author`";
+	$query = "SELECT * FROM `Testimonial` ORDER BY `region`,`nationality`,`author`";
 	$result = array();
 	if ($queryResult = $db->query($query)) {
 		while ($entry = $queryResult->fetch_assoc()) {
