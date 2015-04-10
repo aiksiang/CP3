@@ -48,6 +48,31 @@ else {
 	if (mysqli_query($db, $sql)) {} 
     else echo("Error creating table: " . $db->error);
 }
+//Create ErrataP table to store the pending Errata Content
+$sql = "CREATE TABLE ErrataP (id INT PRIMARY KEY AUTO_INCREMENT, 
+							severity INT,
+							type INT DEFAULT 0,
+							pageNum INT,
+							content VARCHAR(1000),
+							authorName VARCHAR(50),
+							raise_time TIMESTAMP,
+							version INT);";
+
+if (mysqli_query($db, $sql)) {} 
+else {
+	$sql = "DROP TABLE ErrataP;";
+	mysqli_query($db, $sql);
+	$sql = "CREATE TABLE ErrataP (id INT PRIMARY KEY AUTO_INCREMENT, 
+							severity INT,
+							type INT DEFAULT 0,
+							pageNum INT,
+							content VARCHAR(1000),
+							authorName VARCHAR(50),
+							raise_time TIMESTAMP,
+							version INT);";
+	if (mysqli_query($db, $sql)) {} 
+    else echo("Error creating table: " . $db->error);
+}
 //$myfile2 = fopen("Errata.json", "w") or die("Unable to open file!");
 
 //Create Testimonial Table 
@@ -66,6 +91,31 @@ else {
 	$sql = "DROP TABLE Testimonial;";
 	mysqli_query($db, $sql);
 	$sql = "CREATE TABLE Testimonial (id INT PRIMARY KEY AUTO_INCREMENT,
+								  author VARCHAR(100),
+								  content VARCHAR(3000),
+								  nationality VARCHAR(100),
+								  region VARCHAR(100),
+								  credit VARCHAR(200),
+								  imgURL VARCHAR(500));";
+	if (mysqli_query($db, $sql)) {}
+    else echo("Error creating table: " . $db->error);
+}
+//Create table TestimonialP for pending Testimonial Content
+$sql = "CREATE TABLE TestimonialP (id INT PRIMARY KEY AUTO_INCREMENT,
+								  author VARCHAR(100),
+								  content VARCHAR(3000),
+								  nationality VARCHAR(100),
+								  region VARCHAR(100),
+								  credit VARCHAR(200),
+								  imgURL VARCHAR(500));";
+if (mysqli_query($db, $sql)) 
+{
+	
+} 
+else {
+	$sql = "DROP TABLE TestimonialP;";
+	mysqli_query($db, $sql);
+	$sql = "CREATE TABLE TestimonialP (id INT PRIMARY KEY AUTO_INCREMENT,
 								  author VARCHAR(100),
 								  content VARCHAR(3000),
 								  nationality VARCHAR(100),
