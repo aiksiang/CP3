@@ -197,6 +197,21 @@ for($i = 0; $i<count($json_output);$i++) {
     echo( "Error: " . $sql . "<br>" . $db->error);
 	}
 }
+//Insert ErrataPendingList;
+$jsonurl = "ErrataP.json";
+$json = file_get_contents($jsonurl,0,null,null);
+
+$json_output = json_decode($json,true);
+
+for($i = 0; $i<count($json_output);$i++) {
+	$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$json_output[$i]['severity'].",".$json_output[$i]['type'].",".$json_output[$i]['pageNum'].",\"".$json_output[$i]['content']."\",\"".$json_output[$i]['authorName']."\", \"".$json_output[$i]['raise_time']."\",".$json_output[$i]['version'].");";
+
+	if ($db->query($sql) === TRUE) {
+    
+	} else {
+    echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
 //Insert Testimonial
 $jsonurl = "Testimonial.json";
 $json = file_get_contents($jsonurl,0,null,null);
@@ -205,6 +220,21 @@ $json_output = json_decode($json,true);
 
 for($i = 0; $i<count($json_output);$i++) {
 	$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) VALUES (\"".$json_output[$i]['author']."\",\"".$json_output[$i]['content']."\",\"".$json_output[$i]['nationality']."\",\"".$json_output[$i]['region']."\",\"".$json_output[$i]['credit']."\",\"".$json_output[$i]['imgURL']."\");";
+
+	if ($db->query($sql) === TRUE) {
+    
+	} else {
+    echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
+//Insert Testimonial Pending List
+$jsonurl = "TestimonialP.json";
+$json = file_get_contents($jsonurl,0,null,null);
+
+$json_output = json_decode($json,true);
+
+for($i = 0; $i<count($json_output);$i++) {
+	$sql = "INSERT INTO TestimonialP(author,content,nationality,region,credit,imgURL) VALUES (\"".$json_output[$i]['author']."\",\"".$json_output[$i]['content']."\",\"".$json_output[$i]['nationality']."\",\"".$json_output[$i]['region']."\",\"".$json_output[$i]['credit']."\",\"".$json_output[$i]['imgURL']."\");";
 
 	if ($db->query($sql) === TRUE) {
     

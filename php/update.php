@@ -7,7 +7,10 @@ $db = new mysqli(db_host, db_uid, db_pwd, db_name);
 if ($db->connect_errno) 
 	echo("Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error);
 $tables = array("QandA","Errata","ErrataP","Testimonial","TestimonialP","Download","Credit");
+$jsonFiles = array("qanda.json","Errata.json","ErrataP.json","Testimonial.json","TestimonialP.json","download.json","QuestionCredit.json");
 $command = $_POST['command']; //EITHER "new_errata", "new_testimonial" or "add","modify","approve","remove" (these 3 are from the adminstration side)
+
+$email_address = "A0101891@u.nus.edu";
 
 if($command == "new_errata") {
 	$author = $_POST['name'];
@@ -24,6 +27,11 @@ if($command == "new_errata") {
 	} else {
     echo( "Error: " . $sql . "<br>" . $db->error);
 	}
+	$count = $db->query("SELECT * from ErrataP;");
+	$num_rows = mysql_num_rows($count);
+	$title = "A New Errata Raised from CP3 website";
+	$message = "Author ".$author." describes an Errata : \n\t".$content."\nThere are ".$num_rows." items in the Errata pending list.";
+	mail($email_address,$title,$message);
 }
 else if ($command == "new_testimonial") {
 	$author = $_POST['name'];
@@ -38,6 +46,13 @@ else if ($command == "new_testimonial") {
 	} else {
     echo( "Error: " . $sql . "<br>" . $db->error);
 	}
+
+	$count = $db->query("SELECT * from TestimonialP;");
+	$num_rows = mysql_num_rows($count);
+
+	$title = "A New Recommendation Raised from CP3 website";
+	$message = "Author ".$author."from ".$nationality." has provided a Recommendation for CP3 book : \n\t".$content."\nThere are ".$num_rows." items in the Recommendation pending list.";
+	mail($email_address,$title,$message);
 }
 else if ($command == "modify") {
 	$table = $_POST['table_name'];
@@ -106,6 +121,85 @@ else if ($command == "remove") {
 }
 //adding new content
 else if ($command == "add") {
+	$table_id = $_POST['table_id'];
+	$content = $_POST['modify_content']; //Pass in a JSON format entry? like the entries in json files
+	$row = json_decode($content,true);
+	switch ($table_id) {
+		case 0: //QANDA
+		{
+			$sql = "INSERT INTO QandA (question,answer) VALUES (\"".$row['question']."\",\"".$row['answer']."\")";
 
+			if ($db->query($sql) === TRUE) {
+    
+			} else {
+    		echo( "Error: " . $sql . "<br>" . $db->error);
+			}
+			break;
+		}
+		case 1: //Errata
+		{
+			$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (".$row['severity'].",".$row['type'].",".$row['pageNum'].",\"".$row['content']."\",".$row['isFixed'].",\"".$row['authorName']."\", \"".$row['raise_time']."\",".$row['version'].");";
+
+			if ($db->query($sql) === TRUE) {
+    
+			} else {
+    		echo( "Error: " . $sql . "<br>" . $db->error);
+			}
+			break;
+		}
+		case 2: //ErrataP may not be necessary
+		{
+			$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$row['severity'].",".$row['type'].",".$row['pageNum'].",\"".$row['content']."\",\"".$row['authorName']."\", \"".$row['raise_time']."\",".$row['version'].");";
+
+			if ($db->query($sql) === TRUE) {
+    
+			} else {
+    		echo( "Error: " . $sql . "<br>" . $db->error);
+			}
+			break;
+		}
+		case 3: //Testimonial
+		{
+			$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) VALUES (\"".$row['author']."\",\"".$row['content']."\",\"".$row['nationality']."\",\"".$row['region']."\",\"".$row['credit']."\",\"".$row['imgURL']."\");";
+
+			if ($db->query($sql) === TRUE) {
+    
+			} else {
+    			echo( "Error: " . $sql . "<br>" . $db->error);
+			}
+			break;
+		}
+		case 4: //Testimonial Pending
+		{
+			$sql = "INSERT INTO TestimonialP(author,content,nationality,region,credit,imgURL) VALUES (\"".$row['author']."\",\"".$row['content']."\",\"".$row['nationality']."\",\"".$row['region']."\",\"".$row['credit']."\",\"".$row['imgURL']."\");";
+
+			if ($db->query($sql) === TRUE) {
+    
+			} else {
+    			echo( "Error: " . $sql . "<br>" . $db->error);
+			}
+			break;
+		}
+		case 5: //Download
+		{
+			$sql = "INSERT INTO Download(name,count,URL,remark,LastUpdate) VALUES (\"".$row['name']."\",".intval($row['count']).",\"".$row['URL']."\",\"".$row['remark']."\",now());";
+			if ($db->query($sql) === TRUE) {
+    		} else {
+    			echo( "Error: " . $sql . "<br>" . $db->error);
+			}
+			break;
+		}
+		case 6: //Problem Credit
+		{
+			$sql = "INSERT INTO Credit(name,setter,appearance) VALUES (\"".$row['name']."\",\"".$row['setter']."\",\"".$row['appearance']."\");";
+
+			if ($db->query($sql) === TRUE) {
+    
+			} else {
+    			echo( "Error: " . $sql . "<br>" . $db->error);
+			}
+			break;
+		}
+	}
 }
 ?>
