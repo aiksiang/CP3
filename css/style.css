@@ -250,6 +250,9 @@ p, a, li, dd, dl, input, label, form, .btn, .form-control {
 	margin: 10px 0 10px 0;
 }
 
+.btn-group a:hover {
+	text-decoration: none;
+}
 /***
 	Errata
 ***/
@@ -402,7 +405,7 @@ textarea { resize:vertical ; }
 }
 
 .modal-header, .modal-footer{
-	background-color: brown;
+	background-color: #152737;
 	color: white;
 	text-align: center;
 }
