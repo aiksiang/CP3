@@ -202,4 +202,190 @@ else if ($command == "add") {
 		}
 	}
 }
+
+function prettyPrint( $json )
+{
+    $result = '';
+    $level = 0;
+    $in_quotes = false;
+    $in_escape = false;
+    $ends_line_level = NULL;
+    $json_length = strlen( $json );
+
+    for( $i = 0; $i < $json_length; $i++ ) {
+        $char = $json[$i];
+        $new_line_level = NULL;
+        $post = "";
+        if( $ends_line_level !== NULL ) {
+            $new_line_level = $ends_line_level;
+            $ends_line_level = NULL;
+        }
+        if ( $in_escape ) {
+            $in_escape = false;
+        } else if( $char === '"' ) {
+            $in_quotes = !$in_quotes;
+        } else if( ! $in_quotes ) {
+            switch( $char ) {
+                case '}': case ']':
+                    $level--;
+                    $ends_line_level = NULL;
+                    $new_line_level = $level;
+                    break;
+
+                case '{': case '[':
+                    $level++;
+                case ',':
+                    $ends_line_level = $level;
+                    break;
+
+                case ':':
+                    $post = " ";
+                    break;
+
+                case " ": case "\t": case "\n": case "\r":
+                    $char = "";
+                    $ends_line_level = $new_line_level;
+                    $new_line_level = NULL;
+                    break;
+            }
+        } else if ( $char === '\\' ) {
+            $in_escape = true;
+        }
+        if( $new_line_level !== NULL ) {
+            $result .= "\n".str_repeat( "\t", $new_line_level );
+        }
+        $result .= $char.$post;
+    }
+
+    return $result;
+}
+
+function updateJson(){
+	for($i = 0; $i<count($jsonFiles);$i++){
+		unlink($jsonFiles[$i]);
+	}
+
+	$myfile1 = fopen("qanda.json", "w") or die("Unable to open file!");
+	$sth = $db->query("SELECT * from QandA;");
+	$json_response1 = array();
+	while ($row = mysqli_fetch_row($sth)) {
+	        //$row_array['id'] = $row[0];
+	        $row_array1['question'] = $row[1];
+	        $row_array1['answer'] = $row[2];
+	        //push the values in the array
+	        array_push($json_response1,$row_array1);
+	    }
+	fwrite($myfile1, prettyPrint(json_encode($json_response1)));
+	fclose($myfile1);
+
+	$myfile2 = fopen("Errata.json", "w") or die("Unable to open file!");
+	$sth = $db->query("SELECT * from Errata;");
+	$json_response2 = array();
+
+	while($row = mysqli_fetch_row($sth)) {
+	        //$row_array['id'] = $row[0];
+	        $row_array2['severity'] = $row[1];
+	        $row_array2['type'] = $row[2];
+	        $row_array2['pageNum'] = $row[3];
+	        $row_array2['content'] = $row[4];
+	        $row_array2['isFixed'] = $row[5];
+	        $row_array2['authorName'] = $row[6];
+	        $row_array2['raise_time'] = $row[7];
+	        $row_array2['version'] = $row[8];
+	        //push the values in the array
+	        array_push($json_response2,$row_array2);
+	}
+
+	fwrite($myfile2, prettyPrint(json_encode($json_response2)));
+	fclose($myfile2);
+
+	$myfile3 = fopen("ErrataP.json", "w") or die("Unable to open file!");
+	$sth = $db->query("SELECT * from ErrataP;");
+	$json_response3 = array();
+
+	while($row = mysqli_fetch_row($sth)) {
+	        //$row_array['id'] = $row[0];
+	        $row_array3['severity'] = $row[1];
+	        $row_array3['type'] = $row[2];
+	        $row_array3['pageNum'] = $row[3];
+	        $row_array3['content'] = $row[4];
+	        $row_array3['authorName'] = $row[5];
+	        $row_array3['raise_time'] = $row[6];
+	        $row_array3['version'] = $row[7];
+	        //push the values in the array
+	        array_push($json_response3,$row_array3);
+	}
+
+	fwrite($myfile3, prettyPrint(json_encode($json_response3)));
+	fclose($myfile3);
+
+	$myfile4 = fopen("Testimonial.json", "w") or die("Unable to open file!");
+	$sth = $db->query("SELECT * from Testimonial;");
+	$json_response4 = array();
+	while($row = mysqli_fetch_row($sth)) {
+		    $row_array4['author'] = $row[1];
+	        $row_array4['content'] = $row[2];
+	        $row_array4['nationality'] = $row[3];
+	        $row_array4['region'] = $row[4];
+	        $row_array4['credit'] = $row[5];
+	        $row_array4['imageURL'] = $row[6];
+	        //push the values in the array
+	        array_push($json_response4,$row_array4);
+	}
+
+	fwrite($myfile4, prettyPrint(json_encode($json_response4)));
+	fclose($myfile4);
+
+	$myfile5 = fopen("TestimonialP.json", "w") or die("Unable to open file!");
+	$sth = $db->query("SELECT * from TestimonialP;");
+	$json_response5 = array();
+	while($row = mysqli_fetch_row($sth)) {
+		    $row_array5['author'] = $row[1];
+	        $row_array5['content'] = $row[2];
+	        $row_array5['nationality'] = $row[3];
+	        $row_array5['region'] = $row[4];
+	        $row_array5['credit'] = $row[5];
+	        $row_array5['imageURL'] = $row[6];
+	        //push the values in the array
+	        array_push($json_response5,$row_array5);
+	}
+
+	fwrite($myfile5, prettyPrint(json_encode($json_response5)));
+	fclose($myfile5);
+
+	$myfile6 = fopen("download.json", "w") or die("Unable to open file!");
+	$sth = $db->query("SELECT * from Download;");
+	$json_response6 = array();
+	while($row = mysqli_fetch_row($sth)) {
+		    $row_array6['name'] = $row[1];
+	        $row_array6['count'] = $row[2];
+	        $row_array6['URL'] = $row[3];
+	        $row_array6['remark'] = $row[4];
+	        //$row_array4['LastUpdate'] = $row[5];
+	        //push the values in the array
+	        array_push($json_response6,$row_array6);
+	}
+
+	fwrite($myfile6, prettyPrint(json_encode($json_response6)));
+	fclose($myfile6);
+
+	$myfile7 = fopen("QuestionCredit.json", "w") or die("Unable to open file!");
+	$sth = $db->query("SELECT * from Credit;");
+	$json_response7 = array();
+	while($row = mysqli_fetch_row($sth)) {
+			$row_array7['name'] = $row[1];
+	        $row_array7['setter'] = $row[2];
+	        $row_array7['appearance'] = $row[3];
+
+	        //push the values in the array
+	        array_push($json_response5,$row_array7);
+	}
+
+	fwrite($myfile7, prettyPrint(json_encode($json_response7)));
+	fclose($myfile7);
+}
+//Update Json files after all the changes
+
+updateJson();
+
 ?>
