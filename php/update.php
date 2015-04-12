@@ -8,11 +8,8 @@ if ($db->connect_errno)
 	echo("Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error);
 $tables = array("QandA","Errata","ErrataP","Testimonial","TestimonialP","Download","Credit");
 $jsonFiles = array("qanda.json","Errata.json","ErrataP.json","Testimonial.json","TestimonialP.json","download.json","QuestionCredit.json");
-$command = $_POST['command']; //EITHER "new_errata", "new_testimonial" or "add","modify","approve","remove" (these 3 are from the adminstration side)
 
-$email_address = "A0101891@u.nus.edu";
-
-if($command == "new_errata") {
+function errataInsertion(){
 	$author = $_POST['name'];
 	$page = $_POST['page'];
 	$severity = $_POST['severity'];
@@ -33,7 +30,8 @@ if($command == "new_errata") {
 	$message = "Author ".$author." describes an Errata : \n\t".$content."\nThere are ".$num_rows." items in the Errata pending list.";
 	mail($email_address,$title,$message);
 }
-else if ($command == "new_testimonial") {
+
+function testimonialInsertion(){
 	$author = $_POST['name'];
 	$comment = $_POST['comment'];
 	$nationality = $_POST['nationality'];
@@ -54,19 +52,9 @@ else if ($command == "new_testimonial") {
 	$message = "Author ".$author."from ".$nationality." has provided a Recommendation for CP3 book : \n\t".$content."\nThere are ".$num_rows." items in the Recommendation pending list.";
 	mail($email_address,$title,$message);
 }
-else if ($command == "modify") {
-	$table = $_POST['table_name'];
-	$id = $_POST['entry_id'];
-	$content = $_POST['modify_content']; //Pass in a JSON format entry? like the entries in json files
-	$row = json_decode($content,true);
-	//need to implement based on the actual table
 
-}
-else if ($command == "approve") {
-	$table = $_POST['table_name']; //either ErrataP or TestimonialP
-	$entry_id = $_POST['id'];
-	if($table == "ErrataP") {
-		$status = $_POST['status']; //either 0(not fixed) or 1 (fixed)
+function approveErrata($entry_id) {
+	$status = $_POST['status']; //either 0(not fixed) or 1 (fixed)
 		$sth = $db->query("SELECT * from ErrataP WHERE id =".$entry_id.";");
 		while($row = mysqli_fetch_row($sth)) {
         //$row_array['id'] = $row[0];
@@ -94,9 +82,10 @@ else if ($command == "approve") {
 		} else {
     	echo( "Error: " . $sql . "<br>" . $db->error);
 		}
-	}
-	else if ($table == "TestimonialP") {
-		$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) SELECT author,content,nationality,region,credit,imgURL FROM TestimonialP WHERE id =".$entry_id.";";
+}
+
+function approveTestimonial($entry_id){
+	$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) SELECT author,content,nationality,region,credit,imgURL FROM TestimonialP WHERE id =".$entry_id.";";
 
 		if ($db->query($sql) === TRUE) {
     
@@ -111,95 +100,113 @@ else if ($command == "approve") {
 		} else {
     	echo( "Error: " . $sql . "<br>" . $db->error);
 		}
-	}
-
 }
-else if ($command == "remove") {
-	$table_id = $_POST['table_id']; //0-6
-	$entry_id = $POST['entry_id'];
+
+function removeEntry($table_id,$entry_id){
 	$sql = "DELETE FROM ".$tables[$table_id]." WHERE id = ".$entry_id.";";
+	if ($db->query($sql) === TRUE) {} 
+	else {
+    	echo( "Error: " . $sql . "<br>" . $db->error);
+	}
 }
-//adding new content
-else if ($command == "add") {
-	$table_id = $_POST['table_id'];
-	$content = $_POST['modify_content']; //Pass in a JSON format entry? like the entries in json files
-	$row = json_decode($content,true);
-	switch ($table_id) {
-		case 0: //QANDA
-		{
-			$sql = "INSERT INTO QandA (question,answer) VALUES (\"".$row['question']."\",\"".$row['answer']."\")";
 
-			if ($db->query($sql) === TRUE) {
-    
-			} else {
-    		echo( "Error: " . $sql . "<br>" . $db->error);
-			}
-			break;
-		}
-		case 1: //Errata
-		{
-			$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (".$row['severity'].",".$row['type'].",".$row['pageNum'].",\"".$row['content']."\",".$row['isFixed'].",\"".$row['authorName']."\", \"".$row['raise_time']."\",".$row['version'].");";
+function addQandA($row){
+	$sql = "INSERT INTO QandA (question,answer) VALUES (\"".$row['question']."\",\"".$row['answer']."\")";
+	if ($db->query($sql) === TRUE) {} 
+	else {
+	echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
 
-			if ($db->query($sql) === TRUE) {
-    
-			} else {
-    		echo( "Error: " . $sql . "<br>" . $db->error);
-			}
-			break;
-		}
-		case 2: //ErrataP may not be necessary
-		{
-			$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$row['severity'].",".$row['type'].",".$row['pageNum'].",\"".$row['content']."\",\"".$row['authorName']."\", \"".$row['raise_time']."\",".$row['version'].");";
+function addErrata($row){
+	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (".$row['severity'].",".$row['type'].",".$row['pageNum'].",\"".$row['content']."\",".$row['isFixed'].",\"".$row['authorName']."\", \"".$row['raise_time']."\",".$row['version'].");";
+	if ($db->query($sql) === TRUE) {} 
+	else {
+	echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
 
-			if ($db->query($sql) === TRUE) {
-    
-			} else {
-    		echo( "Error: " . $sql . "<br>" . $db->error);
-			}
-			break;
-		}
-		case 3: //Testimonial
-		{
-			$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) VALUES (\"".$row['author']."\",\"".$row['content']."\",\"".$row['nationality']."\",\"".$row['region']."\",\"".$row['credit']."\",\"".$row['imgURL']."\");";
+function addErrataP($row){
+	$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$row['severity'].",".$row['type'].",".$row['pageNum'].",\"".$row['content']."\",\"".$row['authorName']."\", \"".$row['raise_time']."\",".$row['version'].");";
+	if ($db->query($sql) === TRUE) {} 
+	else {
+	echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
 
-			if ($db->query($sql) === TRUE) {
-    
-			} else {
-    			echo( "Error: " . $sql . "<br>" . $db->error);
-			}
-			break;
-		}
-		case 4: //Testimonial Pending
-		{
-			$sql = "INSERT INTO TestimonialP(author,content,nationality,region,credit,imgURL) VALUES (\"".$row['author']."\",\"".$row['content']."\",\"".$row['nationality']."\",\"".$row['region']."\",\"".$row['credit']."\",\"".$row['imgURL']."\");";
+function addTestimonial($row) {
+	$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) VALUES (\"".$row['author']."\",\"".$row['content']."\",\"".$row['nationality']."\",\"".$row['region']."\",\"".$row['credit']."\",\"".$row['imgURL']."\");";
+	if ($db->query($sql) === TRUE) {} 
+	else {
+		echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
 
-			if ($db->query($sql) === TRUE) {
-    
-			} else {
-    			echo( "Error: " . $sql . "<br>" . $db->error);
-			}
-			break;
-		}
-		case 5: //Download
-		{
-			$sql = "INSERT INTO Download(name,count,URL,remark,LastUpdate) VALUES (\"".$row['name']."\",".intval($row['count']).",\"".$row['URL']."\",\"".$row['remark']."\",now());";
-			if ($db->query($sql) === TRUE) {
-    		} else {
-    			echo( "Error: " . $sql . "<br>" . $db->error);
-			}
-			break;
-		}
-		case 6: //Problem Credit
-		{
-			$sql = "INSERT INTO Credit(name,setter,appearance) VALUES (\"".$row['name']."\",\"".$row['setter']."\",\"".$row['appearance']."\");";
+function addTestimonialP($row) {
+	$sql = "INSERT INTO TestimonialP(author,content,nationality,region,credit,imgURL) VALUES (\"".$row['author']."\",\"".$row['content']."\",\"".$row['nationality']."\",\"".$row['region']."\",\"".$row['credit']."\",\"".$row['imgURL']."\");";
+	if ($db->query($sql) === TRUE) {} 
+	else {
+		echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
 
-			if ($db->query($sql) === TRUE) {
-    
-			} else {
-    			echo( "Error: " . $sql . "<br>" . $db->error);
-			}
-			break;
-		}
+function addDownload($row) {
+	$sql = "INSERT INTO Download(name,count,URL,remark,LastUpdate) VALUES (\"".$row['name']."\",".intval($row['count']).",\"".$row['URL']."\",\"".$row['remark']."\",now());";
+	if ($db->query($sql) === TRUE) {} 
+	else {
+		echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
+
+function addCredit($row) {
+	$sql = "INSERT INTO Credit(name,setter,appearance) VALUES (\"".$row['name']."\",\"".$row['setter']."\",\"".$row['appearance']."\");";
+	if ($db->query($sql) === TRUE) {} 
+	else {
+		echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
+
+function modifyQandA($row,$id){
+	$question = $row['question'];
+	$ans = $row['answer'];
+	$sql = "UPDATE QandA SET question=\"".$question."\", answer=\"".$ans."\" WHERE id=".$id.";";
+	if ($db->query($sql) === TRUE) {
+		echo "Record updated successfully";
+	} else {
+	echo "Error updating record: " . $db->error;
+	}
+}
+
+function modifyErrata($row,$id){
+	$author = $row['name'];
+	$page = $row['page'];
+	$severity = $row['severity'];
+	$type = $row['type'];
+	$content = $row['content'];
+	$version = $row['version'];
+	$status = $row['status'];
+	$time = $row['raise_time'];
+	$sql = "UPDATE Errata SET severity = ".$severity.",type = ".$type.",pageNum =".$page.",content = \"".$content."\",isFixed =".$status.",authorName = \"". $author."\",raise_time = \"".$time."\",versioin =".$version." WHERE id = ".$id.";";
+	if ($db->query($sql) === TRUE) {
+		echo "Record updated successfully";
+	} else {
+	echo "Error updating record: " . $db->error;
+	}
+}
+
+function modifyErrataP($row,$id) {
+	$author = $row['name'];
+	$page = $row['page'];
+	$severity = $row['severity'];
+	$type = $row['type'];
+	$content = $row['content'];
+	$version = $row['version'];
+	$time = $row['raise_time'];
+	$sql = "UPDATE ErrataP SET severity = ".$severity.",type = ".$type.",pageNum =".$page.",content = \"".$content."\",authorName = \"". $author."\",raise_time = \"".$time."\",versioin =".$version." WHERE id = ".$id.";";
+	if ($db->query($sql) === TRUE) {
+		echo "Record updated successfully";
+	} else {
+	echo "Error updating record: " . $db->error;
 	}
 }
 
@@ -384,6 +391,123 @@ function updateJson(){
 	fwrite($myfile7, prettyPrint(json_encode($json_response7)));
 	fclose($myfile7);
 }
+
+
+
+$command = $_POST['command']; 
+//EITHER "new_errata", "new_testimonial" or "add","modify","approve","remove" (these 4 are from the adminstration side)
+
+//Testing email functionality, Failed at CP3101B VM but received a successful feedback (e.g mail()==true)
+$email_address = "A0101891@u.nus.edu";
+
+if($command == "new_errata") {
+	errataInsertion();
+}
+else if ($command == "new_testimonial") {
+	testimonialInsertion();
+}
+else if ($command == "modify") {
+	$table = $_POST['table_name'];
+	$id = $_POST['entry_id'];
+	$content = $_POST['modify_content']; //Pass in a JSON format entry? like the entries in json files
+	$row = json_decode($content,true);
+	//need to implement based on the actual table
+	switch($table) {
+		case 0: //QandA
+		{
+			modifyQandA($row,$id);
+			break;
+		}
+		case 1: //Errata
+		{
+			modifyErrata($row,$id);
+			break;
+		}
+		case 2: //ErrataP
+		{
+			modifyErrataP($row,$id);
+			break;
+		}
+		case 3: //Testimonial
+		{
+
+			break;
+		}
+		case 4: //TestimonialP
+		{
+			break;
+		}
+		case 5: //Download
+		{
+			break;
+		}
+		case 6: //Credit
+		{
+			break;
+		}
+	}
+}
+else if ($command == "approve") {
+	$table = $_POST['table_name']; //either ErrataP or TestimonialP
+	$entry_id = $_POST['id'];
+	if($table == "ErrataP") {
+		approveErrata($entry_id);
+	}
+	else if ($table == "TestimonialP") {
+		approveTestimonial($entry_id);
+	}
+
+}
+else if ($command == "remove") {
+	$table_id = $_POST['table_id']; //0-6
+	$entry_id = $POST['entry_id'];
+	removeEntry($table_id,$entry_id);
+}
+//adding new content
+else if ($command == "add") {
+	$table_id = $_POST['table_id'];
+	$content = $_POST['modify_content']; //Pass in a JSON format entry? like the entries in json files
+	$row = json_decode($content,true);
+	switch ($table_id) {
+		case 0: //QANDA
+		{
+			addQandA($row);
+			break;
+		}
+		case 1: //Errata
+		{
+			addErrata($row);
+			break;
+		}
+		case 2: //ErrataP may not be necessary
+		{
+			addErrataP($row);
+			break;
+		}
+		case 3: //Testimonial
+		{
+			addTestimonial($row);
+			break;
+		}
+		case 4: //Testimonial Pending
+		{
+			addTestimonialP($row);
+			break;
+		}
+		case 5: //Download
+		{
+			addDownload($row);
+			break;
+		}
+		case 6: //Problem Credit
+		{
+			addCredit($row);
+			break;
+		}
+	}
+}
+
+
 //Update Json files after all the changes
 
 updateJson();
