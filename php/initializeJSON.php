@@ -198,9 +198,15 @@ for($i = 0; $i<count($json_output);$i++) {
 	}
 }
 //Insert ErrataPendingList;
-$jsonurl = "ErrataP.json";
-$json = file_get_contents($jsonurl,0,null,null);
 
+$jsonurl = "ErrataP.json";
+try {
+$json = file_get_contents($jsonurl,0,null,null);
+} catch (Exception $e) {
+	$myfile = fopen($jsonurl, "w") or die("Unable to open file!");
+	fclose($myfile);
+	$json = file_get_contents($jsonurl,0,null,null);
+}
 $json_output = json_decode($json,true);
 
 for($i = 0; $i<count($json_output);$i++) {
@@ -219,7 +225,7 @@ $json = file_get_contents($jsonurl,0,null,null);
 $json_output = json_decode($json,true);
 
 for($i = 0; $i<count($json_output);$i++) {
-	$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) VALUES (\"".$json_output[$i]['author']."\",\"".$json_output[$i]['content']."\",\"".$json_output[$i]['nationality']."\",\"".$json_output[$i]['region']."\",\"".$json_output[$i]['credit']."\",\"".$json_output[$i]['imgURL']."\");";
+	$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) VALUES (\"".$json_output[$i]['author']."\",\"".$json_output[$i]['content']."\",\"".$json_output[$i]['nationality']."\",\"".$json_output[$i]['region']."\",\"".$json_output[$i]['credit']."\",\"".$json_output[$i]['imageURL']."\");";
 
 	if ($db->query($sql) === TRUE) {
     
@@ -229,8 +235,13 @@ for($i = 0; $i<count($json_output);$i++) {
 }
 //Insert Testimonial Pending List
 $jsonurl = "TestimonialP.json";
+try {
 $json = file_get_contents($jsonurl,0,null,null);
-
+} catch (Exception $e) {
+	$myfile = fopen($jsonurl, "w") or die("Unable to open file!");
+	fclose($myfile);
+	$json = file_get_contents($jsonurl,0,null,null);
+}
 $json_output = json_decode($json,true);
 
 for($i = 0; $i<count($json_output);$i++) {

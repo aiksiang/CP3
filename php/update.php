@@ -240,7 +240,7 @@ function prettyPrint( $json )
     return $result;
 }
 
-function updateJson(){
+function updateJson($jsonFiles,$db){
 	for($i = 0; $i<count($jsonFiles);$i++){
 		unlink($jsonFiles[$i]);
 	}
@@ -490,6 +490,6 @@ else if ($command == "add") {
 
 //Update Json files after all the changes
 
-updateJson();
+updateJson($jsonFiles,$db);
 
 ?>
