@@ -6,8 +6,20 @@ require_once 'config.php';
 $db = new mysqli(db_host, db_uid, db_pwd, db_name);
 if ($db->connect_errno) 
 	echo("Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error);
+
 $tables = array("QandA","Errata","ErrataP","Testimonial","TestimonialP","Download","Credit");
-$jsonFiles = array("qanda.json","Errata.json","ErrataP.json","Testimonial.json","TestimonialP.json","download.json","QuestionCredit.json");
+
+$jsonFiles = array( "qanda.json",
+				    "Errata.json",
+				    "ErrataP.json",
+				    "Testimonial.json",
+				    "TestimonialP.json",
+				    "download.json",
+				    "QuestionCredit.json");
+
+//Testing email functionality, Failed at CP3101B VM but received a successful feedback (e.g mail()==true)
+$email_address = "A0101891@u.nus.edu";
+
 
 function normalRunSQL($sql) {
 if ($db->query($sql) === TRUE) {
@@ -48,6 +60,11 @@ function testimonialInsertion(){
 	$title = "A New Recommendation Raised from CP3 website";
 	$message = "Author ".$author."from ".$nationality." has provided a Recommendation for CP3 book : \n\t".$content."\nThere are ".$num_rows." items in the Recommendation pending list.";
 	mail($email_address,$title,$message);
+}
+
+function newDownloadRequest($id) {
+	$sql = "UPDATE Download SET count = count+1 WHERE id = ".$id.";";
+	normalRunSQL($sql);
 }
 
 function approveErrata($entry_id) {
@@ -349,18 +366,22 @@ function updateJson(){
 }
 
 
+session_start();
 
 $command = $_POST['command']; 
 //EITHER "new_errata", "new_testimonial" or "add","modify","approve","remove" (these 4 are from the adminstration side)
 
-//Testing email functionality, Failed at CP3101B VM but received a successful feedback (e.g mail()==true)
-$email_address = "A0101891@u.nus.edu";
+
 
 if($command == "new_errata") {
 	errataInsertion();
 }
 else if ($command == "new_testimonial") {
 	testimonialInsertion();
+}
+else if ($command == "new_download") {
+	$id = $_POST['entry_id'];
+	newDownloadRequest($id);
 }
 else if ($command == "modify") {
 	$table = $_POST['table_name'];
