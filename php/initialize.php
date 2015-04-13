@@ -72,67 +72,116 @@ function prettyPrint( $json )
 //Create Question Table
 
 $sql = "CREATE TABLE QandA (id INT PRIMARY KEY, 
-							question VARCHAR(300),
-							answer VARCHAR(100))";
+                            question VARCHAR(300),
+                            answer VARCHAR(100))";
 if (mysqli_query($db, $sql)) {} 
 else {
-    echo("Error creating table: " . $db->error);
+    //To avoid old database with the same name
+    $sql = "DROP TABLE QandA;";
+    mysqli_query($db, $sql);
+    $sql = "CREATE TABLE QandA (id INT PRIMARY KEY, 
+                            question VARCHAR(300),
+                            answer VARCHAR(100))";
+    if (mysqli_query($db, $sql)) {} 
+    else echo("Error creating table: " . $db->error);
 }
 $myfile1 = fopen("qanda.json", "w") or die("Unable to open file!");
 //Create Errata Table
 $sql = "CREATE TABLE Errata (id INT PRIMARY KEY AUTO_INCREMENT, 
-							severity INT,
-							type INT DEFAULT 0,
-							pageNum INT,
-							content VARCHAR(1000),
-							isFixed BOOLEAN,
-							authorName VARCHAR(50),
-							raise_time TIMESTAMP,
-							version INT);";
+                            severity INT,
+                            type INT DEFAULT 0,
+                            pageNum INT,
+                            content VARCHAR(1000),
+                            isFixed BOOLEAN,
+                            authorName VARCHAR(50),
+                            raise_time TIMESTAMP,
+                            version INT);";
 
 if (mysqli_query($db, $sql)) {} 
 else {
-    echo("Error creating table: " . $db->error);
+    $sql = "DROP TABLE Errata;";
+    mysqli_query($db, $sql);
+    $sql = "CREATE TABLE Errata (id INT PRIMARY KEY AUTO_INCREMENT, 
+                            severity INT,
+                            type INT DEFAULT 0,
+                            pageNum INT,
+                            content VARCHAR(1000),
+                            isFixed BOOLEAN,
+                            authorName VARCHAR(50),
+                            raise_time TIMESTAMP,
+                            version INT);";
+    if (mysqli_query($db, $sql)) {} 
+    else echo("Error creating table: " . $db->error);
 }
 $myfile2 = fopen("Errata.json", "w") or die("Unable to open file!");
 //Create Testimonial Table 
 $sql = "CREATE TABLE Testimonial (id INT PRIMARY KEY AUTO_INCREMENT,
-								  author VARCHAR(100),
-								  content VARCHAR(3000),
-								  nationality VARCHAR(100),
-								  region VARCHAR(100),
-								  credit VARCHAR(200),
-								  imgURL VARCHAR(500));";
+                                  author VARCHAR(100),
+                                  content VARCHAR(3000),
+                                  nationality VARCHAR(100),
+                                  region VARCHAR(100),
+                                  credit VARCHAR(200),
+                                  imgURL VARCHAR(500));";
 if (mysqli_query($db, $sql)) 
 {
-	echo("done");
+    
 } 
 else {
-    echo("Error creating table: " . $db->error);
+    $sql = "DROP TABLE Testimonial;";
+    mysqli_query($db, $sql);
+    $sql = "CREATE TABLE Testimonial (id INT PRIMARY KEY AUTO_INCREMENT,
+                                  author VARCHAR(100),
+                                  content VARCHAR(3000),
+                                  nationality VARCHAR(100),
+                                  region VARCHAR(100),
+                                  credit VARCHAR(200),
+                                  imgURL VARCHAR(500));";
+    if (mysqli_query($db, $sql)) {}
+    else echo("Error creating table: " . $db->error);
 }
 $myfile3 = fopen("Testimonial.json", "w") or die("Unable to open file!");
 //Create Download Material Table
 $sql = "CREATE TABLE Download (id INT PRIMARY KEY AUTO_INCREMENT,
-							   name VARCHAR(200),
-							   count INT,
-							   URL VARCHAR(500),
-							   Remark VARCHAR(500),
-							   LastUpdate TIMESTAMP);";
-$myfile4 = fopen("download.json", "w") or die("Unable to open file!");
+                               name VARCHAR(200),
+                               count INT,
+                               URL VARCHAR(500),
+                               Remark VARCHAR(500),
+                               LastUpdate TIMESTAMP);";
+//$myfile4 = fopen("download.json", "w") or die("Unable to open file!");
 if (mysqli_query($db, $sql)) {} 
 else {
-    echo("Error creating table: " . $db->error);
+    $sql = "DROP TABLE Download;";
+    mysqli_query($db, $sql);
+    $sql = "CREATE TABLE Download (id INT PRIMARY KEY AUTO_INCREMENT,
+                               name VARCHAR(200),
+                               count INT,
+                               URL VARCHAR(500),
+                               Remark VARCHAR(500),
+                               LastUpdate TIMESTAMP);";
+    if (mysqli_query($db, $sql)) {} 
+    else echo("Error creating table: " . $db->error);
 }
+
+$myfile4 = fopen("download.json", "w") or die("Unable to open file!");
 //Create Question Credit Table
 $sql = "CREATE TABLE Credit (id INT PRIMARY KEY AUTO_INCREMENT,
-							 name VARCHAR(150),
-							 setter VARCHAR(100),
-							 appearance VARCHAR(20));";
-$myfile5 = fopen("QuestionCredit.json", "w") or die("Unable to open file!");
+                             name VARCHAR(150),
+                             setter VARCHAR(100),
+                             appearance VARCHAR(20));";
+//$myfile5 = fopen("QuestionCredit.json", "w") or die("Unable to open file!");
 if (mysqli_query($db, $sql)) {} 
 else {
-    echo("Error creating table: " . $db->error);
+    $sql = "DROP TABLE Credit;";
+    mysqli_query($db, $sql);
+    $sql = "CREATE TABLE Credit (id INT PRIMARY KEY AUTO_INCREMENT,
+                             name VARCHAR(150),
+                             setter VARCHAR(100),
+                             appearance VARCHAR(20));";
+    if (mysqli_query($db, $sql)) {} 
+    else echo("Error creating table: " . $db->error);
 }
+
+$myfile5 = fopen("QuestionCredit.json", "w") or die("Unable to open file!");
 
 //Insertion QandA
 for($i = 0;$i<count($question);$i++){
