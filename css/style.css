@@ -311,7 +311,7 @@ td, th {
 }
 
 .links li:hover, .info li:hover{
-	border-left: 3px solid #0f9fb4;
+	border-left: 3px solid cyan;
 }
 
 
@@ -432,6 +432,17 @@ textarea { resize:vertical ; }
 	opacity: 0.5;
 }
 
+div .backToTop {
+	position: fixed;
+	left: 0;
+  	bottom: 55%;
+  	opacity: 0.5;
+}
+
+div .backToTop:hover {
+	opacity: 1;
+}
+
 /***
 	color schemes
 ***/
@@ -469,17 +480,21 @@ textarea { resize:vertical ; }
 	color: white;
 }
 
-#footer a {
+#footer ul li a {
 	color: white;
 }
 
-#footer a:hover {
-	color: #0f9fb4;
+#footer ul li a:hover {
+	color: cyan;
 	border-color: black;
 }
 
 #page-text .well {
 	color: black;
+}
+
+#page-text .well a {
+	color: blue;
 }
 
 .book-details, .errata, .testimonial, .downloads {
@@ -488,4 +503,16 @@ textarea { resize:vertical ; }
 
 .credits {
 	color: white;
+}
+
+#page-body a {
+	color: cyan; 
+}
+
+#page-body .nav a:hover {
+	color: black;
+}
+
+#page-body .nav .active a {
+	color: black;
 }
