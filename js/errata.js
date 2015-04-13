@@ -216,10 +216,6 @@ function showTable(edition) {
 }
 
 function sortErrata(edition) {
-	if (clickedHeader != undefined) {
-		$("." + clickedHeader).html(classToName[clickedHeader]);
-	}
-
 	$("#errataTable thead th").click(function() {
 		clickHeader($(this).attr("class"), edition);
 	});
@@ -234,6 +230,10 @@ function sortErrata(edition) {
 }
 
 function clickHeader(className, edition) {
+	if (clickedHeader != undefined) {
+		$("." + clickedHeader).html(classToName[clickedHeader]);
+	}
+
 	switch(className) {
 		case 'pageColumn':
 			if (clickedHeader != 'pageColumn' || arrowPointingUp == false) {

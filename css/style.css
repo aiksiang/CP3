@@ -455,8 +455,8 @@ textarea { resize:vertical ; }
 
 div .backToTop {
 	position: fixed;
-	left: 0;
-  	bottom: 55%;
+	right: 10px;
+  	bottom: 15px;
   	opacity: 0.5;
 }
 
