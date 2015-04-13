@@ -1,345 +1,432 @@
-{"Credits":[
- {"id":"1",
- "Problem name":"UVa 10082 - WERTYU",
- "Setter name":"Gordon V. Cormack",
- "Location":"Section 1.3"},
- {"id":"2",
- "Problem name":"UVa 10812 - Beat the Spread!",
- "Setter name":"",
- "Location":"Section 1.3"},
- {"id":"3",
- "Problem name":"UVa 10901 - Ferry Loading III",
- "Setter name":"",
- "Location":"Section 2.2.1"},
- {"id":"4",
- "Problem name":"UVa 10226 - Hardwood Species",
- "Setter name":"",
- "Location":"Section 2.2.2"},
- {"id":"5",
- "Problem name":"UVa 11242 - Tour de France",
- "Setter name":"",
- "Location":"Section 3.1"},
- {"id":"6",
- "Problem name":"UVa 10369 - Arctic Network",
- "Setter name":"",
- "Location":"Section 3.2"},
- {"id":"7",
- "Problem name":"UVa 10364 - Square",
- "Setter name":"",
- "Location":"Section 3.4"},
- {"id":"8",
- "Problem name":"UVa 10731 - Test",
- "Setter name":"",
- "Location":"Section 4.2"},
- {"id":"9",
- "Problem name":"UVa 10150 - Doublets",
- "Setter name":"",
- "Location":"Section 4.3"},
- {"id":"10",
- "Problem name":"UVa 11101 - Mall Mania",
- "Setter name":"",
- "Location":"Section 4.3"},
- {"id":"11",
- "Problem name":"UVa 10034 - Freckles",
- "Setter name":"",
- "Location":"Section 4.4"},
- {"id":"12",
- "Problem name":"UVa 10397 - Connect the Campus",
- "Setter name":"",
- "Location":"Section 4.4"},
- {"id":"13",
- "Problem name":"UVa 10717 - Mint",
- "Setter name":"",
- "Location":"Section 5.3.2"},
- {"id":"14",
- "Problem name":"UVa 10299 - Relatives",
- "Setter name":"",
- "Location":"Section 5.3.3"},
- {"id":"15",
- "Problem name":"UVa 10139 - Factovisors",
- "Setter name":"",
- "Location":"Section 5.3.7"},
- {"id":"16",
- "Problem name":"UVa 10012 - How Big Is It?",
- "Setter name":"",
- "Location":"Section 7.2"},
- {"id":"17",
- "Problem name":"UVa 10316 - Airline Hub",
- "Setter name":"",
- "Location":"Section 7.2"},
- {"id":"18",
- "Problem name":"UVa 10297 - Beavergnaw",
- "Setter name":"",
- "Location":"Section 7.2"},
- {"id":"19",
- "Problem name":"UVa 10387 - Billiard",
- "Setter name":"",
- "Location":"Section 7.2"},
- {"id":"20",
- "Problem name":"UVa 11034 - Ferry Loading IV",
- "Setter name":"Piotr Rudnicki",
- "Location":"Section 2.2.1"},
- {"id":"21",
- "Problem name":"UVa 11137 - Ingenuous Cubrency",
- "Setter name":"",
- "Location":"Section 3.4.2"},
- {"id":"22",
- "Problem name":"UVa 10422 - Knights in FEN",
- "Setter name":"",
- "Location":"Section 4.3"},
- {"id":"23",
- "Problem name":"UVa 10610 - Gopher and Hawks",
- "Setter name":"",
- "Location":"Section 4.3"},
- {"id":"24",
- "Problem name":"UVa 10940 - Throwing cards away II",
- "Setter name":"",
- "Location":"Section 5.2"},
- {"id":"25",
- "Problem name":"UVa 11130 - Billiard bounces",
- "Setter name":"",
- "Location":"Section 5.2"},
- {"id":"26",
- "Problem name":"UVa 10551 - Basic Remains",
- "Setter name":"",
- "Location":"Section 5.4.2"},
- {"id":"27",
- "Problem name":"UVa 10408 - Farey sequences",
- "Setter name":"",
- "Location":"Section 5.5.3"},
- {"id":"28",
- "Problem name":"UVa 10405 - Longest Common Subsequence",
- "Setter name":"",
- "Location":"Section 6.3.2"},
- {"id":"29",
- "Problem name":"UVa 10902 - Pick-up Sticks",
- "Setter name":"",
- "Location":"Section 7.4"},
- {"id":"30",
- "Problem name":"UVa 10171 - Meeting Prof. Miguel...",
- "Setter name":"Shahriar Manzoor",
- "Location":"Section 4.7"},
- {"id":"31",
- "Problem name":"UVa 10394 - Twin Primes",
- "Setter name":"",
- "Location":"Section 5.3.1"},
- {"id":"32",
- "Problem name":"UVa 10533 - Digit Primes",
- "Setter name":"",
- "Location":"Section 5.3.1"},
- {"id":"33",
- "Problem name":"UVa 10539 - Almost Prime Numbers",
- "Setter name":"",
- "Location":"Section 5.3.1"},
- {"id":"34",
- "Problem name":"UVa 10789 - Prime Frequency",
- "Setter name":"",
- "Location":"Section 5.3.1"},
- {"id":"35",
- "Problem name":"UVa 11466 - Largest Prime Divisor",
- "Setter name":"",
- "Location":"Section 5.3.1"},
- {"id":"36",
- "Problem name":"UVa 11417 - GCD",
- "Setter name":"",
- "Location":"Section 5.3.2"},
- {"id":"37",
- "Problem name":"UVa 10174 - Couple-Bachelor-Spinster Numbers.",
- "Setter name":"",
- "Location":"Section 5.3.5"},
- {"id":"38",
- "Problem name":"UVa 10176 - Ocean Deep! Make it shallow!!",
- "Setter name":"",
- "Location":"Section 5.3.5"},
- {"id":"39",
- "Problem name":"UVa 10061 - How many zero's and how many digits?",
- "Setter name":"",
- "Location":"Section 5.3.7"},
- {"id":"40",
- "Problem name":"UVa 10323 - Factorial! You Must be Kidding!!!",
- "Setter name":"",
- "Location":"Section 5.3.7"},
- {"id":"41",
- "Problem name":"UVa 10473 - Simple Base Conversion",
- "Setter name":"",
- "Location":"Section 5.4.2"},
- {"id":"42",
- "Problem name":"UVa 10056 - What is the Probability ?",
- "Setter name":"",
- "Location":"Section 5.5.4"},
- {"id":"43",
- "Problem name":"UVa 10589 - Area",
- "Setter name":"",
- "Location":"Section 7.2"},
- {"id":"44",
- "Problem name":"UVa 10286 - Trouble with a Pentagon",
- "Setter name":"",
- "Location":"Section 7.2"},
- {"id":"45",
- "Problem name":"UVa 10347 - Medians",
- "Setter name":"",
- "Location":"Section 7.2"},
- {"id":"46",
- "Problem name":"UVa 10245 - The Closest Pair Problem",
- "Setter name":"",
- "Location":"Section 7.5"},
- {"id":"47",
- "Problem name":"UVa 10911 - Forming Quiz Teams",
- "Setter name":"Sohel Hafiz",
- "Location":"Section 1.2"},
- {"id":"48",
- "Problem name":"UVa 11159 - Factors and Multiples",
- "Setter name":"",
- "Location":"Section 4.9.3"},
- {"id":"49",
- "Problem name":"UVa 10862 - Connect the Cable Wires",
- "Setter name":"",
- "Location":"Section 5.3.6"},
- {"id":"50",
- "Problem name":"UVa 11462 - Age Sort",
- "Setter name":"Mohammad Mahmudur Rahman with Manzurur Rahman Khan",
- "Location":"Section 2.2.1"},
- {"id":"51",
- "Problem name":"UVa 11262 - Weird Fence",
- "Setter name":"",
- "Location":"Section 3.3"},
- {"id":"52",
- "Problem name":"UVa 11401 - Triangle Counting",
- "Setter name":"",
- "Location":"Section 5.5.2"},
- {"id":"53",
- "Problem name":"LA 3294 - The Ultimate Bamboo Eater",
- "Setter name":"Rujia Liu",
- "Location":"Section 3.3.1"},
- {"id":"54",
- "Problem name":"Thailand ICPC National Contest 2009 - My Ancestor",
- "Setter name":"Felix Halim",
- "Location":"Section 3.3.1"},
- {"id":"55",
- "Problem name":"LA 4143 - Free Parentheses (Jakarta 2008)",
- "Setter name":"",
- "Location":"Section 3.4.3"},
- {"id":"56",
- "Problem name":"LA 4657 - Top 10 (Jakarta 2009)",
- "Setter name":"",
- "Location":"Section 6.4"},
- {"id":"57",
- "Problem name":"SPOJ SARRAY",
- "Setter name":"",
- "Location":"Section 6.4"},
- {"id":"58",
- "Problem name":"LA 4106 - ACORN (Singapore 2007)",
- "Setter name":"Melvin Zhang Zhiyong/Colin Tan Keng Yang",
- "Location":"Section 3.4.3"},
- {"id":"59",
- "Problem name":"LA 410X - RACING (Singapore 2007)",
- "Setter name":"Melvin Zhang Zhiyong",
- "Location":"Section 4.4"},
- {"id":"60",
- "Problem name":"LA 4104 - MODEX (Singapore 2007)",
- "Setter name":"Melvin Zhang Zhiyong",
- "Location":"Section 5.4.2"},
- {"id":"61",
- "Problem name":"UVa 725 - Division",
- "Setter name":"",
- "Location":"Section 3.1.1"},
- {"id":"62",
- "Problem name":"UVa 750 - 8 Queens Chess Problem",
- "Setter name":"",
- "Location":"Section 3.1.1"},
- {"id":"63",
- "Problem name":"UVa 10360 - Rat Attack",
- "Setter name":"TUD Programming Contest (Author unknown)",
- "Location":"Section 3.1.2"},
- {"id":"64",
- "Problem name":"LA 4793 - Robots on Ice (ICPC World Finals 2010)",
- "Setter name":"One of the judge in WF 2010... (Author unknown)",
- "Location":"Section 3.1"},
- {"id":"65",
- "Problem name":"UVa 410 - Station Balance",
- "Setter name":"",
- "Location":"Section 3.3"},
- {"id":"66",
- "Problem name":"LA 4445 - A Careful Approach (ICPC World Finals 2009)",
- "Setter name":"One of the judge in WF 2009... (Author unknown)",
- "Location":"Section 3.3"},
- {"id":"67",
- "Problem name":"UVa 11450 - Wedding Shopping",
- "Setter name":"",
- "Location":"Section 3.4.1"},
- {"id":"68",
- "Problem name":"UVa 108 - Maximum Sum",
- "Setter name":"Internet Duke (Author unknown)",
- "Location":"Section 3.4.2"},
- {"id":"69",
- "Problem name":"UVa 10003 - Cutting Sticks",
- "Setter name":"UPM'2000 (Author unknown)",
- "Location":"Section 3.4.3"},
- {"id":"70",
- "Problem name":"SPOJ 101 - Fishmonger",
- "Setter name":"",
- "Location":"Section 3.4.3"},
- {"id":"71",
- "Problem name":"UVa 336 - A Node Too Far",
- "Setter name":"",
- "Location":"Section 2.2.2 & 4.3"},
- {"id":"72",
- "Problem name":"UVa 908 - Re-connecting Computer Sites",
- "Setter name":"Joao Marques (email address not found yet)",
- "Location":"Section 4.4"},
- {"id":"73",
- "Problem name":"UVa 10600 - ACM Contest and Blackout",
- "Setter name":"Shamil Yagiyayev (email address not found yet)",
- "Location":"Section 4.4"},
- {"id":"74",
- "Problem name":"UVa 341 - Non-Stop Travel",
- "Setter name":"",
- "Location":"Section 4.5"},
- {"id":"75",
- "Problem name":"UVa 558 - Wormholes",
- "Setter name":"",
- "Location":"Section 4.6"},
- {"id":"76",
- "Problem name":"UVa 820 - Internet Bandwidth (World Finals 2000)",
- "Setter name":"",
- "Location":"Section 4.8"},
- {"id":"77",
- "Problem name":"LA 3126 - Taxi Cab Scheme (Northwestern Europe 2004)",
- "Setter name":"",
- "Location":"Section 4.9.2"},
- {"id":"78",
- "Problem name":"TCO 2009 - Qualifying 1 - Prime Pairs",
- "Setter name":"TopCoder",
- "Location":"Section 4.9.3"},
- {"id":"79",
- "Problem name":"LA 3487 - Duopoly ()",
- "Setter name":"",
- "Location":"Section 4.9.3"},
- {"id":"80",
- "Problem name":"UVa 10925 - Krakovia",
- "Setter name":"Sérgio Queiroz de Medeiros (email address not found yet)",
- "Location":"Section 5.4.1"},
- {"id":"81",
- "Problem name":"UVa 10814 - Simplifying Fractions",
- "Setter name":"",
- "Location":"Section 5.4.2"},
- {"id":"82",
- "Problem name":"UVa 350 - Pseudo-Random Numbers",
- "Setter name":"",
- "Location":"Section 5.5.2"},
- {"id":"83",
- "Problem name":"LA 4601 - Euclid (Southeast USA 2009)",
- "Setter name":"Jim Knisely",
- "Location":"Section 7.2"},
- {"id":"84",
- "Problem name":"UVa 11646 - Athletics Track",
- "Setter name":"",
- "Location":"Section 7.5"},
- {"id":"85",
- "Problem name":"UVa 607 - Scheduling Lectures",
- "Setter name":"Howard Cheng",
- "Location":"Section 8"},
- {"id":"86",
- "Problem name":"UVa 610 - Street Directions",
- "Setter name":"Howard Cheng",
- "Location":"Section 4"},]}
+[
+	{
+		"name": "UVa 10082 - WERTYU",
+		"setter": "Gordon V. Cormack",
+		"appearance": "Section 1.3"
+	},
+	{
+		"name": "UVa 10812 - Beat the Spread!",
+		"setter": "",
+		"appearance": "Section 1.3"
+	},
+	{
+		"name": "UVa 10901 - Ferry Loading III",
+		"setter": "",
+		"appearance": "Section 2.2.1"
+	},
+	{
+		"name": "UVa 10226 - Hardwood Species",
+		"setter": "",
+		"appearance": "Section 2.2.2"
+	},
+	{
+		"name": "UVa 11242 - Tour de France",
+		"setter": "",
+		"appearance": "Section 3.1"
+	},
+	{
+		"name": "UVa 10369 - Arctic Network",
+		"setter": "",
+		"appearance": "Section 3.2"
+	},
+	{
+		"name": "UVa 10364 - Square",
+		"setter": "",
+		"appearance": "Section 3.4"
+	},
+	{
+		"name": "UVa 10731 - Test",
+		"setter": "",
+		"appearance": "Section 4.2"
+	},
+	{
+		"name": "UVa 10150 - Doublets",
+		"setter": "",
+		"appearance": "Section 4.3"
+	},
+	{
+		"name": "UVa 11101 - Mall Mania",
+		"setter": "",
+		"appearance": "Section 4.3"
+	},
+	{
+		"name": "UVa 10034 - Freckles",
+		"setter": "",
+		"appearance": "Section 4.4"
+	},
+	{
+		"name": "UVa 10397 - Connect the Campus",
+		"setter": "",
+		"appearance": "Section 4.4"
+	},
+	{
+		"name": "UVa 10717 - Mint",
+		"setter": "",
+		"appearance": "Section 5.3.2"
+	},
+	{
+		"name": "UVa 10299 - Relatives",
+		"setter": "",
+		"appearance": "Section 5.3.3"
+	},
+	{
+		"name": "UVa 10139 - Factovisors",
+		"setter": "",
+		"appearance": "Section 5.3.7"
+	},
+	{
+		"name": "UVa 10012 - How Big Is It?",
+		"setter": "",
+		"appearance": "Section 7.2"
+	},
+	{
+		"name": "UVa 10316 - Airline Hub",
+		"setter": "",
+		"appearance": "Section 7.2"
+	},
+	{
+		"name": "UVa 10297 - Beavergnaw",
+		"setter": "",
+		"appearance": "Section 7.2"
+	},
+	{
+		"name": "UVa 10387 - Billiard",
+		"setter": "",
+		"appearance": "Section 7.2"
+	},
+	{
+		"name": "UVa 11034 - Ferry Loading IV",
+		"setter": "Piotr Rudnicki",
+		"appearance": "Section 2.2.1"
+	},
+	{
+		"name": "UVa 11137 - Ingenuous Cubrency",
+		"setter": "",
+		"appearance": "Section 3.4.2"
+	},
+	{
+		"name": "UVa 10422 - Knights in FEN",
+		"setter": "",
+		"appearance": "Section 4.3"
+	},
+	{
+		"name": "UVa 10610 - Gopher and Hawks",
+		"setter": "",
+		"appearance": "Section 4.3"
+	},
+	{
+		"name": "UVa 10940 - Throwing cards away II",
+		"setter": "",
+		"appearance": "Section 5.2"
+	},
+	{
+		"name": "UVa 11130 - Billiard bounces",
+		"setter": "",
+		"appearance": "Section 5.2"
+	},
+	{
+		"name": "UVa 10551 - Basic Remains",
+		"setter": "",
+		"appearance": "Section 5.4.2"
+	},
+	{
+		"name": "UVa 10408 - Farey sequences",
+		"setter": "",
+		"appearance": "Section 5.5.3"
+	},
+	{
+		"name": "UVa 10405 - Longest Common Subsequence",
+		"setter": "",
+		"appearance": "Section 6.3.2"
+	},
+	{
+		"name": "UVa 10902 - Pick-up Sticks",
+		"setter": "",
+		"appearance": "Section 7.4"
+	},
+	{
+		"name": "UVa 10171 - Meeting Prof. Miguel...",
+		"setter": "Shahriar Manzoor",
+		"appearance": "Section 4.7"
+	},
+	{
+		"name": "UVa 10394 - Twin Primes",
+		"setter": "",
+		"appearance": "Section 5.3.1"
+	},
+	{
+		"name": "UVa 10533 - Digit Primes",
+		"setter": "",
+		"appearance": "Section 5.3.1"
+	},
+	{
+		"name": "UVa 10539 - Almost Prime Numbers",
+		"setter": "",
+		"appearance": "Section 5.3.1"
+	},
+	{
+		"name": "UVa 10789 - Prime Frequency",
+		"setter": "",
+		"appearance": "Section 5.3.1"
+	},
+	{
+		"name": "UVa 11466 - Largest Prime Divisor",
+		"setter": "",
+		"appearance": "Section 5.3.1"
+	},
+	{
+		"name": "UVa 11417 - GCD",
+		"setter": "",
+		"appearance": "Section 5.3.2"
+	},
+	{
+		"name": "UVa 10174 - Couple-Bachelor-Spinster Numbers.",
+		"setter": "",
+		"appearance": "Section 5.3.5"
+	},
+	{
+		"name": "UVa 10176 - Ocean Deep! Make it shallow!!",
+		"setter": "",
+		"appearance": "Section 5.3.5"
+	},
+	{
+		"name": "UVa 10061 - How many zero's and how many digits?",
+		"setter": "",
+		"appearance": "Section 5.3.7"
+	},
+	{
+		"name": "UVa 10323 - Factorial! You Must be Kidding!!!",
+		"setter": "",
+		"appearance": "Section 5.3.7"
+	},
+	{
+		"name": "UVa 10473 - Simple Base Conversion",
+		"setter": "",
+		"appearance": "Section 5.4.2"
+	},
+	{
+		"name": "UVa 10056 - What is the Probability ?",
+		"setter": "",
+		"appearance": "Section 5.5.4"
+	},
+	{
+		"name": "UVa 10589 - Area",
+		"setter": "",
+		"appearance": "Section 7.2"
+	},
+	{
+		"name": "UVa 10286 - Trouble with a Pentagon",
+		"setter": "",
+		"appearance": "Section 7.2"
+	},
+	{
+		"name": "UVa 10347 - Medians",
+		"setter": "",
+		"appearance": "Section 7.2"
+	},
+	{
+		"name": "UVa 10245 - The Closest Pair Problem",
+		"setter": "",
+		"appearance": "Section 7.5"
+	},
+	{
+		"name": "UVa 10911 - Forming Quiz Teams",
+		"setter": "Sohel Hafiz",
+		"appearance": "Section 1.2"
+	},
+	{
+		"name": "UVa 11159 - Factors and Multiples",
+		"setter": "",
+		"appearance": "Section 4.9.3"
+	},
+	{
+		"name": "UVa 10862 - Connect the Cable Wires",
+		"setter": "",
+		"appearance": "Section 5.3.6"
+	},
+	{
+		"name": "UVa 11462 - Age Sort",
+		"setter": "Mohammad Mahmudur Rahman with Manzurur Rahman Khan",
+		"appearance": "Section 2.2.1"
+	},
+	{
+		"name": "UVa 11262 - Weird Fence",
+		"setter": "",
+		"appearance": "Section 3.3"
+	},
+	{
+		"name": "UVa 11401 - Triangle Counting",
+		"setter": "",
+		"appearance": "Section 5.5.2"
+	},
+	{
+		"name": "LA 3294 - The Ultimate Bamboo Eater",
+		"setter": "Rujia Liu",
+		"appearance": "Section 3.3.1"
+	},
+	{
+		"name": "Thailand ICPC National Contest 2009 - My Ancestor",
+		"setter": "Felix Halim",
+		"appearance": "Section 3.3.1"
+	},
+	{
+		"name": "LA 4143 - Free Parentheses (Jakarta 2008)",
+		"setter": "",
+		"appearance": "Section 3.4.3"
+	},
+	{
+		"name": "LA 4657 - Top 10 (Jakarta 2009)",
+		"setter": "",
+		"appearance": "Section 6.4"
+	},
+	{
+		"name": "SPOJ SARRAY",
+		"setter": "",
+		"appearance": "Section 6.4"
+	},
+	{
+		"name": "LA 4106 - ACORN (Singapore 2007)",
+		"setter": "Melvin Zhang Zhiyong\/Colin Tan Keng Yang",
+		"appearance": "Section 3.4.3"
+	},
+	{
+		"name": "LA 410X - RACING (Singapore 2007)",
+		"setter": "Melvin Zhang Zhiyong",
+		"appearance": "Section 4.4"
+	},
+	{
+		"name": "LA 4104 - MODEX (Singapore 2007)",
+		"setter": "Melvin Zhang Zhiyong",
+		"appearance": "Section 5.4.2"
+	},
+	{
+		"name": "UVa 725 - Division",
+		"setter": "",
+		"appearance": "Section 3.1.1"
+	},
+	{
+		"name": "UVa 750 - 8 Queens Chess Problem",
+		"setter": "",
+		"appearance": "Section 3.1.1"
+	},
+	{
+		"name": "UVa 10360 - Rat Attack",
+		"setter": "TUD Programming Contest (Author unknown)",
+		"appearance": "Section 3.1.2"
+	},
+	{
+		"name": "LA 4793 - Robots on Ice (ICPC World Finals 2010)",
+		"setter": "One of the judge in WF 2010... (Author unknown)",
+		"appearance": "Section 3.1"
+	},
+	{
+		"name": "UVa 410 - Station Balance",
+		"setter": "",
+		"appearance": "Section 3.3"
+	},
+	{
+		"name": "LA 4445 - A Careful Approach (ICPC World Finals 2009)",
+		"setter": "One of the judge in WF 2009... (Author unknown)",
+		"appearance": "Section 3.3"
+	},
+	{
+		"name": "UVa 11450 - Wedding Shopping",
+		"setter": "",
+		"appearance": "Section 3.4.1"
+	},
+	{
+		"name": "UVa 108 - Maximum Sum",
+		"setter": "Internet Duke (Author unknown)",
+		"appearance": "Section 3.4.2"
+	},
+	{
+		"name": "UVa 10003 - Cutting Sticks",
+		"setter": "UPM'2000 (Author unknown)",
+		"appearance": "Section 3.4.3"
+	},
+	{
+		"name": "SPOJ 101 - Fishmonger",
+		"setter": "",
+		"appearance": "Section 3.4.3"
+	},
+	{
+		"name": "UVa 336 - A Node Too Far",
+		"setter": "",
+		"appearance": "Section 2.2.2 & 4.3"
+	},
+	{
+		"name": "UVa 908 - Re-connecting Computer Sites",
+		"setter": "Joao Marques (email address not found yet)",
+		"appearance": "Section 4.4"
+	},
+	{
+		"name": "UVa 10600 - ACM Contest and Blackout",
+		"setter": "Shamil Yagiyayev (email address not found yet)",
+		"appearance": "Section 4.4"
+	},
+	{
+		"name": "UVa 341 - Non-Stop Travel",
+		"setter": "",
+		"appearance": "Section 4.5"
+	},
+	{
+		"name": "UVa 558 - Wormholes",
+		"setter": "",
+		"appearance": "Section 4.6"
+	},
+	{
+		"name": "UVa 820 - Internet Bandwidth (World Finals 2000)",
+		"setter": "",
+		"appearance": "Section 4.8"
+	},
+	{
+		"name": "LA 3126 - Taxi Cab Scheme (Northwestern Europe 2004)",
+		"setter": "",
+		"appearance": "Section 4.9.2"
+	},
+	{
+		"name": "TCO 2009 - Qualifying 1 - Prime Pairs",
+		"setter": "TopCoder",
+		"appearance": "Section 4.9.3"
+	},
+	{
+		"name": "LA 3487 - Duopoly ()",
+		"setter": "",
+		"appearance": "Section 4.9.3"
+	},
+	{
+		"name": "UVa 10925 - Krakovia",
+		"setter": "S\u00e9rgio Queiroz de Medeiros (email address not found yet)",
+		"appearance": "Section 5.4.1"
+	},
+	{
+		"name": "UVa 10814 - Simplifying Fractions",
+		"setter": "",
+		"appearance": "Section 5.4.2"
+	},
+	{
+		"name": "UVa 350 - Pseudo-Random Numbers",
+		"setter": "",
+		"appearance": "Section 5.5.2"
+	},
+	{
+		"name": "LA 4601 - Euclid (Southeast USA 2009)",
+		"setter": "Jim Knisely",
+		"appearance": "Section 7.2"
+	},
+	{
+		"name": "UVa 11646 - Athletics Track",
+		"setter": "",
+		"appearance": "Section 7.5"
+	},
+	{
+		"name": "UVa 607 - Scheduling Lectures",
+		"setter": "Howard Cheng",
+		"appearance": "Section 8"
+	},
+	{
+		"name": "UVa 610 - Street Directions",
+		"setter": "Howard Cheng",
+		"appearance": "Section 4"
+	}
+]

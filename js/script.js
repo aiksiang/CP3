@@ -11,6 +11,7 @@ $(document).ready(function(){
 		$(".workshop").fadeOut(400);
 		$(".downloads").fadeOut(400);
 		$(".credits").fadeOut(400);
+		$(".sales-data").fadeOut(400);
 		$("#book-editions-img").slideDown(800);
 		$("#page-text").fadeIn(800);
 		$("#cp1-img img").removeClass("fullOpacity");
@@ -25,6 +26,7 @@ $(document).ready(function(){
 		$(".book-edition-content").fadeOut(400);
 		$(".downloads").fadeOut(400);
 		$(".credits").fadeOut(400);
+		$(".sales-data").fadeOut(400);
 		$("#cp1-img img").addClass("fullOpacity");
 		$("#cp2-img img").removeClass("fullOpacity");
 		$("#cp3-img img").removeClass("fullOpacity");
@@ -44,6 +46,7 @@ $(document).ready(function(){
 		$(".downloads").fadeOut(400);
 		$(".workshop").fadeOut(400);
 		$(".credits").fadeOut(400);
+		$(".sales-data").fadeOut(400);
 		$("#cp1-img img").removeClass("fullOpacity");
 		$("#cp2-img img").addClass("fullOpacity");
 		$("#cp3-img img").removeClass("fullOpacity");
@@ -63,6 +66,7 @@ $(document).ready(function(){
 		$(".downloads").fadeOut(400);
 		$(".workshop").fadeOut(400);
 		$(".credits").fadeOut(400);
+		$(".sales-data").fadeOut(400);
 		$("#cp1-img img").removeClass("fullOpacity");
 		$("#cp2-img img").removeClass("fullOpacity");
 		$("#cp3-img img").addClass("fullOpacity");
@@ -83,6 +87,7 @@ $(document).ready(function(){
 		$(".downloads").fadeOut(400);
 		$(".workshop").fadeOut(400);
 		$(".credits").fadeOut(400);
+		$(".sales-data").fadeOut(400);
 		$(".testimonial").fadeIn(800);
 		showTestimonial();
 	});
@@ -95,6 +100,7 @@ $(document).ready(function(){
 		$(".book-edition-content").fadeOut(400);
 		$(".workshop").fadeOut(400);
 		$(".credits").fadeOut(400);
+		$(".sales-data").fadeOut(400);
 		$(".downloads").fadeIn(800);
 		showDownloads();
 	}); 
@@ -107,6 +113,7 @@ $(document).ready(function(){
 		$(".book-edition-content").fadeOut(400);
 		$(".downloads").fadeOut(400);
 		$(".credits").fadeOut(400);
+		$(".sales-data").fadeOut(400);
 		$(".workshop").fadeIn(800);
 		showWorkshop();
 	}); 
@@ -119,8 +126,22 @@ $(document).ready(function(){
 		$(".book-edition-content").fadeOut(400);
 		$(".downloads").fadeOut(400);
 		$(".workshop").fadeOut(400);
+		$(".sales-data").fadeOut(400);
 		$(".credits").fadeIn(800);
 		showCredits();
+	}); 
+
+	$(".sales-data-button").on('click', function() {
+		$("#book-editions-img").slideUp(400);
+		$("#page-text").fadeOut(400);
+		$(".book-details").fadeOut(400);
+		$(".testimonial").fadeOut(400);
+		$(".book-edition-content").fadeOut(400);
+		$(".downloads").fadeOut(400);
+		$(".workshop").fadeOut(400);
+		$(".credits").fadeOut(400);
+		$(".sales-data").fadeIn(800);
+		showSales();
 	}); 
 });
 

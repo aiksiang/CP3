@@ -119,7 +119,7 @@ p, a, li, dd, dl, input, label, form, .btn, .form-control {
 	border-radius: 0px !important;
 }
 
-#book-nav .nav:hover,
+#details a:hover, #content a:hover, #errataTab a:hover,
 #top-link .nav a:hover {
 	cursor: pointer;
 }
@@ -250,6 +250,9 @@ p, a, li, dd, dl, input, label, form, .btn, .form-control {
 	margin: 10px 0 10px 0;
 }
 
+.btn-group a:hover {
+	text-decoration: none;
+}
 /***
 	Errata
 ***/
@@ -402,7 +405,7 @@ textarea { resize:vertical ; }
 }
 
 .modal-header, .modal-footer{
-	background-color: brown;
+	background-color: #152737;
 	color: white;
 	text-align: center;
 }
@@ -412,13 +415,8 @@ textarea { resize:vertical ; }
 }
 
 .glyphicon {
-	font-size: 50px;
-	opacity: 0.3;
-}
-
-.glyphicon:hover {
-	opacity: 1;
-	cursor: pointer;
+	font-size: 9px;
+	opacity: 0.5;
 }
 
 /***

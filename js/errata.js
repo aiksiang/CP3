@@ -37,13 +37,13 @@ function showTable(edition) {
 	HTMLtoBeInserted += '\
 			<thead>\
 				<tr>\
-					<th class="pageColumn">Page Number</th>\
-					<th class="errataColumn">Errata</th>\
-					<th class="authorColumn">Author</th>\
-					<th class="typeColumn">Type</th>\
-					<th class="timeColumn">Time</th>\
-					<th class="severityColumn">Severity</th>\
-					<th class="statusColumn">Status</th>\
+					<th class="pageColumn">Page Number <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
+					<th class="errataColumn">Errata <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
+					<th class="authorColumn">Author <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
+					<th class="typeColumn">Type <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
+					<th class="timeColumn">Time <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
+					<th class="severityColumn">Severity <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
+					<th class="statusColumn">Status <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
 				</tr>\
 			</thead>\
 			';

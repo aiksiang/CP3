@@ -48,6 +48,31 @@ else {
 	if (mysqli_query($db, $sql)) {} 
     else echo("Error creating table: " . $db->error);
 }
+//Create ErrataP table to store the pending Errata Content
+$sql = "CREATE TABLE ErrataP (id INT PRIMARY KEY AUTO_INCREMENT, 
+							severity INT,
+							type INT DEFAULT 0,
+							pageNum INT,
+							content VARCHAR(1000),
+							authorName VARCHAR(50),
+							raise_time TIMESTAMP,
+							version INT);";
+
+if (mysqli_query($db, $sql)) {} 
+else {
+	$sql = "DROP TABLE ErrataP;";
+	mysqli_query($db, $sql);
+	$sql = "CREATE TABLE ErrataP (id INT PRIMARY KEY AUTO_INCREMENT, 
+							severity INT,
+							type INT DEFAULT 0,
+							pageNum INT,
+							content VARCHAR(1000),
+							authorName VARCHAR(50),
+							raise_time TIMESTAMP,
+							version INT);";
+	if (mysqli_query($db, $sql)) {} 
+    else echo("Error creating table: " . $db->error);
+}
 //$myfile2 = fopen("Errata.json", "w") or die("Unable to open file!");
 
 //Create Testimonial Table 
@@ -66,6 +91,31 @@ else {
 	$sql = "DROP TABLE Testimonial;";
 	mysqli_query($db, $sql);
 	$sql = "CREATE TABLE Testimonial (id INT PRIMARY KEY AUTO_INCREMENT,
+								  author VARCHAR(100),
+								  content VARCHAR(3000),
+								  nationality VARCHAR(100),
+								  region VARCHAR(100),
+								  credit VARCHAR(200),
+								  imgURL VARCHAR(500));";
+	if (mysqli_query($db, $sql)) {}
+    else echo("Error creating table: " . $db->error);
+}
+//Create table TestimonialP for pending Testimonial Content
+$sql = "CREATE TABLE TestimonialP (id INT PRIMARY KEY AUTO_INCREMENT,
+								  author VARCHAR(100),
+								  content VARCHAR(3000),
+								  nationality VARCHAR(100),
+								  region VARCHAR(100),
+								  credit VARCHAR(200),
+								  imgURL VARCHAR(500));";
+if (mysqli_query($db, $sql)) 
+{
+	
+} 
+else {
+	$sql = "DROP TABLE TestimonialP;";
+	mysqli_query($db, $sql);
+	$sql = "CREATE TABLE TestimonialP (id INT PRIMARY KEY AUTO_INCREMENT,
 								  author VARCHAR(100),
 								  content VARCHAR(3000),
 								  nationality VARCHAR(100),
@@ -115,5 +165,123 @@ else {
 							 appearance VARCHAR(20));";
     if (mysqli_query($db, $sql)) {} 
     else echo("Error creating table: " . $db->error);
+}
+//Insert QandA
+$jsonurl = "qanda.json";
+$json = file_get_contents($jsonurl,0,null,null);
+
+$json_output = json_decode($json,true);
+
+for($i = 0; $i<count($json_output);$i++) {
+	$sql = "INSERT INTO QandA (id,question,answer) VALUES (".($i+1).",\"".$json_output[$i]['question']."\",\"".$json_output[$i]['answer']."\")";
+
+	if ($db->query($sql) === TRUE) {
+    
+	} else {
+    echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
+
+//Insert Errata;
+$jsonurl = "Errata.json";
+$json = file_get_contents($jsonurl,0,null,null);
+
+$json_output = json_decode($json,true);
+
+for($i = 0; $i<count($json_output);$i++) {
+	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (".$json_output[$i]['severity'].",".$json_output[$i]['type'].",".$json_output[$i]['pageNum'].",\"".$json_output[$i]['content']."\",".$json_output[$i]['isFixed'].",\"".$json_output[$i]['authorName']."\", \"".$json_output[$i]['raise_time']."\",".$json_output[$i]['version'].");";
+
+	if ($db->query($sql) === TRUE) {
+    
+	} else {
+    echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
+//Insert ErrataPendingList;
+
+$jsonurl = "ErrataP.json";
+try {
+$json = file_get_contents($jsonurl,0,null,null);
+} catch (Exception $e) {
+	$myfile = fopen($jsonurl, "w") or die("Unable to open file!");
+	fclose($myfile);
+	$json = file_get_contents($jsonurl,0,null,null);
+}
+$json_output = json_decode($json,true);
+
+for($i = 0; $i<count($json_output);$i++) {
+	$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$json_output[$i]['severity'].",".$json_output[$i]['type'].",".$json_output[$i]['pageNum'].",\"".$json_output[$i]['content']."\",\"".$json_output[$i]['authorName']."\", \"".$json_output[$i]['raise_time']."\",".$json_output[$i]['version'].");";
+
+	if ($db->query($sql) === TRUE) {
+    
+	} else {
+    echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
+//Insert Testimonial
+$jsonurl = "Testimonial.json";
+$json = file_get_contents($jsonurl,0,null,null);
+
+$json_output = json_decode($json,true);
+
+for($i = 0; $i<count($json_output);$i++) {
+	$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) VALUES (\"".$json_output[$i]['author']."\",\"".$json_output[$i]['content']."\",\"".$json_output[$i]['nationality']."\",\"".$json_output[$i]['region']."\",\"".$json_output[$i]['credit']."\",\"".$json_output[$i]['imageURL']."\");";
+
+	if ($db->query($sql) === TRUE) {
+    
+	} else {
+    echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
+//Insert Testimonial Pending List
+$jsonurl = "TestimonialP.json";
+try {
+$json = file_get_contents($jsonurl,0,null,null);
+} catch (Exception $e) {
+	$myfile = fopen($jsonurl, "w") or die("Unable to open file!");
+	fclose($myfile);
+	$json = file_get_contents($jsonurl,0,null,null);
+}
+$json_output = json_decode($json,true);
+
+for($i = 0; $i<count($json_output);$i++) {
+	$sql = "INSERT INTO TestimonialP(author,content,nationality,region,credit,imgURL) VALUES (\"".$json_output[$i]['author']."\",\"".$json_output[$i]['content']."\",\"".$json_output[$i]['nationality']."\",\"".$json_output[$i]['region']."\",\"".$json_output[$i]['credit']."\",\"".$json_output[$i]['imgURL']."\");";
+
+	if ($db->query($sql) === TRUE) {
+    
+	} else {
+    echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
+//Insert Downloads
+$jsonurl = "download.json";
+$json = file_get_contents($jsonurl,0,null,null);
+
+$json_output = json_decode($json,true);
+
+for($i = 0; $i<count($json_output);$i++) {
+	$sql = "INSERT INTO Download(name,count,URL,remark,LastUpdate) VALUES (\"".$json_output[$i]['name']."\",".intval($json_output[$i]['count']).",\"".$json_output[$i]['URL']."\",\"".$json_output[$i]['remark']."\",now());";
+
+	if ($db->query($sql) === TRUE) {
+    
+	} else {
+    echo( "Error: " . $sql . "<br>" . $db->error);
+	}
+}
+
+//Insert Problem Credits
+$jsonurl = "QuestionCredit.json";
+$json = file_get_contents($jsonurl,0,null,null);
+
+$json_output = json_decode($json,true);
+
+for($i = 0; $i<count($json_output);$i++) {
+	$sql = "INSERT INTO Credit(name,setter,appearance) VALUES (\"".$json_output[$i]['name']."\",\"".$json_output[$i]['setter']."\",\"".$json_output[$i]['appearance']."\");";
+
+	if ($db->query($sql) === TRUE) {
+    
+	} else {
+    echo( "Error: " . $sql . "<br>" . $db->error);
+	}
 }
 ?>

@@ -11,6 +11,64 @@ require_once 'errata_store.php';
 require_once 'testimonial.php';
 require_once 'download.php';
 require_once 'problem_credict.php';
+
+function prettyPrint( $json )
+{
+    $result = '';
+    $level = 0;
+    $in_quotes = false;
+    $in_escape = false;
+    $ends_line_level = NULL;
+    $json_length = strlen( $json );
+
+    for( $i = 0; $i < $json_length; $i++ ) {
+        $char = $json[$i];
+        $new_line_level = NULL;
+        $post = "";
+        if( $ends_line_level !== NULL ) {
+            $new_line_level = $ends_line_level;
+            $ends_line_level = NULL;
+        }
+        if ( $in_escape ) {
+            $in_escape = false;
+        } else if( $char === '"' ) {
+            $in_quotes = !$in_quotes;
+        } else if( ! $in_quotes ) {
+            switch( $char ) {
+                case '}': case ']':
+                    $level--;
+                    $ends_line_level = NULL;
+                    $new_line_level = $level;
+                    break;
+
+                case '{': case '[':
+                    $level++;
+                case ',':
+                    $ends_line_level = $level;
+                    break;
+
+                case ':':
+                    $post = " ";
+                    break;
+
+                case " ": case "\t": case "\n": case "\r":
+                    $char = "";
+                    $ends_line_level = $new_line_level;
+                    $new_line_level = NULL;
+                    break;
+            }
+        } else if ( $char === '\\' ) {
+            $in_escape = true;
+        }
+        if( $new_line_level !== NULL ) {
+            $result .= "\n".str_repeat( "\t", $new_line_level );
+        }
+        $result .= $char.$post;
+    }
+
+    return $result;
+}
+
 //Create Question Table
 
 $sql = "CREATE TABLE QandA (id INT PRIMARY KEY, 
@@ -156,73 +214,83 @@ for($i = 0;$i<count($problems);$i++) {
 	
 }
 
-fwrite($myfile1,"{\"QandAs\":[");
+
 $sth = $db->query("SELECT * from QandA;");
-
-while($row = mysqli_fetch_row($sth)) {
-   	fwrite($myfile1, "\n {\"id\":\"".$row[0]."\",");
-    fwrite($myfile1, "\n \"question\":\"".$row[1]."\",");
-    fwrite($myfile1, "\n \"answer\":\"".$row[2]."\"},");
-}
-fwrite($myfile1, "]}");
-
+$json_response1 = array();
+while ($row = mysqli_fetch_row($sth)) {
+        //$row_array['id'] = $row[0];
+        $row_array1['question'] = $row[1];
+        $row_array1['answer'] = $row[2];
+        //push the values in the array
+        array_push($json_response1,$row_array1);
+    }
+fwrite($myfile1, prettyPrint(json_encode($json_response1)));
 fclose($myfile1);
 
 $sth = $db->query("SELECT * from Errata;");
-fwrite($myfile2,"{\"Erratas\":[");
+$json_response2 = array();
+
 while($row = mysqli_fetch_row($sth)) {
-    fwrite($myfile2, "\n {\"id\":\"".$row[0]."\",");
-    fwrite($myfile2, "\n \"severity\":\"".$row[1]."\",");
-    fwrite($myfile2, "\n \"type\":\"".$row[2]."\",");
-    fwrite($myfile2, "\n \"pageNum\":\"".$row[3]."\",");
-    fwrite($myfile2, "\n \"content\":\"".$row[4]."\",");
-    fwrite($myfile2, "\n \"isFixed\":\"".$row[5]."\",");
-    fwrite($myfile2, "\n \"authorName\":\"".$row[6]."\",");
-    fwrite($myfile2, "\n \"raise_time\":\"".$row[7]."\",");
-    fwrite($myfile2, "\n \"version\":\"".$row[8]."\"},");
+        //$row_array['id'] = $row[0];
+        $row_array2['severity'] = $row[1];
+        $row_array2['type'] = $row[2];
+        $row_array2['pageNum'] = $row[3];
+        $row_array2['content'] = $row[4];
+        $row_array2['isFixed'] = $row[5];
+        $row_array2['authorName'] = $row[6];
+        $row_array2['raise_time'] = $row[7];
+        $row_array2['version'] = $row[8];
+        //push the values in the array
+        array_push($json_response2,$row_array2);
 }
 
-fwrite($myfile2, "]}");
+fwrite($myfile2, prettyPrint(json_encode($json_response2)));
 fclose($myfile2);
 
 $sth = $db->query("SELECT * from Testimonial;");
-fwrite($myfile3,"{\"Testimonials\":[");
+$json_response3 = array();
 while($row = mysqli_fetch_row($sth)) {
-    fwrite($myfile3, "\n {\"id\":\"".$row[0]."\",");
-    fwrite($myfile3, "\n \"author\":\"".$row[1]."\",");
-    fwrite($myfile3, "\n \"content\":\"".$row[2]."\",");
-    fwrite($myfile3, "\n \"nationality\":\"".$row[3]."\",");
-    fwrite($myfile3, "\n \"region\":\"".$row[4]."\",");
-    fwrite($myfile3, "\n \"credit\":\"".$row[5]."\",");
-    fwrite($myfile3, "\n \"imgURL\":\"".$row[6]."\"},");
+	    $row_array3['author'] = $row[1];
+        $row_array3['content'] = $row[2];
+        $row_array3['nationality'] = $row[3];
+        $row_array3['region'] = $row[4];
+        $row_array3['credit'] = $row[5];
+        $row_array3['imageURL'] = $row[6];
+        //push the values in the array
+        array_push($json_response3,$row_array3);
 }
 
-fwrite($myfile3, "]}");
+fwrite($myfile3, prettyPrint(json_encode($json_response3)));
 fclose($myfile3);
 
 $sth = $db->query("SELECT * from Download;");
-fwrite($myfile4,"{\"Downloads\":[");
+$json_response4 = array();
 while($row = mysqli_fetch_row($sth)) {
-    fwrite($myfile4, "\n {\"id\":\"".$row[0]."\",");
-    fwrite($myfile4, "\n \"name\":\"".$row[1]."\",");
-    fwrite($myfile4, "\n \"count\":\"".$row[2]."\",");
-    fwrite($myfile4, "\n \"URL\":\"".$row[3]."\",");
-    fwrite($myfile4, "\n \"Remark\":\"".$row[4]."\",");
-    fwrite($myfile4, "\n \"LastUpdate\":\"".$row[5]."\"},");
+	    $row_array4['name'] = $row[1];
+        $row_array4['count'] = $row[2];
+        $row_array4['URL'] = $row[3];
+        $row_array4['remark'] = $row[4];
+        //$row_array4['LastUpdate'] = $row[5];
+        //push the values in the array
+        array_push($json_response4,$row_array4);
 }
 
-fwrite($myfile4, "]}");
+fwrite($myfile4, prettyPrint(json_encode($json_response4)));
 fclose($myfile4);
 
 $sth = $db->query("SELECT * from Credit;");
-fwrite($myfile5,"{\"Credits\":[");
+$json_response5 = array();
 while($row = mysqli_fetch_row($sth)) {
-    fwrite($myfile5, "\n {\"id\":\"".$row[0]."\",");
-    fwrite($myfile5, "\n \"Problem name\":\"".$row[1]."\",");
-    fwrite($myfile5, "\n \"Setter name\":\"".$row[2]."\",");
-    fwrite($myfile5, "\n \"Location\":\"".$row[3]."\"},");
+		$row_array5['name'] = $row[1];
+        $row_array5['setter'] = $row[2];
+        $row_array5['appearance'] = $row[3];
+
+        //push the values in the array
+        array_push($json_response5,$row_array5);
 }
 
-fwrite($myfile5, "]}");
+fwrite($myfile5, prettyPrint(json_encode($json_response5)));
 fclose($myfile5);
+
+
 ?>

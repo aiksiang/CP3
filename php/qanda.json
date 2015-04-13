@@ -1,91 +1,122 @@
-{"QandAs":[
- {"id":"1",
- "question":"How many answers are there in page 27 Exercise 1.2.2?",
- "answer":"9"},
- {"id":"2",
- "question":"What is the tips number in page 78?",
- "answer":"6"},
- {"id":"3",
- "question":"What is the first underlined Uva question on page 25?",
- "answer":"00403"},
- {"id":"4",
- "question":"How many questions/Exercises in page 47 has a '*'?",
- "answer":"8"},
- {"id":"5",
- "question":"How many points of 'Tips 6 Optimizing your coding' are there in page 78 and page 79?",
- "answer":"12"},
- {"id":"6",
- "question":"What is the first Uva question number mentioned in page 86?",
- "answer":"11935"},
- {"id":"7",
- "question":"In page 126,what is the content in the bracket() next to the title '4.2.5 Topological Sort'?",
- "answer":"Direct Acyclic Graph"},
- {"id":"8",
- "question":"What is the content of the largest title on page 133?",
- "answer":"4.2.9 Finding Strongly Connected Component (Directed Graph)"},
- {"id":"9",
- "question":"what is the algorithm discussed on page 155?",
- "answer":"Floyd Warshall's Algorithm"},
- {"id":"10",
- "question":"How many questions on page 197 without a '*' and underlines?",
- "answer":"24"},
- {"id":"11",
- "question":"On page 216, there are 2 largest titles, what is the content of the second one?",
- "answer":"5.5.8 Modulo Arithmetic"},
- {"id":"12",
- "question":"On page 248 there are 2 algorithm inventors, what is the number of citations of paper written by the second inventor in 1990?",
- "answer":"24000"},
- {"id":"13",
- "question":"How many triangles are there in page 279?",
- "answer":"4"},
- {"id":"14",
- "question":"How many circles are there from page 277 to 280?",
- "answer":"7"},
- {"id":"15",
- "question":"How many digrams are there on page 291?",
- "answer":"6"},
- {"id":"16",
- "question":"When was the photo on page 298 taken?",
- "answer":"2007"},
- {"id":"17",
- "question":"What is the total number of Exercises on page 311?",
- "answer":"21"},
- {"id":"18",
- "question":"What is the figure number on page 315? e.g X.Y",
- "answer":"8.11"},
- {"id":"19",
- "question":"Is there a figure on page 322? Yes/No",
- "answer":"No"},
- {"id":"20",
- "question":"What is the word on the deep color ballon held by Steven at page 334?",
- "answer":"IBM"},
- {"id":"21",
- "question":"What is the Chinese Proverb on page 335?",
- "answer":"Learning is a treasure that will follow its owner everywhere."},
- {"id":"22",
- "question":"How many vertices are there in the graph on page 350?",
- "answer":"8"},
- {"id":"23",
- "question":"What is the content of the biggest title on page 366?",
- "answer":"DP Speed-up with Matrix Power"},
- {"id":"24",
- "question":"What is the figure number on page 388? e.g X.Y",
- "answer":"9.13"},
- {"id":"25",
- "question":"What is the sum of 3 numbers in the table on page 392?",
- "answer":"153"},
- {"id":"26",
- "question":"How many terms are there in the Bibliography on page 398-401?",
- "answer":"71"},
- {"id":"27",
- "question":"What is the largest page number of this book?",
- "answer":"423"},
- {"id":"28",
- "question":"What is the largest Uva number on page 421?",
- "answer":"11984"},
- {"id":"29",
- "question":"How many pages are there in the Content part of this book?",
- "answer":"5"},
- {"id":"30",
- "question":"How many distinct First Letters (e.g ABC, A is the first letter) are there in the Abbreviation of this book?",
- "answer":"17"},]}
+[
+	{
+		"question": "How many answers are there in page 27 Exercise 1.2.2?",
+		"answer": "9"
+	},
+	{
+		"question": "What is the tips number in page 78?",
+		"answer": "6"
+	},
+	{
+		"question": "What is the first underlined Uva question on page 25?",
+		"answer": "00403"
+	},
+	{
+		"question": "How many questions\/Exercises in page 47 has a '*'?",
+		"answer": "8"
+	},
+	{
+		"question": "How many points of 'Tips 6 Optimizing your coding' are there in page 78 and page 79?",
+		"answer": "12"
+	},
+	{
+		"question": "What is the first Uva question number mentioned in page 86?",
+		"answer": "11935"
+	},
+	{
+		"question": "In page 126,what is the content in the bracket() next to the title '4.2.5 Topological Sort'?",
+		"answer": "Direct Acyclic Graph"
+	},
+	{
+		"question": "What is the content of the largest title on page 133?",
+		"answer": "4.2.9 Finding Strongly Connected Component (Directed Graph)"
+	},
+	{
+		"question": "what is the algorithm discussed on page 155?",
+		"answer": "Floyd Warshall's Algorithm"
+	},
+	{
+		"question": "How many questions on page 197 without a '*' and underlines?",
+		"answer": "24"
+	},
+	{
+		"question": "On page 216, there are 2 largest titles, what is the content of the second one?",
+		"answer": "5.5.8 Modulo Arithmetic"
+	},
+	{
+		"question": "On page 248 there are 2 algorithm inventors, what is the number of citations of paper written by the second inventor in 1990?",
+		"answer": "24000"
+	},
+	{
+		"question": "How many triangles are there in page 279?",
+		"answer": "4"
+	},
+	{
+		"question": "How many circles are there from page 277 to 280?",
+		"answer": "7"
+	},
+	{
+		"question": "How many digrams are there on page 291?",
+		"answer": "6"
+	},
+	{
+		"question": "When was the photo on page 298 taken?",
+		"answer": "2007"
+	},
+	{
+		"question": "What is the total number of Exercises on page 311?",
+		"answer": "21"
+	},
+	{
+		"question": "What is the figure number on page 315? e.g X.Y",
+		"answer": "8.11"
+	},
+	{
+		"question": "Is there a figure on page 322? Yes\/No",
+		"answer": "No"
+	},
+	{
+		"question": "What is the word on the deep color ballon held by Steven at page 334?",
+		"answer": "IBM"
+	},
+	{
+		"question": "What is the Chinese Proverb on page 335?",
+		"answer": "Learning is a treasure that will follow its owner everywhere."
+	},
+	{
+		"question": "How many vertices are there in the graph on page 350?",
+		"answer": "8"
+	},
+	{
+		"question": "What is the content of the biggest title on page 366?",
+		"answer": "DP Speed-up with Matrix Power"
+	},
+	{
+		"question": "What is the figure number on page 388? e.g X.Y",
+		"answer": "9.13"
+	},
+	{
+		"question": "What is the sum of 3 numbers in the table on page 392?",
+		"answer": "153"
+	},
+	{
+		"question": "How many terms are there in the Bibliography on page 398-401?",
+		"answer": "71"
+	},
+	{
+		"question": "What is the largest page number of this book?",
+		"answer": "423"
+	},
+	{
+		"question": "What is the largest Uva number on page 421?",
+		"answer": "11984"
+	},
+	{
+		"question": "How many pages are there in the Content part of this book?",
+		"answer": "5"
+	},
+	{
+		"question": "How many distinct First Letters (e.g ABC, A is the first letter) are there in the Abbreviation of this book?",
+		"answer": "17"
+	}
+]
