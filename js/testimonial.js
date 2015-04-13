@@ -90,6 +90,13 @@ function showTestimonial() {
   			}
   		}
   	}
+
+  	HTMLtoBeInserted += '\
+		<br>\
+		<div class="btn-group backToTop">\
+  			<a href="#content-top"><button type="button" class="btn btn-default center-block"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span> Back to Menu</button></a>\
+  		</div>\
+  	';
   	
 	$(".testimonial").html(HTMLtoBeInserted);
 }
