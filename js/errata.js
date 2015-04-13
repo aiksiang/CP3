@@ -1,10 +1,21 @@
 var errata;
+var errataDisplay;
 var clickedHeader;
+var arrowPointingUp = true;
+var classToName = {
+	pageColumn: "Page Number",
+	errataColumn: "Errata",
+	authorColumn: "Author",
+	typeColumn: "Type",
+	timeColumn: "Time",
+	severityColumn: "Severity",
+	statusColumn: "Status"
+}
 
 $(function getErrata(edition) {
 	$.get("php/retrieval.php", {action: "getErrata"}).done(function(result) {
 		errata = result;
-		displayErrata(edition);
+		errataDisplay = errata;
 	});	
 });
 
@@ -23,55 +34,170 @@ function displayErrata(edition) {
 	  		</div>\
 	  	</div>\
 	  	<hr/>\
+	  	<div class="input-group input-group" id="searchErrata">\
+			<div class="input-group-btn dropdown">\
+				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">\
+					Column\
+					<span class="caret"></span>\
+				</button>\
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">\
+					<li role="presentation"><a role="menuitem" tabindex="-1" onClick="changeColumn(' + "'" + "Page Number" + "'" + ');">Page Number</a></li>\
+					<li role="presentation"><a role="menuitem" tabindex="-1" onClick="changeColumn(' + "'" + "Errata" + "'" + ');">Errata</a></li>\
+					<li role="presentation"><a role="menuitem" tabindex="-1" onClick="changeColumn(' + "'" + "Author" + "'" + ');">Author</a></li>\
+					<li role="presentation"><a role="menuitem" tabindex="-1" onClick="changeColumn(' + "'" + "Type" + "'" + ');">Type</a></li>\
+					<li role="presentation"><a role="menuitem" tabindex="-1" onClick="changeColumn(' + "'" + "Severity" + "'" + ');">Severity</a></li>\
+				</ul>\
+			</div>\
+	  		<input class="form-control" type="search" placeholder="Search...">\
+	  		<div class="input-group-btn">\
+	  			<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>\
+	  		</div>\
+	  	</div>\
 	  	<table class="table" id="errataTable">\
+			<thead>\
+				<tr>\
+					<th class="pageColumn">Page Number</th>\
+					<th class="errataColumn">Errata</th>\
+					<th class="authorColumn">Author</th>\
+					<th class="typeColumn">Type</th>\
+					<th class="timeColumn">Time</th>\
+					<th class="severityColumn">Severity</th>\
+					<th class="statusColumn">Status</th>\
+				</tr>\
+			</thead>\
+			<tbody>\
+			</tbody>\
 	  	</table>\
 	';
 
 	$(".book-edition-errata").append(HTMLtoBeInserted);
-    showTable(edition);
+	sortErrata(edition);
+	clickHeader('pageColumn', edition);
+
+	$("#searchErrata .input-group-btn button").on('click', function() {
+		searchErrata();
+	});
+
+	$("#searchErrata input").focusout(function() {
+		searchErrata();
+	});
+
+	$("#searchErrata input").keyup(function() {
+		searchErrata();
+	});
+}
+
+
+function changeColumn(text) {
+	$("#searchErrata .dropdown-toggle").html(text + '<span class="caret"></span>');
+	$("#searchErrata input").val("");
+}
+
+function searchErrata() {
+	var searchField = $("#searchErrata .dropdown-toggle").text();
+	var inputField = $("#searchErrata input").val();
+	switch (searchField) {
+		case "Page Number":
+			errataDisplay = [];
+			for (var i in errata) {
+				if (errata[i].pageNum == inputField) {
+					errataDisplay.push(errata[i]);
+				}
+			}
+			if (inputField == "")
+				errataDisplay = errata;
+		break;
+		case "Errata":
+			errataDisplay = [];
+			for (var i in errata) {
+				if (errata[i].content.toLowerCase().indexOf(inputField.toLowerCase()) >= 0) {
+					errataDisplay.push(errata[i]);
+				}
+			}
+			if (inputField == "")
+				errataDisplay = errata;
+		break;
+		case "Author":
+			errataDisplay = [];
+			for (var i in errata) {
+				if (errata[i].authorName.toLowerCase().indexOf(inputField.toLowerCase()) >= 0) {
+					errataDisplay.push(errata[i]);
+				}
+			}
+			if (inputField == "")
+				errataDisplay = errata;
+		break;
+		case "Type":
+			errataDisplay = [];
+			for (var i in errata) {
+				if (errata[i].type == inputField) {
+					errataDisplay.push(errata[i]);
+				}
+			}
+			if (inputField == "")
+				errataDisplay = errata;
+		break;
+		case "Severity":
+			errataDisplay = [];
+			for (var i in errata) {
+				if (errata[i].severity == inputField) {
+					errataDisplay.push(errata[i]);
+				}
+			}
+			if (inputField == "")
+				errataDisplay = errata;
+		break;
+		default:
+			if (inputField != "") {
+				errataDisplay = [];
+				for (var i in errata) {
+					if (errata[i].pageNum == inputField) {
+						errataDisplay.push(errata[i]);
+					} else if (errata[i].content.toLowerCase().indexOf(inputField.toLowerCase()) >= 0) {
+						errataDisplay.push(errata[i]);
+					} else if (errata[i].authorName.toLowerCase().indexOf(inputField.toLowerCase()) >= 0) {
+						errataDisplay.push(errata[i]);
+					} else if (errata[i].type == inputField) {
+						errataDisplay.push(errata[i]);
+					} else if (errata[i].severity == inputField) {
+						errataDisplay.push(errata[i]);
+					}
+				}
+			} else {
+				errataDisplay = errata;
+			}
+		break;
+	}
+	showTable(selectedEdition);
 }
 
 function showTable(edition) {
 	var HTMLtoBeInserted = '';
-	$("#errataTable").html("");
-	HTMLtoBeInserted += '\
-			<thead>\
-				<tr>\
-					<th class="pageColumn">Page Number <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
-					<th class="errataColumn">Errata <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
-					<th class="authorColumn">Author <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
-					<th class="typeColumn">Type <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
-					<th class="timeColumn">Time <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
-					<th class="severityColumn">Severity <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
-					<th class="statusColumn">Status <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></th>\
-				</tr>\
-			</thead>\
-			';
-	for (var i in errata) {
-		if (errata[i].version == edition) {
+	$("#errataTable tbody").html("");
+	for (var i in errataDisplay) {
+		if (errataDisplay[i].version == edition) {
 			HTMLtoBeInserted += '\
-				<tbody>\
 					<tr>\
 			';
-			if (errata[i].pageNum == 0) {
+			if (errataDisplay[i].pageNum == 0) {
 				HTMLtoBeInserted += '\
 						<td>'+ 'Not Applicable' +'</td>\
 					';
 			} else {
 				HTMLtoBeInserted += '\
-						<td>'+ errata[i].pageNum +'</td>\
+						<td>'+ errataDisplay[i].pageNum +'</td>\
 				';
 			}
 			HTMLtoBeInserted += '\
-						<td>'+ errata[i].content +'</td>\
-						<td>'+ errata[i].authorName +'</td>\
-						<td>'+ errata[i].type +'</td>\
+						<td>'+ errataDisplay[i].content +'</td>\
+						<td>'+ errataDisplay[i].authorName +'</td>\
+						<td>'+ errataDisplay[i].type +'</td>\
 			';
 			HTMLtoBeInserted += '\
-						<td>'+ errata[i].raise_time +'</td>\
-						<td>'+ errata[i].severity +'</td>\
+						<td>'+ errataDisplay[i].raise_time +'</td>\
+						<td>'+ errataDisplay[i].severity +'</td>\
 			';
-			if (errata[i].isFixed == 1) {
+			if (errataDisplay[i].isFixed == 1) {
 				HTMLtoBeInserted += '\
 						<td>'+ 'Fixed' +'</td>\
 				';
@@ -82,139 +208,158 @@ function showTable(edition) {
 			}
 			HTMLtoBeInserted += '\
 					</tr>\
-				</tbody>\
 			';
 		}
 	}
-
-	HTMLtoBeInserted += '\
-		<br>\
-		<div class="btn-group backToTop">\
-  			<a href="#content-top"><button type="button" class="btn btn-default center-block"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span> Back to Menu</button></a>\
-  		</div>\
-  	';
   	
-	$("#errataTable").html(HTMLtoBeInserted);
-	sortErrata(edition);
+	$("#errataTable tbody").html(HTMLtoBeInserted);
 }
 
 function sortErrata(edition) {
+	if (clickedHeader != undefined) {
+		$("." + clickedHeader).html(classToName[clickedHeader]);
+	}
+
 	$("#errataTable thead th").click(function() {
-		switch($(this).attr("class")) {
-			case 'pageColumn':
-				if (clickedHeader != 'pageColumn') {
-					errata.sort(function(a,b) {
-						return a.pageNum - b.pageNum;
-					});
-					clickedHeader = $(this).attr("class");
-				} else {
-					errata.sort(function(a,b) {
-						return b.pageNum - a.pageNum;
-					});
-					clickedHeader = null;
-				}
-				break;
-			case 'errataColumn':
-				if (clickedHeader != 'errataColumn') {
-					errata.sort(function(a,b) {
-						if (a.content.toLowerCase() > b.content.toLowerCase())
-							return 1;
-						else if (a.content.toLowerCase() < b.content.toLowerCase())
-							return -1;
-						else
-							return 0;
-					});
-					clickedHeader = $(this).attr("class");
-				} else {
-					errata.sort(function(a,b) {
-						if (a.content.toLowerCase() < b.content.toLowerCase())
-							return 1;
-						else if (a.content.toLowerCase() > b.content.toLowerCase())
-							return -1;
-						else
-							return 0;
-					});
-					clickedHeader = null;
-				}
-				break;
-			case 'authorColumn':
-				if (clickedHeader != 'authorColumn') {
-					errata.sort(function(a,b) {
-						if (a.authorName.toLowerCase() > b.authorName.toLowerCase())
-							return 1;
-						else if (a.authorName.toLowerCase() < b.authorName.toLowerCase())
-							return -1;
-						else
-							return 0;
-					});
-					clickedHeader = $(this).attr("class");
-				} else {
-					errata.sort(function(a,b) {
-						if (a.authorName.toLowerCase() < b.authorName.toLowerCase())
-							return 1;
-						else if (a.authorName.toLowerCase() > b.authorName.toLowerCase())
-							return -1;
-						else
-							return 0;
-					});
-					clickedHeader = null;
-				}
-				break;
-			case 'typeColumn':
-				if (clickedHeader != 'typeColumn') {
-					errata.sort(function(a,b) {
-						return a.type - b.type;
-					});
-					clickedHeader = $(this).attr("class");
-				} else {
-					errata.sort(function(a,b) {
-						return b.type - a.type;
-					});
-					clickedHeader = null;
-				}
-				break;
-			case 'timeColumn':
-				if (clickedHeader != 'clickedHeader') {
-					errata.sort(function(a,b) {
-						return b.raise_time - a.raise_time;
-					});
-					clickedHeader = $(this).attr("class");
-				} else {
-					errata.sort(function(a,b) {
-						return a.raise_time - b.raise_time;
-					});
-					clickedHeader = null;
-				}
-				break;
-			case 'severityColumn':
-				if (clickedHeader != 'severityColumn') {
-					errata.sort(function(a,b) {
-						return b.severity - a.severity;
-					});
-					clickedHeader = $(this).attr("class");
-				} else {
-					errata.sort(function(a,b) {
-						return a.severity - b.severity;
-					});
-					clickedHeader = null;
-				}
-				break;
-			case 'statusColumn':
-				if (clickedHeader != 'statusColumn') {
-					errata.sort(function(a,b) {
-						return a.isFixed - b.isFixed;
-					});
-					clickedHeader = $(this).attr("class");
-				} else {
-					errata.sort(function(a,b) {
-						return b.isFixed - a.isFixed;
-					});
-					clickedHeader = null;
-				}
-				break;
-			default:
-				break;
-		}
-		showTable(edition);
+		clickHeader($(this).attr("class"), edition);
 	});
+
+	$("#errataTable thead th").hover(function() {
+		if (clickedHeader != $(this).attr("class"))
+			$("." + $(this).attr("class")).html(classToName[$(this).attr("class")] + ' <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>');
+	},function() {
+		if (clickedHeader != $(this).attr("class"))
+			$("." + $(this).attr("class")).html(classToName[$(this).attr("class")]);
+	});
+}
+
+function clickHeader(className, edition) {
+	switch(className) {
+		case 'pageColumn':
+			if (clickedHeader != 'pageColumn' || arrowPointingUp == false) {
+				errataDisplay.sort(function(a,b) {
+					return a.pageNum - b.pageNum;
+				});
+				arrowPointingUp = true;
+			} else {
+				errataDisplay.sort(function(a,b) {
+					return b.pageNum - a.pageNum;
+				});
+				arrowPointingUp = false;
+			}
+			clickedHeader = className;
+			break;
+		case 'errataColumn':
+			if (clickedHeader != 'errataColumn' || arrowPointingUp == false) {
+				errataDisplay.sort(function(a,b) {
+					if (a.content.toLowerCase() > b.content.toLowerCase())
+						return 1;
+					else if (a.content.toLowerCase() < b.content.toLowerCase())
+						return -1;
+					else
+						return 0;
+				});
+				arrowPointingUp = true;
+			} else {
+				errataDisplay.sort(function(a,b) {
+					if (a.content.toLowerCase() < b.content.toLowerCase())
+						return 1;
+					else if (a.content.toLowerCase() > b.content.toLowerCase())
+						return -1;
+					else
+						return 0;
+				});
+				arrowPointingUp = false;
+			}
+			clickedHeader = className;
+			break;
+		case 'authorColumn':
+			if (clickedHeader != 'authorColumn' || arrowPointingUp == false) {
+				errataDisplay.sort(function(a,b) {
+					if (a.authorName.toLowerCase() > b.authorName.toLowerCase())
+						return 1;
+					else if (a.authorName.toLowerCase() < b.authorName.toLowerCase())
+						return -1;
+					else
+						return 0;
+				});
+				arrowPointingUp = true;
+			} else {
+				errataDisplay.sort(function(a,b) {
+					if (a.authorName.toLowerCase() < b.authorName.toLowerCase())
+						return 1;
+					else if (a.authorName.toLowerCase() > b.authorName.toLowerCase())
+						return -1;
+					else
+						return 0;
+				});
+				arrowPointingUp = false;
+			}
+			clickedHeader = className;
+			break;
+		case 'typeColumn':
+			if (clickedHeader != 'typeColumn' || arrowPointingUp == false) {
+				errataDisplay.sort(function(a,b) {
+					return a.type - b.type;
+				});
+				arrowPointingUp = true;
+			} else {
+				errataDisplay.sort(function(a,b) {
+					return b.type - a.type;
+				});
+				arrowPointingUp = false;
+			}
+			clickedHeader = className;
+			break;
+		case 'timeColumn':
+			if (clickedHeader != 'clickedHeader' || arrowPointingUp == false) {
+				errataDisplay.sort(function(a,b) {
+					return b.raise_time - a.raise_time;
+				});
+				arrowPointingUp = true;
+			} else {
+				errataDisplay.sort(function(a,b) {
+					return a.raise_time - b.raise_time;
+				});
+				arrowPointingUp = false;
+			}
+			clickedHeader = className;
+			break;
+		case 'severityColumn':
+			if (clickedHeader != 'severityColumn' || arrowPointingUp == false) {
+				errataDisplay.sort(function(a,b) {
+					return b.severity - a.severity;
+				});
+				arrowPointingUp = true;
+			} else {
+				errataDisplay.sort(function(a,b) {
+					return a.severity - b.severity;
+				});
+				arrowPointingUp = false;
+			}
+			clickedHeader = className;
+			break;
+		case 'statusColumn':
+			if (clickedHeader != 'statusColumn' || arrowPointingUp == false) {
+				errataDisplay.sort(function(a,b) {
+					return a.isFixed - b.isFixed;
+				});
+				arrowPointingUp = true;
+			} else {
+				errataDisplay.sort(function(a,b) {
+					return b.isFixed - a.isFixed;
+				});
+				arrowPointingUp = false;
+			}
+			clickedHeader = className;
+			break;
+		default:
+			break;
+	}
+	showTable(edition);
+	if (arrowPointingUp == true) {
+		$("." + clickedHeader).html(classToName[clickedHeader] + ' <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>');
+	} else if (arrowPointingUp == false) {
+		$("." + clickedHeader).html(classToName[clickedHeader] + ' <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>');
+	}
 }

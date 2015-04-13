@@ -33,11 +33,17 @@ function normalRunSQL($sql) {
 function errataInsertion(){
 	global $db;
 	$author = $_POST['name'];
+	$author = $db->real_escape_string($author);
 	$page = $_POST['page'];
+	$page = $db->real_escape_string($page);
 	$severity = $_POST['severity'];
+	$severity = $db->real_escape_string($severity);
 	$type = $_POST['type'];
+	$type = $db->real_escape_string($type);
 	$content = $_POST['content'];
+	$content = $db->real_escape_string($content);
 	$version = $_POST['version'];
+	$version = $db->real_escape_string($version);
 	//Insert into the pending list first
 	$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$severity.",".$type.",".$page.",\"".$content."\",\"".$author."\",now(),".$version.");";
 	normalRunSQL($sql);
@@ -51,10 +57,15 @@ function errataInsertion(){
 function testimonialInsertion(){
 	global $db;
 	$author = $_POST['name'];
+	$author = $db->real_escape_string($author);
 	$comment = $_POST['comment'];
+	$comment = $db->real_escape_string($comment);
 	$nationality = $_POST['nationality'];
+	$nationality = $db->real_escape_string($nationality);
 	$region = $_POST['region'];
+	$region = $db->real_escape_string($region);
 	$credit = $_POST['credibility'];
+	$credit = $db->real_escape_string($credit);
 	$sql = "INSERT INTO TestimonialP(author,content,nationality,region,credit,imgURL) VALUES (\"".$author."\",\"".$comment."\",\"".$nationality."\",\"".$region."\",\"".$credit."\",\""."\");";
 	normalRunSQL($sql);
 	$count = $db->query("SELECT * from TestimonialP;");
