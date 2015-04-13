@@ -1,11 +1,13 @@
 $('#submitError').click(function() {
-	console.log($("#exampleInputEmail1").val());
-	console.log($("#page-number").val());
-	console.log($("#severity").val());
-	console.log($("#errorReportContent").val());
-	console.log($("#humanAnswerError").val());
+	var error = {};
+	error.userName = $("#exampleInputEmail1").val();
+	error.type = $("#error-type").val();
+	error.severity = $("#severity").val();
+	error.pageNumber = $("#page-number").val();
+	error.content = $("#errorReportContent").val();
+	error.humanCheck = $("#humanAnswerError").val();
 	var userAnswer = $("#humanAnswerError").val();
-	checkAnswer(userAnswer.toString());
+	checkAnswer(userAnswer.toString(), "ErrorSubmission", error);
 });
 
 $("#humanAnswerError").click(function() {

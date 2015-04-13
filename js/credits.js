@@ -3,7 +3,6 @@ var credits;
 $(function getCredits(edition) {
 	$.get("php/retrieval.php", {action: "getCredits"}).done(function(result) {
 		credits = result;
-		console.log(credits);
 	});	
 });
 

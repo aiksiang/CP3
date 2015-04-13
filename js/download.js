@@ -42,7 +42,7 @@ function showDownloads() {
   		HTMLtoBeInserted += '\
 			<tbody>\
 				<tr>\
-					<td class="thirtyPercentWidth"><a href="' + downloadStatistics[i].URL + '">' + downloadStatistics[i].name + '</a></td>\
+					<td class="thirtyPercentWidth"><a href="' + downloadStatistics[i].URL + '" onClick="updateDownload(' + "'" + downloadStatistics[i].id + "'" + ');">' + downloadStatistics[i].name + '</a></td>\
 					<td class="tenPercentWidth">' + downloadStatistics[i].count + '</td>\
 					<td class="tenPercentWidth">' + downloadStatistics[i].LastUpdate + '</td>\
 					<td class="thirtyPercentWidth">' + downloadStatistics[i].Remark + '</td>\
@@ -69,4 +69,11 @@ function showDownloads() {
 		$(".workshop").fadeIn(800);
 		showWorkshop();
 	}); 
+}
+
+function updateDownload(index) {
+	$.post("php/update.php", {
+		command: "new_download",
+		entry_id: index
+	});	
 }

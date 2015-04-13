@@ -18,18 +18,20 @@ $jsonFiles = array( "qanda.json",
 				    "QuestionCredit.json");
 
 //Testing email functionality, Failed at CP3101B VM but received a successful feedback (e.g mail()==true)
-$email_address = "A0101891@u.nus.edu";
+$email_address = "a0082903@u.nus.edu";
 
 
 function normalRunSQL($sql) {
-if ($db->query($sql) === TRUE) {
-	echo "Record updated successfully";
-} else {
-echo "Error updating record: " . $db->error;
-}
+	global $db;
+	if ($db->query($sql) === TRUE) {
+		echo "Record updated successfully";
+	} else {
+		echo "Error updating record: " . $db->error;
+	}
 }
 
 function errataInsertion(){
+	global $db;
 	$author = $_POST['name'];
 	$page = $_POST['page'];
 	$severity = $_POST['severity'];
@@ -37,21 +39,22 @@ function errataInsertion(){
 	$content = $_POST['content'];
 	$version = $_POST['version'];
 	//Insert into the pending list first
-	$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$severity.",".$type.",".$page.",\"".$content."\",\"".$name."\",now(),".$version.");";
+	$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$severity.",".$type.",".$page.",\"".$content."\",\"".$author."\",now(),".$version.");";
 	normalRunSQL($sql);
 	$count = $db->query("SELECT * from ErrataP;");
 	$num_rows = mysql_num_rows($count);
 	$title = "A New Errata Raised from CP3 website";
 	$message = "Author ".$author." describes an Errata : \n\t".$content."\nThere are ".$num_rows." items in the Errata pending list.";
-	mail($email_address,$title,$message);
+	//mail($email_address,$title,$message);
 }
 
 function testimonialInsertion(){
+	global $db;
 	$author = $_POST['name'];
 	$comment = $_POST['comment'];
 	$nationality = $_POST['nationality'];
 	$region = $_POST['region'];
-	$credit = $_POST['Credibility'];
+	$credit = $_POST['credibility'];
 	$sql = "INSERT INTO TestimonialP(author,content,nationality,region,credit,imgURL) VALUES (\"".$author."\",\"".$comment."\",\"".$nationality."\",\"".$region."\",\"".$credit."\",\""."\");";
 	normalRunSQL($sql);
 	$count = $db->query("SELECT * from TestimonialP;");
@@ -59,7 +62,7 @@ function testimonialInsertion(){
 
 	$title = "A New Recommendation Raised from CP3 website";
 	$message = "Author ".$author."from ".$nationality." has provided a Recommendation for CP3 book : \n\t".$content."\nThere are ".$num_rows." items in the Recommendation pending list.";
-	mail($email_address,$title,$message);
+	//mail($email_address,$title,$message);
 }
 
 function newDownloadRequest($id) {
