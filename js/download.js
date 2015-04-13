@@ -1,3 +1,12 @@
+var downloadStatistics;
+
+$(function getDownloads(edition) {
+	$.get("php/retrieval.php", {action: "getDownloadStatistics"}).done(function(result) {
+		downloadStatistics = result;
+		console.log(downloadStatistics);
+	});	
+});
+
 function showDownloads() {
 	$(".downloads").html("");
 	var HTMLtoBeInserted = "";
@@ -15,9 +24,38 @@ function showDownloads() {
 			<p>(note: more details are inside the book, not in these brief slides!)</p>\
 			<p>There are 13 teaching weeks per semester in NUS and thus 13 set of slides/link to relevant stuffs. This section is from CS3233 in Semester 2, 2012/2013 (January-April 2013). You can download the current slides and use it for yourself / for teaching in class.</p>\
 			<p>Steven of course has many other hidden slides and techniques that will only be shown in CS3233 classes or if we are invited to give competitive programming <a href="#" class="workshop-button">workshop</a> :).</p>\
-			<p><a href="http://www.comp.nus.edu.sg/%7Estevenha/myteaching/competitive_programming/com-chn-en-terms.pdf" target="_blank" rel="nofollow">Computing terms for Chinese readers only</a> (courtesy of: Acer Jing Wei, NUS)</p>\
   		</div>\
   	';
+
+	HTMLtoBeInserted += '\
+		<table class="table">\
+			<thead>\
+				<tr>\
+					<th>Material</span></th>\
+					<th>Download Count</span></th>\
+					<th>Last Update</span></th>\
+					<th>Remarks</span></th>\
+				</tr>\
+			</thead>\
+  	';
+
+  	for (var i in downloadStatistics) {
+  		HTMLtoBeInserted += '\
+			<tbody>\
+				<tr>\
+					<td class="thirtyPercentWidth"><a href="' + downloadStatistics[i].URL + '">' + downloadStatistics[i].name + '</a></td>\
+					<td class="tenPercentWidth">' + downloadStatistics[i].count + '</td>\
+					<td class="tenPercentWidth">' + downloadStatistics[i].LastUpdate + '</td>\
+					<td class="thirtyPercentWidth">' + downloadStatistics[i].Remark + '</td>\
+				</tr>\
+			</thead>\
+	  	';
+  	}
+
+  	HTMLtoBeInserted += '\
+		</table>\
+  	';
+
 	$(".downloads").html(HTMLtoBeInserted);
 
 	$(".workshop-button").on('click', function() {

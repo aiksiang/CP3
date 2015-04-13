@@ -20,6 +20,18 @@ if ($_GET['action'] == 'getErrata') {
 	echo json_encode($result);
 }
 
+if ($_GET['action'] == 'getDownloadStatistics') {
+	global $db;
+	$query = "SELECT * FROM `Download`";
+	$result = array();
+	if ($queryResult = $db->query($query)) {
+		while ($entry = $queryResult->fetch_assoc()) {
+			array_push($result, $entry);
+		}
+	}
+	echo json_encode($result);
+}
+
 if ($_GET['action'] == 'getRandomQuestion') {
 	global $db;
 	$query = "SELECT `id`,`question`,`answer` FROM `QandA`";

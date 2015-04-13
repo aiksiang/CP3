@@ -287,6 +287,19 @@ td, th {
 	color: black;
 }
 
+#errataTable img {
+	max-width: 300px;
+	display: block;
+}
+
+.thirtyPercentWidth {
+	width: 30%;
+}
+
+.tenPercentWidth {
+	width: 10%;
+}
+
 /*** 
 	footer 
 ***/
