@@ -49,6 +49,7 @@ $data_remarks = array (
 						"Ch 1, parts of Ch 9",
 						"Ch 2",
 						"Sec 3.1-3.2, Sec 8.2",
+						"Sec 3.5.1 to 3.5.2",
 						"Sec 3.5.3, 4.7.1, 5.4, 5.6, 6.5, 8.3, parts of Ch 9\nCh 4 (except Sec 4.6 + 4.7.4)",
 						"Sec 3.5.3, 4.7.1, 5.4, 5.6, 6.5, 8.3, parts of Ch 9\nCh 4 (except Sec 4.6 + 4.7.4)",
 						"Sec 4.6, Sec 9.6, 9.13, 9.14",
