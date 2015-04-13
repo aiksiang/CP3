@@ -126,7 +126,7 @@ p, a, li, dd, dl, input, label, form, .btn, .form-control {
 
 
 .nav img {
-	height: 17px;
+	height: 20px;
 	width: initial;
 	margin-right: 5px;
 }
@@ -470,6 +470,10 @@ div .backToTop:hover {
 
 #top-link .nav {
 	background-color: #1d2f3e;
+}
+
+#top-link .glyphicon {
+	font-size:13px;
 }
 
 #footer {

@@ -11,7 +11,6 @@ $(function() {
 			}
 			testimonials[data[i].region][data[i].nationality].push(data[i]);
 		}
-		console.log(testimonials);
 	});
 });
 

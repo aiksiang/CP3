@@ -3,7 +3,6 @@ var downloadStatistics;
 $(function getDownloads(edition) {
 	$.get("php/retrieval.php", {action: "getDownloadStatistics"}).done(function(result) {
 		downloadStatistics = result;
-		console.log(downloadStatistics);
 	});	
 });
 
