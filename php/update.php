@@ -32,6 +32,7 @@ function normalRunSQL($sql) {
 
 function errataInsertion(){
 	global $db;
+	global $email_address;
 	$author = $_POST['name'];
 	$author = $db->real_escape_string($author);
 	$page = $_POST['page'];
@@ -45,17 +46,20 @@ function errataInsertion(){
 	$version = $_POST['version'];
 	$version = $db->real_escape_string($version);
 	//Insert into the pending list first
-	$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$severity.",".$type.",".$page.",\"".$content."\",\"".$author."\",now(),".$version.");";
+	$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$severity.",".$type.",".$page.",'".$content."','".$author."',now(),".$version.");";
 	normalRunSQL($sql);
 	$count = $db->query("SELECT * from ErrataP;");
 	$num_rows = mysql_num_rows($count);
-	$title = "A New Errata Raised from CP3 website";
-	$message = "Author ".$author." describes an Errata : \n\t".$content."\nThere are ".$num_rows." items in the Errata pending list.";
-	//mail($email_address,$title,$message);
+	$title = "A new errata was raised from CPBook website!";
+	$message = "".$author." raised a new Errata: \n\t".$content.".";
+	$headers = "From: notifications\r\nReply-To: no-reply";
+	$mail_sent = @mail($email_address,$title,$message, $headers);
+	echo $mail_sent ? "Mail Sent" : "Mail Sending Failed";
 }
 
 function testimonialInsertion(){
 	global $db;
+	global $email_address;
 	$author = $_POST['name'];
 	$author = $db->real_escape_string($author);
 	$comment = $_POST['comment'];
@@ -71,9 +75,11 @@ function testimonialInsertion(){
 	$count = $db->query("SELECT * from TestimonialP;");
 	$num_rows = mysql_num_rows($count);
 
-	$title = "A New Recommendation Raised from CP3 website";
-	$message = "Author ".$author."from ".$nationality." has provided a Recommendation for CP3 book : \n\t".$content."\nThere are ".$num_rows." items in the Recommendation pending list.";
-	//mail($email_address,$title,$message);
+	$title = "A new testimonial was written for CPBook website!";
+	$message = "".$author." (".$credit.") from ".$nationality." has written a Testimonial for CP book: \n\t".$comment."\n";
+	$headers = "From: notifications\r\nReply-To: no-reply";
+	$mail_sent = @mail($email_address,$title,$message, $headers);
+	echo $mail_sent ? "Mail Sent" : "Mail Sending Failed";
 }
 
 function newDownloadRequest($id) {

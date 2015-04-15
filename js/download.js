@@ -43,7 +43,7 @@ function showDownloads() {
 			<tbody>\
 				<tr>\
 					<td class="thirtyPercentWidth"><a href="' + downloadStatistics[i].URL + '" onClick="updateDownload(' + "'" + downloadStatistics[i].id + "'" + ');">' + downloadStatistics[i].name + '</a></td>\
-					<td class="tenPercentWidth">' + downloadStatistics[i].count + '</td>\
+					<td id="downloadCount'+ downloadStatistics[i].id +'"class="tenPercentWidth">' + downloadStatistics[i].count + '</td>\
 					<td class="tenPercentWidth">' + downloadStatistics[i].LastUpdate + '</td>\
 					<td class="thirtyPercentWidth">' + downloadStatistics[i].Remark + '</td>\
 				</tr>\
@@ -75,5 +75,8 @@ function updateDownload(index) {
 	$.post("php/update.php", {
 		command: "new_download",
 		entry_id: index
+	}).done(function() {
+		$("#downloadCount" + index).html(parseInt($("#downloadCount" + index).html()) + 1);
 	});	
+
 }
