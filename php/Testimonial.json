@@ -13,7 +13,7 @@
 		"nationality": "USA",
 		"region": "North America",
 		"credit": "ICPCNews",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371110814685\/home\/testimonials\/NorthAmerica-SouthwestBaptistUniversity.jpg"
+		"imageURL": ""
 	},
 	{
 		"author": "Baochuan Lu",
@@ -21,7 +21,7 @@
 		"nationality": "USA",
 		"region": "North America",
 		"credit": "an instructor from Southwest Baptist University, USA",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371100999713\/home\/testimonials\/Florida_International_University_Seal.png?height=200&amp;width=200"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371110814685\/home\/testimonials\/NorthAmerica-SouthwestBaptistUniversity.jpg"
 	},
 	{
 		"author": "Kip Irvine",
@@ -29,7 +29,7 @@
 		"nationality": "USA",
 		"region": "North America",
 		"credit": "an instructor at Florida International University, USA",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371110867063\/home\/testimonials\/NorthAmerica-LeTourneauUniversity.jpg"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371100999713\/home\/testimonials\/Florida_International_University_Seal.png?height=200&amp;width=200"
 	},
 	{
 		"author": "Brent Baas",
@@ -37,7 +37,7 @@
 		"nationality": "USA",
 		"region": "North America",
 		"credit": "Chair of Computer Science Department, LeTourneau University, Texas",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371110798324\/home\/testimonials\/NorthAmerica-PurdueUniversity.png"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371110867063\/home\/testimonials\/NorthAmerica-LeTourneauUniversity.jpg"
 	},
 	{
 		"author": "Tim Korb",
@@ -45,7 +45,7 @@
 		"nationality": "USA",
 		"region": "North America",
 		"credit": "Assistant Head, CS Department, Purdue University",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371110844852\/home\/testimonials\/NorthAmerica-JamesMadisonUniversity.jpg"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371110798324\/home\/testimonials\/NorthAmerica-PurdueUniversity.png"
 	},
 	{
 		"author": "Christopher S Mayfield",
@@ -53,7 +53,7 @@
 		"nationality": "USA",
 		"region": "North America",
 		"credit": "Assistant Professor, Department of Computer Science, James Madison University",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371113890901\/home\/testimonials\/NorthAmerica-USA-NewYorkUniversity.png"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371110844852\/home\/testimonials\/NorthAmerica-JamesMadisonUniversity.jpg"
 	},
 	{
 		"author": "New York University",
@@ -61,7 +61,7 @@
 		"nationality": "USA",
 		"region": "North America",
 		"credit": "New York University",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371114039004\/home\/testimonials\/NorthAmerica-USA-StanfordUniversity.png"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371113890901\/home\/testimonials\/NorthAmerica-USA-NewYorkUniversity.png"
 	},
 	{
 		"author": "Stanford University",
@@ -69,7 +69,7 @@
 		"nationality": "USA",
 		"region": "North America",
 		"credit": "Stanford University",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1373007696916\/home\/testimonials\/rosehulman.jpg"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371114039004\/home\/testimonials\/NorthAmerica-USA-StanfordUniversity.png"
 	},
 	{
 		"author": "Shawn A Bohner",
@@ -77,7 +77,7 @@
 		"nationality": "USA",
 		"region": "North America",
 		"credit": "Rose-Hulman Institute of Technology",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371101411246\/home\/testimonials\/200px-University_of_lethbridge_logo.svg.png?height=200&amp;width=148"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1373007696916\/home\/testimonials\/rosehulman.jpg"
 	},
 	{
 		"author": "Howard Cheng",
@@ -85,7 +85,7 @@
 		"nationality": "CANADA",
 		"region": "North America",
 		"credit": "University of Lethbridge, Alberta, Canada",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371114054188\/home\/testimonials\/NorthAmerica-Canada-UniversityOfWaterloo.gif"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371101411246\/home\/testimonials\/200px-University_of_lethbridge_logo.svg.png?height=200&amp;width=148"
 	},
 	{
 		"author": "University of Waterloo",
@@ -93,7 +93,7 @@
 		"nationality": "CANADA",
 		"region": "North America",
 		"credit": "University of Waterloo",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111310178\/home\/testimonials\/SouthAmerica-UniversidadeRegionalIntegrada.jpg"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371114054188\/home\/testimonials\/NorthAmerica-Canada-UniversityOfWaterloo.gif"
 	},
 	{
 		"author": "Neilor Tonin",
@@ -101,7 +101,7 @@
 		"nationality": "BRAZIL",
 		"region": "South America",
 		"credit": "a professor at URI - Campus de Erechim",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111328946\/home\/testimonials\/SouthAmerica-UniversidadeDeSaoPaulo.gif"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111310178\/home\/testimonials\/SouthAmerica-UniversidadeRegionalIntegrada.jpg"
 	},
 	{
 		"author": "Maria da Gra\u00e7a Campos Pimentel",
@@ -109,7 +109,7 @@
 		"nationality": "BRAZIL",
 		"region": "South America",
 		"credit": "a professor at Universidade de Sao Paulo (USP)",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111347257\/home\/testimonials\/SouthAmerica-UniversidadeFederalDoRioGrandeDoSul.jpg"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111328946\/home\/testimonials\/SouthAmerica-UniversidadeDeSaoPaulo.gif"
 	},
 	{
 		"author": "Joao Comba",
@@ -117,7 +117,7 @@
 		"nationality": "BRAZIL",
 		"region": "South America",
 		"credit": "a professor in UFRGS",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371101665154\/home\/testimonials\/UFV.jpeg.jpeg?height=193&amp;width=200"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111347257\/home\/testimonials\/SouthAmerica-UniversidadeFederalDoRioGrandeDoSul.jpg"
 	},
 	{
 		"author": "Andr\u00e9 Gustavo dos Santos",
@@ -125,7 +125,7 @@
 		"nationality": "BRAZIL",
 		"region": "South America",
 		"credit": "a professor in Universidade Federal de Vi\u00e7osa",
-		"imageURL": ""
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371101665154\/home\/testimonials\/UFV.jpeg.jpeg?height=193&amp;width=200"
 	},
 	{
 		"author": "A Brazilian Contestant",
@@ -157,7 +157,7 @@
 		"nationality": "COLOMBIA",
 		"region": "South America",
 		"credit": "",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111474700\/home\/testimonials\/UNTrujilo.jpg"
+		"imageURL": ""
 	},
 	{
 		"author": "A contestant from Universidad Nacional de Trujillo - Peru",
@@ -165,7 +165,7 @@
 		"nationality": "PERU",
 		"region": "South America",
 		"credit": "A contestant from Universidad Nacional de Trujillo - Peru",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111600001\/home\/testimonials\/Africa-Egypt-AlexandriaUniversity.png"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111474700\/home\/testimonials\/UNTrujilo.jpg"
 	},
 	{
 		"author": "A contestant from Alexandria University in Egypt",
@@ -173,7 +173,7 @@
 		"nationality": "EGYPT",
 		"region": "Africa",
 		"credit": "A contestant from Alexandria University in Egypt",
-		"imageURL": ""
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111600001\/home\/testimonials\/Africa-Egypt-AlexandriaUniversity.png"
 	},
 	{
 		"author": "Richard Forster",
@@ -181,7 +181,7 @@
 		"nationality": "UNITED KINGDOM",
 		"region": "Europe",
 		"credit": "IOI IC president",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111705747\/home\/testimonials\/Europe-Spain-UniversidadDeValladolid.jpg"
+		"imageURL": ""
 	},
 	{
 		"author": "Miguel A. Revilla",
@@ -189,7 +189,7 @@
 		"nationality": "SPAIN",
 		"region": "Europe",
 		"credit": "UVa Online Judge site creator, ACM-ICPC Problem Archivist, Universidad de Valladolid",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111852453\/home\/testimonials\/Europe-Spain-UniversidadComplutenseDeMadrid.jpg"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111705747\/home\/testimonials\/Europe-Spain-UniversidadDeValladolid.jpg"
 	},
 	{
 		"author": "Marco Antonio G\u00f3mez Mart\u00edn",
@@ -197,7 +197,7 @@
 		"nationality": "SPAIN",
 		"region": "Europe",
 		"credit": "Universidad Complutense de Madrid",
-		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111944639\/home\/testimonials\/Europe-Germany-Karlsruhe%20InstituteofTechnology.png"
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111852453\/home\/testimonials\/Europe-Spain-UniversidadComplutenseDeMadrid.jpg"
 	},
 	{
 		"author": "Martin Tillmann",
@@ -205,7 +205,7 @@
 		"nationality": "GERMANY",
 		"region": "Europe",
 		"credit": "Karlsruhe Institute of Technology",
-		"imageURL": ""
+		"imageURL": "https:\/\/sites.google.com\/site\/stevenhalim\/_\/rsrc\/1371111944639\/home\/testimonials\/Europe-Germany-Karlsruhe%20InstituteofTechnology.png"
 	},
 	{
 		"author": "Luigi Laura",
