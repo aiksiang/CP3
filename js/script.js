@@ -143,6 +143,8 @@ $(document).ready(function(){
 		$(".sales-data").fadeIn(800);
 		showSales();
 	}); 
+
+	$("a").tooltip({'placement': 'bottom','content':'html'});
 });
 
 function initializeErrata(edition) {
