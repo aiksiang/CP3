@@ -1,26 +1,2 @@
 [
-	{
-		"author": "name",
-		"content": "comment",
-		"nationality": "country",
-		"region": "continent",
-		"credit": "credibiblity",
-		"imageURL": ""
-	},
-	{
-		"author": "",
-		"content": "",
-		"nationality": "",
-		"region": "",
-		"credit": "",
-		"imageURL": ""
-	},
-	{
-		"author": "q",
-		"content": "4",
-		"nationality": "3",
-		"region": "2",
-		"credit": "w",
-		"imageURL": ""
-	}
 ]
