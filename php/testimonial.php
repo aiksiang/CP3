@@ -190,7 +190,8 @@ $Credit = array (
 				);
 $imgURL = array(
 
-"https://sites.google.com/site/stevenhalim/_/rsrc/1371100861873/home/testimonials/200px-Clemson_University_Seal.svg.png?height=200&amp;width=200",
+					"https://sites.google.com/site/stevenhalim/_/rsrc/1371100861873/home/testimonials/200px-Clemson_University_Seal.svg.png?height=200&amp;width=200",
+					"",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371110814685/home/testimonials/NorthAmerica-SouthwestBaptistUniversity.jpg",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371100999713/home/testimonials/Florida_International_University_Seal.png?height=200&amp;width=200",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371110867063/home/testimonials/NorthAmerica-LeTourneauUniversity.jpg",
@@ -199,39 +200,55 @@ $imgURL = array(
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371113890901/home/testimonials/NorthAmerica-USA-NewYorkUniversity.png",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371114039004/home/testimonials/NorthAmerica-USA-StanfordUniversity.png",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1373007696916/home/testimonials/rosehulman.jpg",
+
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371101411246/home/testimonials/200px-University_of_lethbridge_logo.svg.png?height=200&amp;width=148",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371114054188/home/testimonials/NorthAmerica-Canada-UniversityOfWaterloo.gif",
+					
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371111310178/home/testimonials/SouthAmerica-UniversidadeRegionalIntegrada.jpg" ,
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371111328946/home/testimonials/SouthAmerica-UniversidadeDeSaoPaulo.gif",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371111347257/home/testimonials/SouthAmerica-UniversidadeFederalDoRioGrandeDoSul.jpg",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371101665154/home/testimonials/UFV.jpeg.jpeg?height=193&amp;width=200",
 					"",
 					"",
+
 					"",
+
+
 					"",
+
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371111474700/home/testimonials/UNTrujilo.jpg",
+
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371111600001/home/testimonials/Africa-Egypt-AlexandriaUniversity.png",
+					
 					"",
+
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371111705747/home/testimonials/Europe-Spain-UniversidadDeValladolid.jpg",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371111852453/home/testimonials/Europe-Spain-UniversidadComplutenseDeMadrid.jpg",
+					
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371111944639/home/testimonials/Europe-Germany-Karlsruhe%20InstituteofTechnology.png",
+					
+					"",
+
 					"",
 					"",
 					"",
 					"",
 					"",
-					"",
-					"",
+
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371112439691/home/testimonials/Asia-Singapore-NationalUniversityOfSingapore.gif",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371112452151/home/testimonials/Asia-Singapore-NanyangTechnologicalUniversity.png",
+					
 					"",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371112184654/home/testimonials/Asia-Indonesia-UniversityOfIndonesia.jpg",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371112196730/home/testimonials/Asia-Indonesia-BinaNusantaraUniversity.jpg",
+					
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371112530005/home/testimonials/Asia-Malaysia-InternationalIslamicUniversityMalaysia.jpg",
 					"",
+					
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371115230464/home/testimonials/Asia-Thailand-ChulalongkornUniversity.png",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371115243577/home/testimonials/Asia-Thailand-KasetsartUniversity.jpg",
 					"https://sites.google.com/site/stevenhalim/_/rsrc/1371115258792/home/testimonials/Asia-Thailand-PrinceOfSongklaUniversity.jpg",
+					
 					"",
 					"",
 					""
