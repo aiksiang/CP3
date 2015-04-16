@@ -472,7 +472,7 @@ div .backToTop:hover {
 	background-color: #c9e1c1;
 }
 
-#top-link a:hover {
+#top-link a:hover, #top-link .open .dropdown-toggle{
 	color: black;
 	background-color: #0f9fb4;
 }
@@ -489,7 +489,7 @@ div .backToTop:hover {
 	color: white;
 }
 
-#top-link .nav {
+#top-link .nav, ul .dropdown-menu {
 	background-color: #1d2f3e;
 }
 
@@ -540,4 +540,23 @@ div .backToTop:hover {
 
 #page-body .nav .active a {
 	color: black;
+}
+
+/***
+	admin
+***/
+@-webkit-keyframes thumb {
+	0% { -webkit-transform: scale(1.2); }
+	50% { -webkit-transform: scale(0.8); }
+	100% { -webkit-transform: scale(1.2); }
+}
+
+.admin-icon img:hover
+{
+	cursor: pointer;
+	-webkit-animation-name: thumb;
+	-webkit-animation-duration: 500ms;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: 10;
+	-webkit-animation-timing-function: linear;
 }
