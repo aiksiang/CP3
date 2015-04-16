@@ -1,4 +1,4 @@
-function populateBookDetails(edition, callback) {
+function populateBookDetails(edition, selection, callback) {
 	var DOM_bookDetails = $(".book-details");
 	DOM_bookDetails.html("");
 	
@@ -20,7 +20,10 @@ function populateBookDetails(edition, callback) {
 
 	DOM_bookDetails.append(HTMLtoBeInserted);
 	
-   	showInfo(edition);
+	if(selection == SELECT_ERR)
+		displayErrata(edition);
+	else if(selection == SELECT_INFO)
+   		showInfo(edition);
 	
 	callback();
 }
