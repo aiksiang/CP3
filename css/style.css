@@ -8,13 +8,14 @@
 
 	body {
 		position: relative;
-		top: 120px;
+		top: 140px;
 	}
 
 	#book-editions .books-jumbo {
 		display: block;
 		margin: 0 auto;
 	}
+
 }
 
 /*** 
@@ -36,7 +37,7 @@ td {
 	title 
 ***/
 body {
-	/*max-width: 1600px;*/
+	min-width: 700px;
 }
 
 h1, h2, h3, h4, h5, dt {

@@ -12,4 +12,11 @@ $('#submitTestimonial').click(function() {
 
 $("#humanAnswerTestimonial").click(function() {
 	$("#humanAnswerTestimonial").val("");
-})
+});
+
+$('#review-submit').on('hidden.bs.modal', function (e) {
+	$(this)
+	    .find("input,textarea")
+	       .val('')
+	       .end();
+});

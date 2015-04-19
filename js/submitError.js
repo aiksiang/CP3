@@ -12,4 +12,11 @@ $('#submitError').click(function() {
 
 $("#humanAnswerError").click(function() {
 	$("#humanAnswerError").val("");
-})
+});
+
+$('#errata-submit').on('hidden.bs.modal', function (e) {
+	$(this)
+	    .find("input,textarea")
+	       .val('')
+	       .end();
+});

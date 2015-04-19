@@ -53,7 +53,7 @@ function displayErrata(edition) {
 	  			<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>\
 	  		</div>\
 	  	</div>\
-	  	<table class="table" id="errataTable">\
+	  	<table class="container table" id="errataTable">\
 			<thead>\
 				<tr>\
 					<th class="pageColumn">Page Number</th>\
