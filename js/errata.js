@@ -70,6 +70,13 @@ function displayErrata(edition) {
 	  	</table>\
 	';
 
+	HTMLtoBeInserted += '\
+		<br>\
+		<div class="btn-group backToTop">\
+  			<a href="#content-top"><button type="button" class="btn btn-default center-block btn-sm"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span> Top</button></a>\
+  		</div>\
+  	';
+
 	$(".book-edition-errata").append(HTMLtoBeInserted);
 	sortErrata(edition);
 	clickHeader('pageColumn', edition);

@@ -55,6 +55,13 @@ function showDownloads() {
 		</table>\
   	';
 
+  	HTMLtoBeInserted += '\
+		<br>\
+		<div class="btn-group backToTop">\
+  			<a href="#content-top"><button type="button" class="btn btn-default center-block btn-sm"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span> Top</button></a>\
+  		</div>\
+  	';
+
 	$(".downloads").html(HTMLtoBeInserted);
 
 	$(".workshop-button").on('click', function() {
