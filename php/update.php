@@ -30,6 +30,11 @@ function normalRunSQL($sql) {
 		echo "Error updating record: " . $db->error;
 	}
 }
+function htmldefend($data){
+	$temp_str = str_replace('<', '&lt', $data);
+	$temp_str = str_replace('>', '&gt', $temp_str);
+	return $temp_str;
+}
 
 function errataInsertion(){
 	global $db;
@@ -47,7 +52,7 @@ function errataInsertion(){
 	$version = $_POST['version'];
 	$version = $db->real_escape_string($version);
 	//Insert into the pending list first
-	$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$severity.",".$type.",".$page.",'".$content."','".$author."',now(),".$version.");";
+	$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".htmldefend($severity).",".htmldefend($type).",".htmldefend($page).",'".htmldefend($content)."','".htmldefend($author)."',now(),".htmldefend($version).");";
 	normalRunSQL($sql);
 
 	$count = $db->query("SELECT * from ErrataP;");
@@ -74,7 +79,7 @@ function testimonialInsertion(){
 	$region = $db->real_escape_string($region);
 	$credit = $_POST['credibility'];
 	$credit = $db->real_escape_string($credit);
-	$sql = "INSERT INTO TestimonialP(author,content,nationality,region,credit,imgURL) VALUES (\"".$author."\",\"".$comment."\",\"".$nationality."\",\"".$region."\",\"".$credit."\",\""."\");";
+	$sql = "INSERT INTO TestimonialP(author,content,nationality,region,credit,imgURL) VALUES (\"".htmldefend($author)."\",\"".htmldefend($comment)."\",\"".htmldefend($nationality)."\",\"".htmldefend($region)."\",\"".htmldefend($credit)."\",\""."\");";
 	normalRunSQL($sql);
 	$count = $db->query("SELECT * from TestimonialP;");
 	$num_rows = mysql_num_rows($count);
