@@ -116,7 +116,6 @@ div {
 	position: fixed;
 	z-index: 2;
 	width: 100%;
-	overflow-y: hidden;
 }
 
 #top-link a, #top-link a:link {
