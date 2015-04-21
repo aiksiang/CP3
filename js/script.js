@@ -106,6 +106,7 @@ function slideDownBooks() {$("#book-editions-img").slideDown(800);}
 function slideUpBooks() {$("#book-editions-img").slideUp(800);}
 
 $(document).ready(function(){
+	slideDownBooks();
 	$("#home-button").on('click', function() {
 		fadeAllExcept("mainPage");
 		slideDownBooks();
@@ -127,6 +128,7 @@ $(document).ready(function(){
 		fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
 			showInfo(FIRST_EDITION);
 		});
+		slideDownBooks();
 		makeBookFullOpacity(FIRST_EDITION);
 		selectedEdition = FIRST_EDITION;
 		appendHashTag("CP1details");
@@ -136,6 +138,7 @@ $(document).ready(function(){
 		fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
 			showInfo(SECOND_EDITION);
 		});
+		slideDownBooks();
 		makeBookFullOpacity(SECOND_EDITION);
 		selectedEdition = SECOND_EDITION;
 		appendHashTag("CP2details");
@@ -145,6 +148,7 @@ $(document).ready(function(){
 		fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
 			showInfo(THIRD_EDITION);
 		});
+		slideDownBooks();
 		makeBookFullOpacity(THIRD_EDITION);
 		selectedEdition = THIRD_EDITION;
 		appendHashTag("CP3details");
@@ -154,6 +158,7 @@ $(document).ready(function(){
 		fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
 			displayErrata(FIRST_EDITION);
 		});
+		slideDownBooks();
 		makeBookFullOpacity(FIRST_EDITION);
 		selectedEdition = FIRST_EDITION;
 		appendHashTag("CP1errata");
@@ -162,6 +167,7 @@ $(document).ready(function(){
 		fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
 			displayErrata(SECOND_EDITION);
 		});
+		slideDownBooks();
 		makeBookFullOpacity(SECOND_EDITION);
 		selectedEdition = SECOND_EDITION;
 		appendHashTag("CP2errata");
@@ -170,6 +176,7 @@ $(document).ready(function(){
 		fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
 			displayErrata(THIRD_EDITION);
 		});
+		slideDownBooks();
 		makeBookFullOpacity(THIRD_EDITION);
 		selectedEdition = THIRD_EDITION;
 		appendHashTag("CP3errata");
@@ -219,6 +226,7 @@ $(document).ready(function(){
 			fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
 				showInfo(FIRST_EDITION);
 			});
+			slideDownBooks();
 			makeBookFullOpacity(FIRST_EDITION);
 			selectedEdition = FIRST_EDITION;
 			appendHashTag("CP1details");
@@ -227,6 +235,7 @@ $(document).ready(function(){
 			fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
 				showInfo(SECOND_EDITION);
 			});
+			slideDownBooks();
 			makeBookFullOpacity(SECOND_EDITION);
 			selectedEdition = SECOND_EDITION;
 			appendHashTag("CP2details");
@@ -235,6 +244,7 @@ $(document).ready(function(){
 			fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
 				showInfo(THIRD_EDITION);
 			});
+			slideDownBooks();
 			makeBookFullOpacity(THIRD_EDITION);
 			selectedEdition = THIRD_EDITION;
 			appendHashTag("CP3details");
@@ -243,6 +253,7 @@ $(document).ready(function(){
 			fadeAllExcept("bookContainer", showTabContent("bookContentsTabContent"), function(){
 				showContent(FIRST_EDITION);
 			});
+			slideDownBooks();
 			makeBookFullOpacity(FIRST_EDITION);
 			selectedEdition = FIRST_EDITION;
 			appendHashTag("CP1content");
@@ -251,6 +262,7 @@ $(document).ready(function(){
 			fadeAllExcept("bookContainer", showTabContent("bookContentsTabContent"), function(){
 				showContent(SECOND_EDITION);
 			});
+			slideDownBooks();
 			makeBookFullOpacity(SECOND_EDITION);
 			selectedEdition = SECOND_EDITION;
 			appendHashTag("CP2content");
@@ -259,6 +271,7 @@ $(document).ready(function(){
 			fadeAllExcept("bookContainer", showTabContent("bookContentsTabContent"), function(){
 				showContent(THIRD_EDITION);
 			});
+			slideDownBooks();
 			makeBookFullOpacity(THIRD_EDITION);
 			selectedEdition = THIRD_EDITION;
 			appendHashTag("CP3content");
@@ -267,6 +280,7 @@ $(document).ready(function(){
 			fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
 				displayErrata(FIRST_EDITION);
 			});
+			slideDownBooks();
 			makeBookFullOpacity(FIRST_EDITION);
 			selectedEdition = FIRST_EDITION;
 			appendHashTag("CP1errata");
@@ -275,6 +289,7 @@ $(document).ready(function(){
 			fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
 				displayErrata(SECOND_EDITION);
 			});
+			slideDownBooks();
 			makeBookFullOpacity(SECOND_EDITION);
 			selectedEdition = SECOND_EDITION;
 			appendHashTag("CP2errata");
@@ -284,6 +299,7 @@ $(document).ready(function(){
 			fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
 				displayErrata(THIRD_EDITION);
 			});
+			slideDownBooks();
 			makeBookFullOpacity(THIRD_EDITION);
 			selectedEdition = THIRD_EDITION;
 			appendHashTag("CP3errata");
