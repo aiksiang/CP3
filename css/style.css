@@ -22,8 +22,14 @@
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
 	#top-link .nav #get-cp3 {
+		display: none;
+	}
+}
+
+@media (max-width: 495px) {
+	#top-link .nav #go-download {
 		display: none;
 	}
 }
@@ -47,7 +53,7 @@ td {
 	title 
 ***/
 body {
-	min-width: 667px;
+	min-width: 665px;
 }
 
 h1, h2, h3, h4, h5, dt {
