@@ -110,6 +110,7 @@ $(document).ready(function(){
 		fadeAllExcept("mainPage");
 		slideDownBooks();
 		makeBookFullOpacity(0);
+		window.location.href = (window.location.href).replace(/#.*/, '');
 	});
 
 	$("#top-link .dropdown-toggle").hover(function() {
@@ -128,6 +129,7 @@ $(document).ready(function(){
 		});
 		makeBookFullOpacity(FIRST_EDITION);
 		selectedEdition = FIRST_EDITION;
+		appendHashTag("CP1details");
 	});
 
 	bookImages[2].on('click', function() {
@@ -136,6 +138,7 @@ $(document).ready(function(){
 		});
 		makeBookFullOpacity(SECOND_EDITION);
 		selectedEdition = SECOND_EDITION;
+		appendHashTag("CP2details");
 	});
 
 	bookImages[3].on('click', function() {
@@ -144,6 +147,7 @@ $(document).ready(function(){
 		});
 		makeBookFullOpacity(THIRD_EDITION);
 		selectedEdition = THIRD_EDITION;
+		appendHashTag("CP3details");
 	});
 
 	$(".errata-1").on('click', function() {
@@ -152,6 +156,7 @@ $(document).ready(function(){
 		});
 		makeBookFullOpacity(FIRST_EDITION);
 		selectedEdition = FIRST_EDITION;
+		appendHashTag("CP1errata");
 	});
 	$(".errata-2").on('click', function() {
 		fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
@@ -159,6 +164,7 @@ $(document).ready(function(){
 		});
 		makeBookFullOpacity(SECOND_EDITION);
 		selectedEdition = SECOND_EDITION;
+		appendHashTag("CP2errata");
 	});
 	$(".errata-3").on('click', function() {
 		fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
@@ -166,6 +172,7 @@ $(document).ready(function(){
 		});
 		makeBookFullOpacity(THIRD_EDITION);
 		selectedEdition = THIRD_EDITION;
+		appendHashTag("CP3errata");
 	});
 
 	initializeBookTabs();
@@ -174,31 +181,148 @@ $(document).ready(function(){
 		fadeAllExcept("testimonial");
 		slideUpBooks();
 		showTestimonial();
+		appendHashTag("testimonial");
 	});
 
 	$(".download-button").on('click', function() {
 		fadeAllExcept("downloads");
 		slideUpBooks();
 		showDownloads();
+		appendHashTag("downloads");
 	}); 
 
 	$(".workshop-button").on('click', function() {
 		fadeAllExcept("workshop");
 		slideUpBooks();
 		showWorkshop();
+		appendHashTag("workshops");
 	}); 
 
 	$(".credits-button").on('click', function() {
 		fadeAllExcept("credits");
 		slideUpBooks();
 		showCredits();
+		appendHashTag("credits");
 	}); 
 
 	$(".sales-data-button").on('click', function() {
 		fadeAllExcept("salesData");
 		slideUpBooks();
 		showSales();
+		appendHashTag("sales");
 	}); 
+
+	//Redirection, for example cpbook.net/#errata
+	var hashLocation = (window.location.href).replace(/^.*#/, '');
+	switch(hashLocation) {
+		case "CP1details":
+			fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
+				showInfo(FIRST_EDITION);
+			});
+			makeBookFullOpacity(FIRST_EDITION);
+			selectedEdition = FIRST_EDITION;
+			appendHashTag("CP1details");
+		break;
+		case "CP2details":
+			fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
+				showInfo(SECOND_EDITION);
+			});
+			makeBookFullOpacity(SECOND_EDITION);
+			selectedEdition = SECOND_EDITION;
+			appendHashTag("CP2details");
+		break;
+		case "CP3details":
+			fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
+				showInfo(THIRD_EDITION);
+			});
+			makeBookFullOpacity(THIRD_EDITION);
+			selectedEdition = THIRD_EDITION;
+			appendHashTag("CP3details");
+		break;
+		case "CP1content":
+			fadeAllExcept("bookContainer", showTabContent("bookContentsTabContent"), function(){
+				showContent(FIRST_EDITION);
+			});
+			makeBookFullOpacity(FIRST_EDITION);
+			selectedEdition = FIRST_EDITION;
+			appendHashTag("CP1content");
+		break;
+		case "CP2content":
+			fadeAllExcept("bookContainer", showTabContent("bookContentsTabContent"), function(){
+				showContent(SECOND_EDITION);
+			});
+			makeBookFullOpacity(SECOND_EDITION);
+			selectedEdition = SECOND_EDITION;
+			appendHashTag("CP2content");
+		break;
+		case "CP3content":
+			fadeAllExcept("bookContainer", showTabContent("bookContentsTabContent"), function(){
+				showContent(THIRD_EDITION);
+			});
+			makeBookFullOpacity(THIRD_EDITION);
+			selectedEdition = THIRD_EDITION;
+			appendHashTag("CP3content");
+		break;
+		case "CP1errata":
+			fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
+				displayErrata(FIRST_EDITION);
+			});
+			makeBookFullOpacity(FIRST_EDITION);
+			selectedEdition = FIRST_EDITION;
+			appendHashTag("CP1errata");
+		break;
+		case "CP2errata":
+			fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
+				displayErrata(SECOND_EDITION);
+			});
+			makeBookFullOpacity(SECOND_EDITION);
+			selectedEdition = SECOND_EDITION;
+			appendHashTag("CP2errata");
+		break;
+		case "errata":
+		case "CP3errata":
+			fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
+				displayErrata(THIRD_EDITION);
+			});
+			makeBookFullOpacity(THIRD_EDITION);
+			selectedEdition = THIRD_EDITION;
+			appendHashTag("CP3errata");
+		break;
+		case "testimonial":
+			fadeAllExcept("testimonial");
+			slideUpBooks();
+			showTestimonial();
+			appendHashTag("testimonial");
+		break;
+		case "download":
+		case "downloads":
+			fadeAllExcept("downloads");
+			slideUpBooks();
+			showDownloads();
+			appendHashTag("downloads");
+		break;
+		case "workshop":
+		case "workshops":
+			fadeAllExcept("workshop");
+			slideUpBooks();
+			showWorkshop();
+			appendHashTag("workshops");
+		break;
+		case "credit":
+		case "credits":
+			fadeAllExcept("credits");
+			slideUpBooks();
+			showCredits();
+			appendHashTag("credits");
+		break;
+		case "sales":
+		case "salesData":
+			fadeAllExcept("salesData");
+			slideUpBooks();
+			showSales();
+			appendHashTag("sales");
+		break;
+	}
 
 	$("a").tooltip({'placement': 'bottom','content':'html'});
 });
@@ -208,17 +332,28 @@ function initializeBookTabs() {
 		showTabContent("bookDetailsTabContent", function() {
 			showInfo(selectedEdition);
 		});
+		appendHashTag("CP" + selectedEdition + "details");
 	});
 
 	$(".content-button").on('click', function() {
 		showTabContent("bookContentsTabContent", function() {
 			showContent(selectedEdition);
 		});
+		appendHashTag("CP" + selectedEdition + "content");
 	});
 
 	$(".errata-button").on('click', function() {
 		showTabContent("bookErratasTabContent", function() {
 			displayErrata(selectedEdition);
 		});
+		appendHashTag("CP" + selectedEdition + "errata");
 	});
+}
+
+function appendHashTag(hash) {
+	if ((window.location.href).match(/#.*/g)) {
+		window.location.href = (window.location.href).replace(/#.*/, '#' + hash);
+	} else {
+		(window.location.href) +=  "#" + hash;
+	}
 }
