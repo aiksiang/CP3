@@ -6,146 +6,111 @@ var selectedEdition = 0;
 var SELECT_ERR = 10;
 var SELECT_INFO = -10;
 
+var pages = {
+	mainPage: $("#main-page-introduction"),
+	bookContainer: $(".book-details"),
+	testimonial: $(".testimonial"),
+	downloads: $(".downloads"),
+	salesData: $(".sales-data"),
+	workshop: $(".workshop"),
+	credits: $(".credits")
+};
+
+var tabContents = {
+	bookDetailsTabContent: $(".book-edition-info"),
+	bookContentsTabContent: $(".book-edition-content"),
+	bookErratasTabContent: $(".book-edition-errata")
+}
+
+var bookImages = {
+	1: $("#cp1-img img"),
+	2: $("#cp2-img img"),
+	3: $("#cp3-img img"),
+};
+
+var tabs = {
+	bookDetailsTab: $("#details"),
+	bookContentsTab: $("#content"),
+	bookErratasTab: $("#errataTab")
+}
+
+function setTabToActive(tabToBeSet) {
+	for (var tab in tabs) {
+		if (tab == tabToBeSet) {
+			tabs[tabToBeSet].addClass("active");
+		} else {
+			tabs[tab].removeClass("active");
+		}
+	}
+}
+
+function fadeAllExcept(identifier, immediate, doneFadingOut, doneFadingIn) { // identifier must be a key from the pages
+	var fadeInFunction;
+	var fadeCount = Object.keys(pages).length;
+	for (var page in pages) {
+		pages[page].fadeOut(400, function() {
+			fadeCount--;
+			if (fadeCount == 0) {
+				fadeInFunction();
+				if (doneFadingOut != undefined)
+					doneFadingOut();
+			}
+		});
+		if (page == identifier) {
+			fadeInFunction = function() {
+				pages[identifier].fadeIn(400, function() {
+					if (doneFadingIn != undefined)
+						doneFadingIn();
+				});
+			}
+		}
+	}
+	if (immediate != undefined)
+		immediate();
+}
+
+function showTabContent(identifier, doneFadingOut, doneFadingIn) {
+	var fadeInFunction;
+	var fadeCountTab = Object.keys(tabContents).length;
+	for (var tabContent in tabContents) {
+		tabContents[tabContent].fadeOut(400, function() {
+			fadeCountTab--;
+			if (fadeCountTab == 0) {
+				fadeInFunction();
+				if (doneFadingOut != undefined)
+					doneFadingOut();
+			}
+		});
+		if (tabContent == identifier) {console.log(identifier, tabContent)
+			setTabToActive(tabContent.substring(0,tabContent.length - 7));
+			fadeInFunction = function() {
+				tabContents[identifier].fadeIn(400, function() {
+					if (doneFadingIn != undefined)
+						doneFadingIn();
+				});
+			}
+		}
+	}
+}
+
+function makeBookFullOpacity(bookNumber) {
+	for (var book in bookImages) {
+		if (bookNumber == book) {
+			bookImages[book].addClass("fullOpacity");
+		} else {
+			bookImages[book].removeClass("fullOpacity");
+		}
+	}
+}
+function slideDownBooks() {$("#book-editions-img").slideDown(800);}
+function slideUpBooks() {$("book-editions-img").slideUp(800);}
+
 $(document).ready(function(){
 	$("#home-button").on('click', function() {
-		$(".book-details").fadeOut(400);
-		$(".testimonial").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".workshop").fadeOut(400);
-		$(".downloads").fadeOut(400);
-		$(".credits").fadeOut(400);
-		$(".sales-data").fadeOut(400);
-		$("#book-editions-img").slideDown(800);
-		$("#page-text").fadeIn(800);
-		$("#cp1-img img").removeClass("fullOpacity");
-		$("#cp2-img img").removeClass("fullOpacity");
-		$("#cp3-img img").removeClass("fullOpacity");
+		fadeAllExcept("mainPage");
+		slideDownBooks();
+		makeBookFullOpacity(0);
 	});
-
-	$("#cp1-img").on('click', function() {
-		// $("#book-editions-img").fadeOut(400);
-		$("#page-text").fadeOut(400);
-		$(".testimonial").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".downloads").fadeOut(400);
-		$(".credits").fadeOut(400);
-		$(".sales-data").fadeOut(400);
-		$("#cp1-img img").addClass("fullOpacity");
-		$("#cp2-img img").removeClass("fullOpacity");
-		$("#cp3-img img").removeClass("fullOpacity");
-		$(".book-details").fadeOut(400, function() {
-			populateBookDetails(FIRST_EDITION, SELECT_INFO, function() {
-				initializeErrata(FIRST_EDITION);
-				$(".book-details").fadeIn(400);
-			});
-		});
-		selectedEdition = FIRST_EDITION;
-	});
-	$("#cp2-img").on('click', function() {
-		// $("#book-editions-img").fadeOut(400);
-		$("#page-text").fadeOut(400);
-		$(".testimonial").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".downloads").fadeOut(400);
-		$(".workshop").fadeOut(400);
-		$(".credits").fadeOut(400);
-		$(".sales-data").fadeOut(400);
-		$("#cp1-img img").removeClass("fullOpacity");
-		$("#cp2-img img").addClass("fullOpacity");
-		$("#cp3-img img").removeClass("fullOpacity");
-		$(".book-details").fadeOut(400, function() {
-			populateBookDetails(SECOND_EDITION, SELECT_INFO, function() {
-				initializeErrata(SECOND_EDITION);
-				$(".book-details").fadeIn(400);
-			});
-		});
-		selectedEdition = SECOND_EDITION;
-	});
-	$("#cp3-img").on('click', function() {
-		// $("#book-editions-img").fadeOut(400);
-		$("#page-text").fadeOut(400);
-		$(".testimonial").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".downloads").fadeOut(400);
-		$(".workshop").fadeOut(400);
-		$(".credits").fadeOut(400);
-		$(".sales-data").fadeOut(400);
-		$("#cp1-img img").removeClass("fullOpacity");
-		$("#cp2-img img").removeClass("fullOpacity");
-		$("#cp3-img img").addClass("fullOpacity");
-		$(".book-details").fadeOut(400, function() {
-			populateBookDetails(THIRD_EDITION, SELECT_INFO, function() {
-				initializeErrata(THIRD_EDITION);
-				$(".book-details").fadeIn(400);
-			});
-		});
-		selectedEdition = THIRD_EDITION;
-	});
-
-	$(".testimonial-button").on('click', function() {
-		$("#book-editions-img").slideUp(400);
-		$("#page-text").fadeOut(400);
-		$(".book-details").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".downloads").fadeOut(400);
-		$(".workshop").fadeOut(400);
-		$(".credits").fadeOut(400);
-		$(".sales-data").fadeOut(400);
-		$(".testimonial").fadeIn(800);
-		showTestimonial();
-	});
-
-	$(".download-button").on('click', function() {
-		$("#book-editions-img").slideUp(400);
-		$("#page-text").fadeOut(400);
-		$(".book-details").fadeOut(400);
-		$(".testimonial").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".workshop").fadeOut(400);
-		$(".credits").fadeOut(400);
-		$(".sales-data").fadeOut(400);
-		$(".downloads").fadeIn(800);
-		showDownloads();
-	}); 
-
-	$(".workshop-button").on('click', function() {
-		$("#book-editions-img").slideUp(400);
-		$("#page-text").fadeOut(400);
-		$(".book-details").fadeOut(400);
-		$(".testimonial").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".downloads").fadeOut(400);
-		$(".credits").fadeOut(400);
-		$(".sales-data").fadeOut(400);
-		$(".workshop").fadeIn(800);
-		showWorkshop();
-	}); 
-
-	$(".credits-button").on('click', function() {
-		$("#book-editions-img").slideUp(400);
-		$("#page-text").fadeOut(400);
-		$(".book-details").fadeOut(400);
-		$(".testimonial").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".downloads").fadeOut(400);
-		$(".workshop").fadeOut(400);
-		$(".sales-data").fadeOut(400);
-		$(".credits").fadeIn(800);
-		showCredits();
-	}); 
-
-	$(".sales-data-button").on('click', function() {
-		$("#book-editions-img").slideUp(400);
-		$("#page-text").fadeOut(400);
-		$(".book-details").fadeOut(400);
-		$(".testimonial").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".downloads").fadeOut(400);
-		$(".workshop").fadeOut(400);
-		$(".credits").fadeOut(400);
-		$(".sales-data").fadeIn(800);
-		showSales();
-	}); 
 
 	$("#top-link .dropdown-toggle").hover(function() {
 		$("#top-link .dropdown-toggle").dropdown('toggle');
@@ -157,100 +122,103 @@ $(document).ready(function(){
 		$(this).find('.dropdown-menu').first().stop(true, true).slideUp(200);
 	});
 
-	$(".errata-1").on('click', function() {
-		$("#page-text").fadeOut(400);
-		$(".testimonial").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".downloads").fadeOut(400);
-		$(".workshop").fadeOut(400);
-		$(".credits").fadeOut(400);
-		$(".sales-data").fadeOut(400);
-		$("#cp1-img img").addClass("fullOpacity");
-		$("#cp2-img img").removeClass("fullOpacity");
-		$("#cp3-img img").removeClass("fullOpacity");
-		$(".book-details").fadeOut(400, function() {
-			populateBookDetails(FIRST_EDITION, SELECT_ERR, function() {
-				initializeErrata(FIRST_EDITION);
-				$("#details").removeClass("active");
-				$("#errataTab").addClass("active");
-				$(".book-details").fadeIn(400);
-			});
+	bookImages[1].on('click', function() {
+		fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
+			showInfo(FIRST_EDITION);
 		});
+		makeBookFullOpacity(FIRST_EDITION);
+		selectedEdition = FIRST_EDITION;
+	});
+
+	bookImages[2].on('click', function() {
+		fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
+			showInfo(SECOND_EDITION);
+		});
+		makeBookFullOpacity(SECOND_EDITION);
+		selectedEdition = SECOND_EDITION;
+	});
+
+	bookImages[3].on('click', function() {
+		fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
+			showInfo(THIRD_EDITION);
+		});
+		makeBookFullOpacity(THIRD_EDITION);
+		selectedEdition = THIRD_EDITION;
+	});
+
+	$(".errata-1").on('click', function() {
+		fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
+			displayErrata(FIRST_EDITION);
+		});
+		makeBookFullOpacity(FIRST_EDITION);
 		selectedEdition = FIRST_EDITION;
 	});
 	$(".errata-2").on('click', function() {
-		$("#page-text").fadeOut(400);
-		$(".testimonial").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".downloads").fadeOut(400);
-		$(".workshop").fadeOut(400);
-		$(".credits").fadeOut(400);
-		$(".sales-data").fadeOut(400);
-		$("#cp1-img img").removeClass("fullOpacity");
-		$("#cp2-img img").addClass("fullOpacity");
-		$("#cp3-img img").removeClass("fullOpacity");
-		$(".book-details").fadeOut(400, function() {
-			populateBookDetails(SECOND_EDITION, SELECT_ERR, function() {
-				initializeErrata(SECOND_EDITION);
-				$("#details").removeClass("active");
-				$("#errataTab").addClass("active");
-				$(".book-details").fadeIn(400);
-			});
+		fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
+			displayErrata(SECOND_EDITION);
 		});
+		makeBookFullOpacity(SECOND_EDITION);
 		selectedEdition = SECOND_EDITION;
 	});
 	$(".errata-3").on('click', function() {
-		$("#page-text").fadeOut(400);
-		$(".testimonial").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".downloads").fadeOut(400);
-		$(".workshop").fadeOut(400);
-		$(".credits").fadeOut(400);
-		$(".sales-data").fadeOut(400);
-		$("#cp1-img img").removeClass("fullOpacity");
-		$("#cp2-img img").removeClass("fullOpacity");
-		$("#cp3-img img").addClass("fullOpacity");
-		$(".book-details").fadeOut(400, function() {
-			populateBookDetails(THIRD_EDITION, SELECT_ERR, function() {
-				initializeErrata(THIRD_EDITION);
-				$("#details").removeClass("active");
-				$("#errataTab").addClass("active");
-				$(".book-details").fadeIn(400);
-			});
+		fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
+			displayErrata(THIRD_EDITION);
 		});
+		makeBookFullOpacity(THIRD_EDITION);
 		selectedEdition = THIRD_EDITION;
 	});
+
+	initializeBookTabs();
+
+	$(".testimonial-button").on('click', function() {
+		fadeAllExcept("testimonial");
+		slideUpBooks();
+		showTestimonial();
+	});
+
+	$(".download-button").on('click', function() {
+		fadeAllExcept("downloads");
+		slideUpBooks();
+		showDownloads();
+	}); 
+
+	$(".workshop-button").on('click', function() {
+		fadeAllExcept("workshop");
+		slideUpBooks();
+		showWorkshop();
+	}); 
+
+	$(".credits-button").on('click', function() {
+		fadeAllExcept("credits");
+		slideUpBooks();
+		showCredits();
+	}); 
+
+	$(".sales-data-button").on('click', function() {
+		fadeAllExcept("salesData");
+		slideUpBooks();
+		showSales();
+	}); 
 
 	$("a").tooltip({'placement': 'bottom','content':'html'});
 });
 
-function initializeErrata(edition) {
-	$(".content-button").on('click', function() {
-		$(".book-edition-info").fadeOut(400);
-		$(".book-edition-content").fadeIn(800);
-		$(".book-edition-errata").fadeOut(400);
-		$("#content").addClass("active");
-		$("#details").removeClass("active");
-		$("#errataTab").removeClass("active");
-		showContent(edition);
+function initializeBookTabs() {
+	$(".details-button").on('click', function() {
+		showTabContent("bookDetailsTabContent", function() {
+			showInfo(selectedEdition);
+		});
 	});
 
-	$(".details-button").on('click', function() {
-		$(".book-edition-info").fadeIn(800);
-		$(".book-edition-content").fadeOut(400);
-		$(".book-edition-errata").fadeOut(400);
-		$("#details").addClass("active");
-		$("#content").removeClass("active");
-		$("#errataTab").removeClass("active");
+	$(".content-button").on('click', function() {
+		showTabContent("bookContentsTabContent", function() {
+			showContent(selectedEdition);
+		});
 	});
 
 	$(".errata-button").on('click', function() {
-		$(".book-edition-info").fadeOut(400);
-		$(".book-edition-content").fadeOut(400);
-		$(".book-edition-errata").fadeIn(400);
-		$("#details").removeClass("active");
-		$("#content").removeClass("active");
-		$("#errataTab").addClass("active");
-		displayErrata(edition);
+		showTabContent("bookErratasTabContent", function() {
+			displayErrata(selectedEdition);
+		});
 	});
 }

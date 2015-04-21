@@ -67,7 +67,7 @@ function showDownloads() {
 	$(".workshop-button").on('click', function() {
 		$(".errata").fadeOut(400);
 		$("#book-editions-img").fadeOut(400);
-		$("#page-text").fadeOut(400);
+		$("#main-page-introduction").fadeOut(400);
 		$(".book-details").fadeOut(400);
 		$(".testimonial").fadeOut(400);
 		$(".book-edition-content").fadeOut(400);

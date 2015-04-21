@@ -94,7 +94,7 @@ div {
 
 
 /*** main page text ***/
-#page-text {
+#main-page-introduction {
 	padding: 10px 0px 20px 0px;
 	width: 70%;
 	padding: 30px 0px 20px 0px;
@@ -499,7 +499,11 @@ div .backToTop:hover {
 	background-color: #0f9fb4;
 }
 
-#page-text {
+.whiteBody {
+	color: white;
+}
+
+#main-page-introduction {
 	color: white;
 }
 
@@ -548,11 +552,11 @@ div .backToTop:hover {
 	border-color: black;
 }
 
-#page-text .well {
+#main-page-introduction .well {
 	color: black;
 }
 
-#page-text .well a {
+#main-page-introduction .well a {
 	color: blue;
 }
 
