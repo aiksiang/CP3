@@ -81,7 +81,7 @@ function showTabContent(identifier, doneFadingOut, doneFadingIn) {
 					doneFadingOut();
 			}
 		});
-		if (tabContent == identifier) {console.log(identifier, tabContent)
+		if (tabContent == identifier) {
 			setTabToActive(tabContent.substring(0,tabContent.length - 7));
 			fadeInFunction = function() {
 				tabContents[identifier].fadeIn(400, function() {
