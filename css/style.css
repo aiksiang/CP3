@@ -347,7 +347,17 @@ td, th {
 	font-size: 14px;
 	cursor: pointer;
 }
+/*
+#searchErrata .dropdown {
+	overflow: visible;
+}
 
+#searchErrata .dropdown-menu {
+	z-index: 3;
+	position: relative;
+	display: block;
+}
+*/
 /*** 
 	footer 
 ***/
@@ -379,10 +389,6 @@ a {
 
 #footer a:hover {
 	text-decoration: none;
-}
-
-#footer a {
-	cursor: pointer;
 }
 
 /***
