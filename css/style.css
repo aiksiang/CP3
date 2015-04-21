@@ -375,6 +375,10 @@ a {
 	text-decoration: none;
 }
 
+#footer a {
+	cursor: pointer;
+}
+
 /***
 	errata
 ***/

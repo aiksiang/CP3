@@ -1,6 +1,6 @@
 var testimonials = {};
 
-$(function() {
+function showTestimonial() {
 	$.get("php/retrieval.php", {action: "getTestimonials"}).done(function(data) {
 		for (var i in data) {
 			if (!testimonials.hasOwnProperty(data[i].region)) {
@@ -11,10 +11,11 @@ $(function() {
 			}
 			testimonials[data[i].region][data[i].nationality].push(data[i]);
 		}
+		displayTestimonial();
 	});
-});
+}
 
-function showTestimonial() {
+function displayTestimonial() {
 	$(".testimonial").html("");
 	var HTMLtoBeInserted = "";
 	HTMLtoBeInserted += '\

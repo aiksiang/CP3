@@ -1,12 +1,13 @@
 var credits;
 
-$(function getCredits(edition) {
+function showCredits() {
 	$.get("php/retrieval.php", {action: "getCredits"}).done(function(result) {
 		credits = result;
+		displayCredits();
 	});	
-});
+}
 
-function showCredits() {
+function displayCredits() {
 	$(".credits").html("");
 	var HTMLtoBeInserted = "";
 	HTMLtoBeInserted += '\
