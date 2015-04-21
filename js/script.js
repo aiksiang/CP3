@@ -103,7 +103,7 @@ function makeBookFullOpacity(bookNumber) {
 	}
 }
 function slideDownBooks() {$("#book-editions-img").slideDown(800);}
-function slideUpBooks() {$("book-editions-img").slideUp(800);}
+function slideUpBooks() {$("#book-editions-img").slideUp(800);}
 
 $(document).ready(function(){
 	$("#home-button").on('click', function() {
