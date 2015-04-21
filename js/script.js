@@ -147,7 +147,16 @@ $(document).ready(function(){
 		showSales();
 	}); 
 
-/*
+	$("#top-link .dropdown-toggle").hover(function() {
+		$("#top-link .dropdown-toggle").dropdown('toggle');
+	}, function(){});
+	$('#top-link li').on('show.bs.dropdown', function() {
+		$(this).find('.dropdown-menu').first().stop(true, true).slideDown(200);
+	});
+	$('#top-link li').on('hide.bs.dropdown', function() {
+		$(this).find('.dropdown-menu').first().stop(true, true).slideUp(200);
+	});
+
 	$(".errata-1").on('click', function() {
 		$("#page-text").fadeOut(400);
 		$(".testimonial").fadeOut(400);
@@ -156,12 +165,14 @@ $(document).ready(function(){
 		$(".workshop").fadeOut(400);
 		$(".credits").fadeOut(400);
 		$(".sales-data").fadeOut(400);
-		$("#cp1-img img").removeClass("fullOpacity");
+		$("#cp1-img img").addClass("fullOpacity");
 		$("#cp2-img img").removeClass("fullOpacity");
-		$("#cp3-img img").addClass("fullOpacity");
+		$("#cp3-img img").removeClass("fullOpacity");
 		$(".book-details").fadeOut(400, function() {
 			populateBookDetails(FIRST_EDITION, SELECT_ERR, function() {
 				initializeErrata(FIRST_EDITION);
+				$("#details").removeClass("active");
+				$("#errataTab").addClass("active");
 				$(".book-details").fadeIn(400);
 			});
 		});
@@ -176,11 +187,13 @@ $(document).ready(function(){
 		$(".credits").fadeOut(400);
 		$(".sales-data").fadeOut(400);
 		$("#cp1-img img").removeClass("fullOpacity");
-		$("#cp2-img img").removeClass("fullOpacity");
-		$("#cp3-img img").addClass("fullOpacity");
+		$("#cp2-img img").addClass("fullOpacity");
+		$("#cp3-img img").removeClass("fullOpacity");
 		$(".book-details").fadeOut(400, function() {
 			populateBookDetails(SECOND_EDITION, SELECT_ERR, function() {
 				initializeErrata(SECOND_EDITION);
+				$("#details").removeClass("active");
+				$("#errataTab").addClass("active");
 				$(".book-details").fadeIn(400);
 			});
 		});
@@ -200,12 +213,14 @@ $(document).ready(function(){
 		$(".book-details").fadeOut(400, function() {
 			populateBookDetails(THIRD_EDITION, SELECT_ERR, function() {
 				initializeErrata(THIRD_EDITION);
+				$("#details").removeClass("active");
+				$("#errataTab").addClass("active");
 				$(".book-details").fadeIn(400);
 			});
 		});
 		selectedEdition = THIRD_EDITION;
 	});
-*/
+
 	$("a").tooltip({'placement': 'bottom','content':'html'});
 });
 

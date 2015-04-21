@@ -127,6 +127,7 @@ div {
 #details a:hover, #content a:hover, #errataTab a:hover,
 #top-link .nav a:hover {
 	cursor: pointer;
+	color: black;
 }
 
 
@@ -507,8 +508,20 @@ div .backToTop:hover {
 	background-color: #1d2f3e;
 }
 
+#top-link .dropdown-menu {
+	width: 100%;
+}
+
 #top-link .glyphicon {
 	font-size:13px;
+}
+
+#top-link .glyphicon-triangle-bottom {
+	opacity: 1;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	font-size: 12px;
 }
 
 #footer {

@@ -78,7 +78,9 @@ function displayErrata(edition) {
   	';
 
 	$(".book-edition-errata").append(HTMLtoBeInserted);
+	searchErrata();
 	sortErrata(edition);
+	clickedHeader = null;
 	clickHeader('pageColumn', edition);
 
 	$("#searchErrata .input-group-btn button").on('click', function() {
