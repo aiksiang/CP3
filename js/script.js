@@ -373,3 +373,4 @@ function appendHashTag(hash) {
 		(window.location.href) +=  "#" + hash;
 	}
 }
+
