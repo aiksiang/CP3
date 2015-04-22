@@ -23,13 +23,13 @@
 }
 
 @media (max-width: 720px) {
-	#top-link .nav #get-cp3 {
+	#top-link .nav #go-download {
 		display: none;
 	}
 }
 
-@media (max-width: 495px) {
-	#top-link .nav #go-download {
+@media (max-width: 580px) {
+	#top-link .nav #get-cp3 {
 		display: none;
 	}
 }
@@ -66,9 +66,7 @@ p, a, li, dd, dl, input, label, form, .btn, .form-control {
 	font-size: 17px;
 }
 
-div {
-	overflow-x: hidden;
-}
+
 
 #book-editions .title {
 	font-size: 45px;
@@ -347,7 +345,7 @@ td, th {
 	font-size: 14px;
 	cursor: pointer;
 }
-/*
+
 #searchErrata .dropdown {
 	overflow: visible;
 }
@@ -357,7 +355,7 @@ td, th {
 	position: relative;
 	display: block;
 }
-*/
+
 /*** 
 	footer 
 ***/
@@ -374,7 +372,7 @@ td, th {
 
 
 .links, .info, .buy-book {
-	left: 10%;
+	padding-left: 170px !important;
 }
 
 .buy-book {
@@ -618,5 +616,6 @@ div .backToTop:hover {
 .share-buttons {
 	padding-top: 15px;
 	position: relative;
-	left: 7%;
+	margin-right: 0;
+	padding-left: 150px !important;
 }
