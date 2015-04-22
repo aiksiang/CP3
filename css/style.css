@@ -118,7 +118,7 @@ p, a, li, dd, dl, input, label, form, .btn, .form-control {
 #top-link .nav {
 	/*background-color: rgba(110, 110, 110, 0.9);*/
 	position: fixed;
-	z-index: 2;
+	z-index: 3;
 	width: 100%;
 }
 
@@ -372,7 +372,8 @@ td, th {
 
 
 .links, .info, .buy-book {
-	padding-left: 170px !important;
+	padding-left: 130px !important;
+    z-index: 2;
 }
 
 .buy-book {
@@ -617,5 +618,6 @@ div .backToTop:hover {
 	padding-top: 15px;
 	position: relative;
 	margin-right: 0;
-	padding-left: 150px !important;
+	padding-left: 130px !important;
+    clear: left;
 }
