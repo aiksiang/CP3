@@ -31,8 +31,8 @@ function normalRunSQL($sql) {
 	}
 }
 function htmldefend($data){
-	$temp_str = str_replace('<', '&lt', $data);
-	$temp_str = str_replace('>', '&gt', $temp_str);
+	$temp_str = str_replace('<', '?&lt?', $data);
+	$temp_str = str_replace('>', '?&gt?', $temp_str);
 	return $temp_str;
 }
 
