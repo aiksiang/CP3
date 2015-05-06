@@ -1,4 +1,11 @@
 <?php
+
+//In order to run this php code and transfer the data from json files to MySQL databases, all the 7 json files must be presented under the same directory.
+//Setup Situations
+//1. have content in mySQL databases but no json files. => Run update.php to generate the json files.
+//2. have json files but empty mySQL databases. => Run this to transfer data into mySQL databases
+//3. No content in mySQL databases and no json files. => Run initializes.php (only with the basic old data) to generate the json files then run this.  
+
 require_once 'config.php'; // your PHP script(s) can access this, but the rest cannot
 
 $db = new mysqli(db_host, db_uid, db_pwd, db_name);

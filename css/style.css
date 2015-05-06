@@ -117,7 +117,7 @@ p, a, li, dd, dl, input, label, form, .btn, .form-control {
 ***/
 #top-link .nav {
 	position: fixed;
-	z-index: 2;
+	z-index: 3;
 	width: 100%;
 }
 
@@ -345,14 +345,6 @@ td, th {
 	cursor: pointer;
 }
 
-#searchErrata .dropdown {
-	overflow: visible;
-}
-
-#searchErrata .dropdown-menu {
-	z-index: 3;
-}
-
 .container table {
 	border: none;
 }
@@ -397,7 +389,8 @@ textarea { resize:vertical ; }
 
 
 .links, .info, .buy-book {
-	padding-left: 170px !important;
+	padding-left: 130px !important;
+    z-index: 2;
 }
 
 .buy-book {
@@ -611,5 +604,6 @@ div .backToTop:hover {
 	padding-top: 15px;
 	position: relative;
 	margin-right: 0;
-	padding-left: 150px !important;
+	padding-left: 130px !important;
+    clear: left;
 }
