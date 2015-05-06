@@ -53,7 +53,7 @@ function displayErrata(edition) {
 	  			<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>\
 	  		</div>\
 	  	</div>\
-	  	<table class="table" id="errataTable">\
+	  	<table class="container table" id="errataTable">\
 			<thead>\
 				<tr>\
 					<th class="pageColumn">Page Number</th>\
@@ -68,10 +68,33 @@ function displayErrata(edition) {
 			<tbody>\
 			</tbody>\
 	  	</table>\
+	  	<div class="col-md-12 crudErrata">\
+  			<div class="row">\
+  				<span class="admin-icon"><img src="img/glyphicons-17-bin.png" alt="discard"></span>\
+  				<span class="admin-icon"><img src="img/glyphicons-53-eye-close.png" alt="hide"></span>\
+  				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">\
+					Pending Fix\
+					<span class="caret"></span>\
+				</button>\
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">\
+					<li role="presentation"><a role="menuitem" tabindex="-1" onClick="changeFix(' + "'" + "Fixed" + "'" + ');">Fixed</a></li>\
+					<li role="presentation"><a role="menuitem" tabindex="-1" onClick="changeFix(' + "'" + "Pending Fix" + "'" + ');">Pending Fix</a></li>\
+				</ul>\
+  			</div>\
+  		</div>\
 	';
 
+	HTMLtoBeInserted += '\
+		<br>\
+		<div class="btn-group backToTop">\
+  			<a href="#content-top"><button type="button" class="btn btn-default center-block btn-sm"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span> Top</button></a>\
+  		</div>\
+  	';
+
 	$(".book-edition-errata").append(HTMLtoBeInserted);
+	searchErrata();
 	sortErrata(edition);
+	clickedHeader = null;
 	clickHeader('pageColumn', edition);
 
 	$("#searchErrata .input-group-btn button").on('click', function() {
@@ -91,6 +114,11 @@ function displayErrata(edition) {
 function changeColumn(text) {
 	$("#searchErrata .dropdown-toggle").html(text + '<span class="caret"></span>');
 	$("#searchErrata input").val("");
+}
+
+function changeFix(text) {
+	$(".crudErrata .dropdown-toggle").html(text + '<span class="caret"></span>');
+	$(".crudErrata input").val("");
 }
 
 function searchErrata() {
@@ -206,9 +234,6 @@ function showTable(edition) {
 						<td>'+ 'Pending Fix' +'</td>\
 				';
 			}
-			HTMLtoBeInserted += '\
-						<td>'+ '<span class="admin-icon"><img src="img/glyphicons-17-bin.png" alt="discard"><img src="img/glyphicons-53-eye-close.png" alt="hide"></span>' +'</td>\
-			';
 			HTMLtoBeInserted += '\
 					</tr>\
 			';

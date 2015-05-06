@@ -116,7 +116,6 @@ p, a, li, dd, dl, input, label, form, .btn, .form-control {
 	navigation 
 ***/
 #top-link .nav {
-	/*background-color: rgba(110, 110, 110, 0.9);*/
 	position: fixed;
 	z-index: 2;
 	width: 100%;
@@ -352,9 +351,35 @@ td, th {
 
 #searchErrata .dropdown-menu {
 	z-index: 3;
-	position: relative;
-	display: block;
 }
+
+.container table {
+	border: none;
+}
+
+#orderby, #select-edition, #report-error {
+	text-align: center;
+}
+
+.errata {
+    margin: 20px;
+}
+
+.errataLink {
+    cursor: pointer;
+}
+
+.row h5 {
+	font-family: 'Raleway', sans-serif;
+}
+
+hr {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+textarea { resize:vertical ; }
 
 /*** 
 	footer 
@@ -388,37 +413,6 @@ a {
 #footer a:hover {
 	text-decoration: none;
 }
-
-/***
-	errata
-***/
-.container table {
-	border: none;
-}
-
-#orderby, #select-edition, #report-error {
-	text-align: center;
-}
-
-.errata {
-    margin: 20px;
-}
-
-.errataLink {
-    cursor: pointer;
-}
-
-.row h5 {
-	font-family: 'Raleway', sans-serif;
-}
-
-hr {
-	width: 70%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-textarea { resize:vertical ; }
 
 /***
 	others
@@ -609,7 +603,7 @@ div .backToTop:hover {
 	-webkit-animation-name: thumb;
 	-webkit-animation-duration: 500ms;
 	-webkit-transform-origin:50% 50%;
-	-webkit-animation-iteration-count: 10;
+	-webkit-animation-iteration-count: 100;
 	-webkit-animation-timing-function: linear;
 }
 
