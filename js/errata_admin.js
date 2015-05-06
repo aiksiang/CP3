@@ -12,12 +12,15 @@ var classToName = {
 	statusColumn: "Status"
 }
 
-$(function getErrata(edition) {
+function getErrata(edition) {
 	$.get("php/retrieval.php", {action: "getErrata"}).done(function(result) {
 		errata = result;
 		errataDisplay = errata;
-	});	
-});
+		displayErrata(edition);
+	});
+}
+
+$(getErrata());
 
 function displayErrata(edition) {
 	$(".book-edition-errata").html("");

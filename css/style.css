@@ -405,6 +405,7 @@ a {
 
 #footer a:hover {
 	text-decoration: none;
+	cursor: pointer;
 }
 
 /***

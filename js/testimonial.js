@@ -1,6 +1,6 @@
 var testimonials = {};
 
-$(function() {
+function getTestimonial() {
 	$.get("php/retrieval.php", {action: "getTestimonials"}).done(function(data) {
 		for (var i in data) {
 			if (!testimonials.hasOwnProperty(data[i].region)) {
@@ -11,8 +11,11 @@ $(function() {
 			}
 			testimonials[data[i].region][data[i].nationality].push(data[i]);
 		}
+		showTestimonial();
 	});
-});
+}
+
+$(getTestimonial());
 
 function showTestimonial() {
 	$(".testimonial").html("");

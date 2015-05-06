@@ -1,10 +1,13 @@
 var downloadStatistics;
 
-$(function getDownloads(edition) {
+function getDownloads() {
 	$.get("php/retrieval.php", {action: "getDownloadStatistics"}).done(function(result) {
 		downloadStatistics = result;
+		showDownloads();
 	});	
-});
+}
+
+$(getDownloads());
 
 function showDownloads() {
 	$(".downloads").html("");

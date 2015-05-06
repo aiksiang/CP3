@@ -1,10 +1,12 @@
 var credits;
 
-$(function getCredits(edition) {
+function getCredits() {
 	$.get("php/retrieval.php", {action: "getCredits"}).done(function(result) {
 		credits = result;
+		showCredits();
 	});	
-});
+}
+$(getCredits());
 
 function showCredits() {
 	$(".credits").html("");

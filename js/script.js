@@ -3,9 +3,6 @@ var SECOND_EDITION = 2;
 var THIRD_EDITION = 3;
 var selectedEdition = 0;
 
-var SELECT_ERR = 10;
-var SELECT_INFO = -10;
-
 var pages = {
 	mainPage: $("#main-page-introduction"),
 	bookContainer: $(".book-details"),
@@ -106,7 +103,21 @@ function slideDownBooks() {$("#book-editions-img").slideDown(800);}
 function slideUpBooks() {$("#book-editions-img").slideUp(800);}
 
 $(document).ready(function(){
-	slideDownBooks();
+	//Redirection, for example cpbook.net/#errata
+	var hashLocation = (window.location.href).replace(/^.*#/, '');
+	if (!(hashLocation == "testimonial" ||
+		hashLocation == "download" ||
+		hashLocation == "downloads" ||
+		hashLocation == "workshop" ||
+		hashLocation == "workshops" ||
+		hashLocation == "credit" ||
+		hashLocation == "credits" ||
+		hashLocation == "sales" ||
+		hashLocation == "salesData"
+		)) {
+		slideDownBooks();
+	}
+
 	$("#home-button").on('click', function() {
 		fadeAllExcept("mainPage");
 		slideDownBooks();
@@ -219,8 +230,6 @@ $(document).ready(function(){
 		appendHashTag("sales");
 	}); 
 
-	//Redirection, for example cpbook.net/#errata
-	var hashLocation = (window.location.href).replace(/^.*#/, '');
 	switch(hashLocation) {
 		case "CP1details":
 			fadeAllExcept("bookContainer", showTabContent("bookDetailsTabContent"), function(){
@@ -278,7 +287,7 @@ $(document).ready(function(){
 		break;
 		case "CP1errata":
 			fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
-				displayErrata(FIRST_EDITION);
+				getErrata(FIRST_EDITION);
 			});
 			slideDownBooks();
 			makeBookFullOpacity(FIRST_EDITION);
@@ -287,7 +296,7 @@ $(document).ready(function(){
 		break;
 		case "CP2errata":
 			fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
-				displayErrata(SECOND_EDITION);
+				getErrata(SECOND_EDITION);
 			});
 			slideDownBooks();
 			makeBookFullOpacity(SECOND_EDITION);
@@ -297,7 +306,7 @@ $(document).ready(function(){
 		case "errata":
 		case "CP3errata":
 			fadeAllExcept("bookContainer", showTabContent("bookErratasTabContent"), function(){
-				displayErrata(THIRD_EDITION);
+				getErrata(THIRD_EDITION);
 			});
 			slideDownBooks();
 			makeBookFullOpacity(THIRD_EDITION);
@@ -314,7 +323,7 @@ $(document).ready(function(){
 		case "downloads":
 			fadeAllExcept("downloads");
 			slideUpBooks();
-			showDownloads();
+			getDownloads();
 			appendHashTag("downloads");
 		break;
 		case "workshop":
@@ -328,7 +337,7 @@ $(document).ready(function(){
 		case "credits":
 			fadeAllExcept("credits");
 			slideUpBooks();
-			showCredits();
+			getCredits();
 			appendHashTag("credits");
 		break;
 		case "sales":
