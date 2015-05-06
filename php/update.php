@@ -31,11 +31,12 @@ function normalRunSQL($sql) {
 	}
 }
 function htmldefend($data){
-	$temp_str = str_replace('<', '&lt', $data);
-	$temp_str = str_replace('>', '&gt', $temp_str);
+	$temp_str = str_replace('<', '?&lt?', $data);
+	$temp_str = str_replace('>', '?&gt?', $temp_str);
 	return $temp_str;
 }
-
+//From client side
+//Assumption : The content should not be null for all fields of Errata passed from the client side 
 function errataInsertion(){
 	global $db;
 	global $email_address;
@@ -65,7 +66,8 @@ function errataInsertion(){
 		echo $mail_sent ? "Mail Sent" : "Mail Sending Failed";
 	}
 }
-
+//From client side
+//Assumption : The content should not be null for all fields of Errata passed from the client side 
 function testimonialInsertion(){
 	global $db;
 	global $email_address;
@@ -92,88 +94,98 @@ function testimonialInsertion(){
 		echo $mail_sent ? "Mail Sent" : "Mail Sending Failed";
 	}
 }
-
+//From client side
 function newDownloadRequest($id) {
-	$sql = "UPDATE Download SET count = count+1 WHERE id = ".$id.";";
+	$entry_id = $db->real_escape_string($id);
+	$sql = "UPDATE Download SET count = count+1 WHERE id = ".$entry_id.";";
 	normalRunSQL($sql);
 }
-
+//From admin page
 function approveErrata($entry_id) {
 	$status = $_POST['status']; //either 0(not fixed) or 1 (fixed)
-		$sth = $db->query("SELECT * from ErrataP WHERE id =".$entry_id.";");
+	$status = $db->real_escape_string($status);
+	$id = $db->real_escape_string($entry_id);
+		$sth = $db->query("SELECT * from ErrataP WHERE id =".$id.";");
 		while($row = mysqli_fetch_row($sth)) {
         //$row_array['id'] = $row[0];
-        $row_array['severity'] = $row[1];
-        $row_array['type'] = $row[2];
-        $row_array['pageNum'] = $row[3];
-        $row_array['content'] = $row[4];
-        $row_array['authorName'] = $row[5];
-        $row_array['raise_time'] = $row[6];
-        $row_array['version'] = $row[7];
+        $row_array['severity'] = $db->real_escape_string($row[1]);
+        $row_array['type'] = $db->real_escape_string($row[2]);
+        $row_array['pageNum'] = $db->real_escape_string($row[3]);
+        $row_array['content'] = $db->real_escape_string($row[4]);
+        $row_array['authorName'] = $db->real_escape_string($row[5]);
+        $row_array['raise_time'] = $db->real_escape_string($row[6]);
+        $row_array['version'] = $db->real_escape_string($row[7]);
 
     	}
     	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (".$row_array['severity'].",".$row_array['type'].",".$row_array['pageNum'].",\"".$row_array['content']."\",".$status.",\"".$row_array['authorName']."\", \"".$row_array['raise_time']."\",".$row_array['version'].");";
     	normalRunSQL($sql);
 		//Remove from the pending list
-		$sql = "DELETE FROM ErrataP WHERE id = ".$entry_id.";";
+		$sql = "DELETE FROM ErrataP WHERE id = ".$id.";";
 		normalRunSQL($sql);
 }
-
+//From the admin page
 function approveTestimonial($entry_id){
-	$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) SELECT author,content,nationality,region,credit,imgURL FROM TestimonialP WHERE id =".$entry_id.";";
+	$id = $db->real_escape_string($entry_id);
+	$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) SELECT author,content,nationality,region,credit,imgURL FROM TestimonialP WHERE id =".$id.";";
 	normalRunSQL($sql);
 	//remove from the pending list
-	$sql = "DELETE FROM TestimonialP WHERE id = ".$entry_id.";";
+	$sql = "DELETE FROM TestimonialP WHERE id = ".$id.";";
 	normalRunSQL($sql);
 }
-
+//From the admin page
 function removeEntry($table_id,$entry_id){
-	$sql = "DELETE FROM ".$tables[$table_id]." WHERE id = ".$entry_id.";";
+	$id = $db->real_escape_string($entry_id);
+	$sql = "DELETE FROM ".$tables[intval($table_id)]." WHERE id = ".$id.";";
 	normalRunSQL($sql);
 }
-
+//From the admin page
 function addQandA($row){
 	$sql = "INSERT INTO QandA (question,answer) VALUES (\"".$row['question']."\",\"".$row['answer']."\")";
 	normalRunSQL($sql);
 }
-
+//From the admin page
 function addErrata($row){
 	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (".$row['severity'].",".$row['type'].",".$row['pageNum'].",\"".$row['content']."\",".$row['isFixed'].",\"".$row['authorName']."\", \"".$row['raise_time']."\",".$row['version'].");";
 	normalRunSQL($sql);
 }
-
+//From the admin page
 function addErrataP($row){
 	$sql = "INSERT INTO ErrataP(severity,type,pageNum,content,authorName,raise_time,version) VALUES (".$row['severity'].",".$row['type'].",".$row['pageNum'].",\"".$row['content']."\",\"".$row['authorName']."\", \"".$row['raise_time']."\",".$row['version'].");";
 	normalRunSQL($sql);
 }
-
+//From the admin page
 function addTestimonial($row) {
 	$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) VALUES (\"".$row['author']."\",\"".$row['content']."\",\"".$row['nationality']."\",\"".$row['region']."\",\"".$row['credit']."\",\"".$row['imgURL']."\");";
 	normalRunSQL($sql);
 }
-
+//From the admin page
 function addTestimonialP($row) {
 	$sql = "INSERT INTO TestimonialP(author,content,nationality,region,credit,imgURL) VALUES (\"".$row['author']."\",\"".$row['content']."\",\"".$row['nationality']."\",\"".$row['region']."\",\"".$row['credit']."\",\"".$row['imgURL']."\");";
 	normalRunSQL($sql);
 }
-
+//From the admin page
 function addDownload($row) {
 	$sql = "INSERT INTO Download(name,count,URL,remark,LastUpdate) VALUES (\"".$row['name']."\",".intval($row['count']).",\"".$row['URL']."\",\"".$row['remark']."\",now());";
 	normalRunSQL($sql);
 }
-
+//From the admin page
 function addCredit($row) {
 	$sql = "INSERT INTO Credit(name,setter,appearance) VALUES (\"".$row['name']."\",\"".$row['setter']."\",\"".$row['appearance']."\");";
 	normalRunSQL($sql);
 }
-
+//From the admin page
 function modifyQandA($row,$id){
 	$question = $row['question'];
+	$question = $db->real_escape_string($question);
 	$ans = $row['answer'];
-	$sql = "UPDATE QandA SET question=\"".$question."\", answer=\"".$ans."\" WHERE id=".$id.";";
+	$ans = $db->real_escape_string($ans);
+	$entry_id = $db->real_escape_string($id);
+	$sql = "UPDATE QandA SET question=\"".$question."\", answer=\"".$ans."\" WHERE id=".$entry_id.";";
 	normalRunSQL($sql);
 }
-
+//From the admin page
+//Assumption 1 content entered from the admin should be harmful to the website and database
+//Assumption 2 id are passed internally so that there is no way to do SQL injection in id
 function modifyErrata($row,$id){
 	$author = $row['name'];
 	$page = $row['page'];
@@ -183,10 +195,13 @@ function modifyErrata($row,$id){
 	$version = $row['version'];
 	$status = $row['status'];
 	$time = $row['raise_time'];
+
 	$sql = "UPDATE Errata SET severity = ".$severity.",type = ".$type.",pageNum =".$page.",content = \"".$content."\",isFixed =".$status.",authorName = \"". $author."\",raise_time = \"".$time."\",versioin =".$version." WHERE id = ".$id.";";
 	normalRunSQL($sql);
 }
-
+//From the admin page
+//Assumption 1 content entered from the admin should be harmful to the website and database
+//Assumption 2 id are passed internally so that there is no way to do SQL injection in id
 function modifyErrataP($row,$id) {
 	$author = $row['name'];
 	$page = $row['page'];
@@ -198,22 +213,28 @@ function modifyErrataP($row,$id) {
 	$sql = "UPDATE ErrataP SET severity = ".$severity.",type = ".$type.",pageNum =".$page.",content = \"".$content."\",authorName = \"". $author."\",raise_time = \"".$time."\",versioin =".$version." WHERE id = ".$id.";";
 	normalRunSQL($sql);
 }
-
+//From the admin page
+//Assumption 1 content entered from the admin should be harmful to the website and database
+//Assumption 2 id are passed internally so that there is no way to do SQL injection in id
 function modifyTestimonial($row,$id,$table_id) {
 	$sql = "UPDATE ".$tables[$table_id]." SET author = \"".$row['author']."\",content = \"".$row['content']."\",nationality = \"".$row['nationality']."\", region = \"".$row['region']."\",credit = \"".$row['credit']."\",imgURL = \"".$row['imgURL']."\" WHERE id = ".$id.";";
 	normalRunSQL($sql);
 }
-
+//From the admin page
+//Assumption 1 content entered from the admin should be harmful to the website and database
+//Assumption 2 id are passed internally so that there is no way to do SQL injection in id
 function modifyDownload($row,$id) {
 	$sql = "UPDATE Download SET name = \"".$row['name']."\",count = ".$row['count'].", URL = \"".$row['URL']."\",remark = \"".$row['remark']."\" WHERE id = ".$id.";";
 	normalRunSQL($sql);
 }
-
+//From the admin page
+//Assumption 1 content entered from the admin should be harmful to the website and database
+//Assumption 2 id are passed internally so that there is no way to do SQL injection in id
 function modifyCredit($row,$id) {
 	$sql = "UPDATE Credit SET name = \"".$row['name']."\",setter = \"".$row['setter']."\",appearance = \"".$row['appearance']."\" WHERE id = ".$id.";";
 	normalRunSQL($sql);
 }
-
+//To generate readable json file content stored in the backup json file
 function prettyPrint( $json )
 {
     $result = '';
@@ -270,7 +291,7 @@ function prettyPrint( $json )
 
     return $result;
 }
-
+//Update the backup json file after executing every operation
 function updateJson($jsonFiles,$db){
 	for($i = 0; $i<count($jsonFiles);$i++){
 		unlink($jsonFiles[$i]);
@@ -403,17 +424,20 @@ $command = $_POST['command'];
 //EITHER "new_errata", "new_testimonial" or "add","modify","approve","remove" (these 4 are from the adminstration side)
 
 
-
+//new posting errata request from the client side
 if($command == "new_errata") {
 	errataInsertion();
 }
+//new posting testimonial request from the client side
 else if ($command == "new_testimonial") {
 	testimonialInsertion();
 }
+//new download request from the client side
 else if ($command == "new_download") {
 	$id = $_POST['entry_id'];
 	newDownloadRequest($id);
 }
+//request done in the admin page
 else if ($command == "modify") {
 	$table = $_POST['table_name'];
 	$id = $_POST['entry_id'];
@@ -458,6 +482,7 @@ else if ($command == "modify") {
 		}
 	}
 }
+//approve request done in the admin page
 else if ($command == "approve") {
 	$table = $_POST['table_name']; //either ErrataP or TestimonialP
 	$entry_id = $_POST['id'];
@@ -469,12 +494,14 @@ else if ($command == "approve") {
 	}
 
 }
+//delete request done in the admin page
 else if ($command == "remove") {
 	$table_id = $_POST['table_id']; //0-6
 	$entry_id = $POST['entry_id'];
 	removeEntry($table_id,$entry_id);
 }
 //adding new content
+///add request done in the admin page
 else if ($command == "add") {
 	$table_id = $_POST['table_id'];
 	$content = $_POST['modify_content']; //Pass in a JSON format entry? like the entries in json files
