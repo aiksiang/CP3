@@ -373,6 +373,7 @@ td, th {
 
 .links, .info, .buy-book {
 	padding-left: 170px !important;
+	z-index: 2;
 }
 
 .buy-book {
@@ -615,6 +616,7 @@ div .backToTop:hover {
 
 .share-buttons {
 	padding-top: 15px;
+	position: relative;
 	margin-right: 0;
 	padding-left: 150px !important;
 }
