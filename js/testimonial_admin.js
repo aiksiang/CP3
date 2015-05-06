@@ -60,6 +60,7 @@ function showTestimonial() {
 	HTMLtoBeInserted += '\
   			</div>\
   		</div>\
+	  	<hr/>\
   	';
 
   	HTMLtoBeInserted += '\

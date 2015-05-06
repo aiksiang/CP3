@@ -116,7 +116,6 @@ function approveErrata($entry_id) {
         $row_array['authorName'] = $db->real_escape_string($row[5]);
         $row_array['raise_time'] = $db->real_escape_string($row[6]);
         $row_array['version'] = $db->real_escape_string($row[7]);
-
     	}
     	$sql = "INSERT INTO Errata(severity,type,pageNum,content,isFixed,authorName,raise_time,version) VALUES (".$row_array['severity'].",".$row_array['type'].",".$row_array['pageNum'].",\"".$row_array['content']."\",".$status.",\"".$row_array['authorName']."\", \"".$row_array['raise_time']."\",".$row_array['version'].");";
     	normalRunSQL($sql);
@@ -198,9 +197,8 @@ function modifyErrata($row,$id){
 	$content = $row['content'];
 	$version = $row['version'];
 	$status = $row['status'];
-	$time = $row['raise_time'];
 
-	$sql = "UPDATE Errata SET severity = ".$severity.",type = ".$type.",pageNum =".$page.",content = \"".$content."\",isFixed =".$status.",authorName = \"". $author."\",raise_time = \"".$time."\",versioin =".$version." WHERE id = ".$id.";";
+	$sql = "UPDATE Errata SET severity = ".$severity.",type = ".$type.",pageNum =".$page.",content = \"".$content."\",isFixed =".$status.",authorName = \"". $author."\",version =".$version." WHERE id = ".$id.";";
 	normalRunSQL($sql);
 }
 //From the admin page
@@ -213,8 +211,8 @@ function modifyErrataP($row,$id) {
 	$type = $row['type'];
 	$content = $row['content'];
 	$version = $row['version'];
-	$time = $row['raise_time'];
-	$sql = "UPDATE ErrataP SET severity = ".$severity.",type = ".$type.",pageNum =".$page.",content = \"".$content."\",authorName = \"". $author."\",raise_time = \"".$time."\",versioin =".$version." WHERE id = ".$id.";";
+
+	$sql = "UPDATE ErrataP SET severity = ".$severity.",type = ".$type.",pageNum =".$page.",content = \"".$content."\",authorName = \"". $author."\",version =".$version." WHERE id = ".$id.";";
 	normalRunSQL($sql);
 }
 //From the admin page

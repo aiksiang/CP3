@@ -20,6 +20,18 @@ if ($_GET['action'] == 'getErrata') {
 	echo json_encode($result);
 }
 
+if ($_GET['action'] == 'getPendingErrata') {
+	global $db;
+	$query = "SELECT * FROM `ErrataP`";
+	$result = array();
+	if ($queryResult = $db->query($query)) {
+		while ($entry = $queryResult->fetch_assoc()) {
+			array_push($result, $entry);
+		}
+	}
+	echo json_encode($result);
+}
+
 if ($_GET['action'] == 'getCredits') {
 	global $db;
 	$query = "SELECT * FROM `Credit`";

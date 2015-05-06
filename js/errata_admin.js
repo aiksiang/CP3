@@ -1,5 +1,6 @@
 var errata;
 var errataDisplay;
+var errataPending;
 var clickedHeader;
 var arrowPointingUp = true;
 var classToName = {
@@ -16,8 +17,12 @@ function getErrata(edition) {
 	$.get("php/retrieval.php", {action: "getErrata"}).done(function(result) {
 		errata = result;
 		errataDisplay = errata;
-		displayErrata(edition);
+		$.get("php/retrieval.php", {action: "getPendingErrata"}).done(function(resultP) {
+			errataPending = resultP;
+			displayErrata(edition);
+		});
 	});
+
 }
 
 $(getErrata());
@@ -29,14 +34,66 @@ function displayErrata(edition) {
 		<div class="container">\
 			<div class="col-md-12" id="report-error">\
 				<div class="row">\
-					<div class="col-md-12" id="select-edition"><h3>Report Error</h3></div>\
-					<p>This page contains all the known errors and bugs for <span id="edition">CP</span>. <br>Please report any sightings of bugs, errors or misprints here.</p>\
+					<div class="col-md-12" id="select-edition"><h3>Pending Erratas</h3></div>\
+					<table class="container table">\
+						<thead>\
+							<tr>\
+								<th class="pageColumn">Page Number</th>\
+								<th class="errataColumn">Errata</th>\
+								<th class="authorColumn">Author</th>\
+								<th class="typeColumn">Type</th>\
+								<th class="timeColumn">Time</th>\
+								<th class="severityColumn">Severity</th>\
+								<th class="statusColumn">Status</th>\
+								<th> </th>\
+								<th>Edit</th>\
+							</tr>\
+						</thead>\
+						<tbody>\
+	';
+
+	for (var k in errataPending) {
+		if (errataPending[k].version == edition) {
+			HTMLtoBeInserted += '\
+					<tr id="errataPending' + errataPending[k].id + '">\
+			';
+			if (errataPending[k].pageNum == 0) {
+				HTMLtoBeInserted += '\
+						<td>'+ 'Not Applicable' +'</td>\
+					';
+			} else {
+				HTMLtoBeInserted += '\
+						<td>'+ errataPending[k].pageNum +'</td>\
+				';
+			}
+			HTMLtoBeInserted += '\
+						<td>'+ errataPending[k].content +'</td>\
+						<td>'+ errataPending[k].authorName +'</td>\
+						<td>'+ errataPending[k].type +'</td>\
+			';
+			HTMLtoBeInserted += '\
+						<td>'+ errataPending[k].raise_time +'</td>\
+						<td>'+ errataPending[k].severity +'</td>\
+						<td>'+ 'Pending Fix' +'</td>\
+				';
+			HTMLtoBeInserted += '\
+						<td><span class="glyphicon glyphicon-ok admin-icon" onClick=\'approvePendingErrata(' + k + ');\' aria-hidden="true" rel="tooltip" title="Approve"></span></td>\
+						<td><span class="glyphicon glyphicon-pencil admin-icon" onClick=\'editPendingErrata(' + k + ');\' aria-hidden="true" rel="tooltip" title="Edit"></span></td>\
+						<td><span class="glyphicon glyphicon-remove admin-icon" onClick=\'deletePendingErrata(' + k + ');\' aria-hidden="true" rel="tooltip" title="Delete"></span></td>\
+					</tr>\
+			';
+			errataPending[k].isFixed = 0;
+		}
+	}
+
+	HTMLtoBeInserted += '\
+						</tbody>\
+				  	</table>\
+	  				<hr/>\
+					<div class="col-md-12" id="select-edition"><h3>Erratas</h3></div>\
 				</div>\
-				\
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#errata-submit" onClick="getQuestion();">Report</button>\
 	  		</div>\
 	  	</div>\
-	  	<hr/>\
 	  	<div class="input-group input-group" id="searchErrata">\
 			<div class="input-group-btn dropdown">\
 				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">\
@@ -66,25 +123,13 @@ function displayErrata(edition) {
 					<th class="timeColumn">Time</th>\
 					<th class="severityColumn">Severity</th>\
 					<th class="statusColumn">Status</th>\
+					<th> </th>\
+					<th>Edit</th>\
 				</tr>\
 			</thead>\
 			<tbody>\
 			</tbody>\
 	  	</table>\
-	  	<div class="col-md-12 crudErrata">\
-  			<div class="row">\
-  				<span class="admin-icon"><img src="img/glyphicons-17-bin.png" alt="discard"></span>\
-  				<span class="admin-icon"><img src="img/glyphicons-53-eye-close.png" alt="hide"></span>\
-  				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">\
-					Pending Fix\
-					<span class="caret"></span>\
-				</button>\
-				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">\
-					<li role="presentation"><a role="menuitem" tabindex="-1" onClick="changeFix(' + "'" + "Fixed" + "'" + ');">Fixed</a></li>\
-					<li role="presentation"><a role="menuitem" tabindex="-1" onClick="changeFix(' + "'" + "Pending Fix" + "'" + ');">Pending Fix</a></li>\
-				</ul>\
-  			</div>\
-  		</div>\
 	';
 
 	HTMLtoBeInserted += '\
@@ -117,11 +162,6 @@ function displayErrata(edition) {
 function changeColumn(text) {
 	$("#searchErrata .dropdown-toggle").html(text + '<span class="caret"></span>');
 	$("#searchErrata input").val("");
-}
-
-function changeFix(text) {
-	$(".crudErrata .dropdown-toggle").html(text + '<span class="caret"></span>');
-	$(".crudErrata input").val("");
 }
 
 function searchErrata() {
@@ -208,7 +248,7 @@ function showTable(edition) {
 	for (var i in errataDisplay) {
 		if (errataDisplay[i].version == edition) {
 			HTMLtoBeInserted += '\
-					<tr>\
+					<tr id="errata' + errataDisplay[i].id + '">\
 			';
 			if (errataDisplay[i].pageNum == 0) {
 				HTMLtoBeInserted += '\
@@ -238,6 +278,8 @@ function showTable(edition) {
 				';
 			}
 			HTMLtoBeInserted += '\
+						<td><span class="glyphicon glyphicon-pencil admin-icon" onClick=\'editErrata(' + i + ');\' aria-hidden="true" rel="tooltip" title="Edit"></span></td>\
+						<td><span class="glyphicon glyphicon-remove admin-icon" onClick=\'deleteErrata(' + i + ');\' aria-hidden="true" rel="tooltip" title="Delete"></span></td>\
 					</tr>\
 			';
 		}
@@ -393,4 +435,136 @@ function clickHeader(className, edition) {
 	} else if (arrowPointingUp == false) {
 		$("." + clickedHeader).html(classToName[clickedHeader] + ' <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>');
 	}
+}
+
+function editErrata(i) {
+
+	HTMLtoBeInserted = '\
+			<td><form><textarea class="form-control errata-pagenum">'+ errataDisplay[i].pageNum +'</textarea></form></td>\
+			<td><form><textarea class="form-control errata-content">'+ errataDisplay[i].content +'</textarea></form></td>\
+			<td><form><textarea class="form-control errata-authorname">'+ errataDisplay[i].authorName +'</textarea></form></td>\
+			<td><form><textarea class="form-control errata-type">'+ errataDisplay[i].type +'</textarea></form></td>\
+			<td>'+ errataDisplay[i].raise_time +'</td>\
+			<td><form><textarea class="form-control errata-severity">'+ errataDisplay[i].severity +'</textarea></form></td>\
+			<td><form><textarea class="form-control errata-fixed">'+ errataDisplay[i].isFixed +'</textarea></form></td>\
+	';
+	HTMLtoBeInserted += '\
+			<td><span class="glyphicon glyphicon-ok admin-icon" onClick=\'confirmEditErrata(' + i + ');\' aria-hidden="true" rel="tooltip" title="Confirm"></span></td>\
+			<td><span id="editErrata" class="glyphicon glyphicon-remove admin-icon" onClick=\'displayErrata(' + selectedEdition + ');\' aria-hidden="true" rel="tooltip" title="Cancel"></span></td>\
+	';
+
+	$("#editErrata").tooltip('destroy');
+	$("#errata" + errataDisplay[i].id).html(HTMLtoBeInserted);
+	$(".book-edition-errata .admin-icon").tooltip({'placement': 'top'});
+}
+
+function confirmEditErrata(i) {
+	var pagenum = $("#errata" + errataDisplay[i].id + " .errata-pagenum").val();
+	var content = $("#errata" + errataDisplay[i].id + " .errata-content").val();
+	var authorname = $("#errata" + errataDisplay[i].id + " .errata-authorname").val();
+	var type = $("#errata" + errataDisplay[i].id + " .errata-type").val();
+	var severity = $("#errata" + errataDisplay[i].id + " .errata-severity").val();
+	var isFixed = $("#errata" + errataDisplay[i].id + " .errata-fixed").val();
+	$.post("php/update.php", {
+		command: "modify",
+		table_name: 1,
+		entry_id: errataDisplay[i].id,
+		modify_content: JSON.stringify({
+			name: authorname,
+			page: pagenum,
+			severity: severity,
+			type: type,
+			content: content,
+			version: selectedEdition,
+			status: isFixed
+		})
+	}).done(function() {
+		getErrata(selectedEdition);
+	});
+}
+
+function editPendingErrata(k) {
+
+	HTMLtoBeInserted = '\
+			<td><form><textarea class="form-control errata-pagenum">'+ errataPending[k].pageNum +'</textarea></form></td>\
+			<td><form><textarea class="form-control errata-content">'+ errataPending[k].content +'</textarea></form></td>\
+			<td><form><textarea class="form-control errata-authorname">'+ errataPending[k].authorName +'</textarea></form></td>\
+			<td><form><textarea class="form-control errata-type">'+ errataPending[k].type +'</textarea></form></td>\
+			<td>'+ errataPending[k].raise_time +'</td>\
+			<td><form><textarea class="form-control errata-severity">'+ errataPending[k].severity +'</textarea></form></td>\
+			<td><form><textarea class="form-control errata-fixed">'+ errataPending[k].isFixed +'</textarea></form></td>\
+	';
+	HTMLtoBeInserted += '\
+			<td><span class="glyphicon glyphicon-ok admin-icon" onClick=\'approvePendingErrata(' + k + ');\' aria-hidden="true" rel="tooltip" title="Confirm"></span></td>\
+			<td><span class="glyphicon glyphicon-remove admin-icon" onClick=\'displayErrata(' + selectedEdition + ');\' aria-hidden="true" rel="tooltip" title="Cancel"></span></td>\
+	';
+
+	$("#editErrata").tooltip('destroy');
+	$("#errataPending" + errataPending[k].id).html(HTMLtoBeInserted);
+	$(".book-edition-errata .admin-icon").tooltip({'placement': 'top'});
+}
+
+function approvePendingErrata(k) {
+	var pagenum = $("#errataPending" + errataPending[k].id + " .errata-pagenum").val();
+	var content = $("#errataPending" + errataPending[k].id + " .errata-content").val();
+	var authorname = $("#errataPending" + errataPending[k].id + " .errata-authorname").val();
+	var type = $("#errataPending" + errataPending[k].id + " .errata-type").val();
+	var severity = $("#errataPending" + errataPending[k].id + " .errata-severity").val();
+	var isFixed = $("#errataPending" + errataPending[k].id + " .errata-fixed").val();
+	console.log(isFixed)
+	if (pagenum != undefined) {
+		$.post("php/update.php", {
+			command: "modify",
+			table_name: 2,
+			entry_id: errataPending[k].id,
+			modify_content: JSON.stringify({
+				name: authorname,
+				page: pagenum,
+				severity: severity,
+				type: type,
+				content: content,
+				version: selectedEdition
+			})
+		}).done(function() {
+			$.post("php/update.php", {
+				command: "approve",
+				table_name: "ErrataP",
+				status: isFixed,
+				id: errataPending[k].id
+			}).done(function() {
+				getErrata(selectedEdition);
+			});
+		});
+	} else {
+		$.post("php/update.php", {
+			command: "approve",
+			table_name: "ErrataP",
+			status: isFixed,
+			id: errataPending[k].id
+		}).done(function() {
+			getErrata(selectedEdition);
+		});
+	}
+}
+
+function deleteErrata(i) {
+	$.post("php/update.php", {
+		command: "remove",
+		table_id: 1,
+		entry_id: errataDisplay[i].id
+	}).done(function() {
+		getErrata(selectedEdition);
+	});
+	errataDisplay.splice(i,1);
+}
+
+function deletePendingErrata(k) {
+	$.post("php/update.php", {
+		command: "remove",
+		table_id: 2,
+		entry_id: errataPending[k].id
+	}).done(function() {
+		getErrata(selectedEdition);
+	});
+	errataPending.splice(k,1);
 }

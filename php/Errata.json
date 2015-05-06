@@ -1,13 +1,13 @@
 [
 	{
-		"severity": "1",
-		"type": "5",
-		"pageNum": "127",
-		"content": "memset(dfs_num, UNVISITED, sizeof dfs_num); was a legacy code. We have changed dfs_num from plain array to vi (vector of integers), therefore the initialization part should be written as dfs_num.assign(V, UNVISITED);",
+		"severity": "2",
+		"type": "3",
+		"pageNum": "1",
+		"content": "123123123123123",
 		"isFixed": "1",
-		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
-		"version": "3"
+		"authorName": "7",
+		"raise_time": "2015-05-07 06:24:06",
+		"version": "1"
 	},
 	{
 		"severity": "1",
@@ -16,7 +16,7 @@
 		"content": "For very competitive programmer E: ... solve this 'well known' problem in \u2264 15 minutes...'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -26,7 +26,7 @@
 		"content": "Footnote 5. 'This number may vary', not 'This numbers may vary'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -36,7 +36,7 @@
 		"content": "Question 4 should not have the word 'randomly'. The points are only randomly scattered in Question 8, not in Question 4.",
 		"isFixed": "0",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -46,7 +46,7 @@
 		"content": "Question 8, option (a). The complete search mentioned in question 4 (not question 3).",
 		"isFixed": "0",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -56,7 +56,7 @@
 		"content": "The answer for exercise 1.2.2, question 3. should be ' (f) Fenwick Tree ... then (e) Segment Tree' (the reference letters are wrong).",
 		"isFixed": "0",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -66,7 +66,7 @@
 		"content": "The comment 'Wed' written as the output for Exercise 1.2.3, task 3 is wrong. 9 August 2010 is 'Mon'.",
 		"isFixed": "0",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -76,7 +76,7 @@
 		"content": "The typedef pair<int, ii> iii in Exercise 1.2.3. task 5 is slightly wrong, it should be typedef pairt<ii, int> iii, because I use pair first (for Month and Day), and then one more integer for Year",
 		"isFixed": "0",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -86,7 +86,7 @@
 		"content": "The RegEx for Exercise 1.2.3 task 10 is not perfect as it may give extra spaces before and after the '***'. The correct answer should be System.out.println(S.replaceAll(''\b[a-z][0-9][0-9]''\b', '***''));",
 		"isFixed": "0",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -96,7 +96,7 @@
 		"content": "Figure 4.13. The sentence 'Edge 1-2 is fixed' is wrong. It should be 'Edge 0-1' is fixed (off-by-one error).",
 		"isFixed": "0",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -106,7 +106,7 @@
 		"content": "Binet's formula is NOT an approximation formula. It is a closed form formula to compute Fib(n). It is imprecise due to floating point computation. It is also not an O(1) method, but O(log n) method as raising a number to the power of n requires O(log n) steps.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -116,7 +116,7 @@
 		"content": "Exercise 5.4.4.2 answer. The 'above' in 'see above' refer to the fundamental counting principle mentioned in the answer of Exercise 5.4.4.1.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -126,7 +126,7 @@
 		"content": "There is an extra 'and' in 'Postfix Calculator and (Infix to Postfix) Conversion and (Section 9.27)'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -136,7 +136,7 @@
 		"content": "Section 9.2 about Bitonic TSP should be Section 9.3 (off-by-one error).",
 		"isFixed": "0",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "3"
 	},
 	{
@@ -146,7 +146,7 @@
 		"content": "add newline characters in ch1_02_scanf.cpp",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -156,7 +156,7 @@
 		"content": "in ft_adjust function, the comparison k <= (int)t.size() should be k < (int)t.size(). Otherwise, we will get array out-of-bound error.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -166,7 +166,7 @@
 		"content": "Our LA 4793 code is AC in Live Archive (the outlined algorithm should be AC too in the actual World Finals) but TLE in UVa online judge problem 1098. We have managed to improve the solution and get AC in UVa 1098 using the 'meet in the middle' technique. But this will need lots of explanation. In CP3, we will include the discussion of this technique (maybe in Chapter 8). For now, the readers of CP2 can try testing their code on ICPC Live Archive 4793, which has less strict time limit for the same problem (and similar test data).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -176,7 +176,7 @@
 		"content": "M - price[0][i] in can_reach[M - price[0][i]][0] = true; may be < 0 and causes RTE. Use a simple if statement to prevent this.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -186,7 +186,7 @@
 		"content": "Every time you see '->' in function 'graphCheck' and 'AlternatingPath', replace it with a '.'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -196,7 +196,7 @@
 		"content": "Every time you see '->' in function 'graphCheck' and 'AlternatingPath', replace it with a '.'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -206,7 +206,7 @@
 		"content": "We rename 'AlternatingPath' algorithm to 'AugmentingPath' algorithm.\nWe also notice that the sample Bipartite Graph in Figure 4.37 is slightly wrong. The correct one should be:\nV = 4, num_vertices_on_left = 2\nAdjList[0] = {(2,1), (3,1)} \/\/ index 0 belong to the left set\nAdjList[1] = {(2,1)} \/\/ index 1 belong to the left set\nAdjList[2] = {}\nAdjList[3] = {} \nso that the 'AugmentingPath' algorithm will behave like described in Page 116-117.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -216,7 +216,7 @@
 		"content": "There is a unknown bug with our UVa 10681 code (powers of square matrix), we have replaced our sample code with the solution of similar problem: UVa 10229",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -226,7 +226,7 @@
 		"content": "We have managed to identify the (subtle) bug in our Suffix Array code involving simple test case like T = 'AAAA'. The shortest quick fix is to add T[n++] = '.'; (add '.', a dot, as the end of string delimiter to break ties in our counting sort routine) before calling constructSA(); See our updated sample code: ch6_03_sa.cpp in ch6.zip in this supporting material page.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -236,7 +236,7 @@
 		"content": "comparison function in struct Point is buggy, change 'if (fabs(x - other.x) < EPS)' to 'if (fabs(x - other.x) > EPS)'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -246,7 +246,7 @@
 		"content": "Page viii,Point 1: We have not mentioned that we use A5 book size in the list of changes (it was last minute decision).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -256,7 +256,7 @@
 		"content": "Page viii,Point 2: 'Some minor bug...' should be 'Some minor bugs...'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -266,7 +266,7 @@
 		"content": "Page xi,There is a sentence that 'Steven's wife, Grace, is pregnant during the time the second edition of this book is released.'. Our daughter, Jane Angelina Halim has been born on Monday, 24 October 2011.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -276,7 +276,7 @@
 		"content": "Page xii,Convention: Our Java codes also use the same fixed-width font like the C++ codes.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -286,7 +286,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -296,7 +296,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -306,7 +306,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -316,7 +316,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -326,7 +326,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -336,7 +336,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -346,7 +346,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -356,7 +356,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -366,7 +366,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -376,7 +376,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -386,7 +386,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -396,7 +396,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -406,7 +406,7 @@
 		"content": "We want to use the term 'problem author' instead of 'problem setter'.",
 		"isFixed": "1",
 		"authorName": "Brian C. Dean",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -416,7 +416,7 @@
 		"content": "Section 1.2.2  Tip 3: Do Algorithm Analysis.Modern computers can do a BILLION operations a second, not a MILLION.  Your table of 'worst AC algorithm' is using a limit of 1,000,000, but I'm generally comfortable with around 10^8 (NOT 10^6) simple operations per test case.  On TopCoder around 300,000,000 to 400,000,000 (O(n^5) for the usual n=50) is the limit.  There's no perfect measure for ICPC, of course.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -426,7 +426,7 @@
 		"content": "first paragraph: '... coding this simple problem ...' should be '... coding the solution for this simple problem ...'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -436,7 +436,7 @@
 		"content": "Exercise 1.2.4, Question 2 (and the corresponding solution in page 215): '....TLE response for an your O(N^3)...', please delete 'an'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -446,7 +446,7 @@
 		"content": "Tip 6 is not 'last tip', it is the 'second last tip'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -456,7 +456,7 @@
 		"content": "Steven's and Felix's UVA statistics are no longer correct :). We have solved much more problems since 1 August 2011.",
 		"isFixed": "1",
 		"authorName": "Amanda Sturgill",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -466,7 +466,7 @@
 		"content": "'... history said it was ...' should be '... history said he was ..'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -476,7 +476,7 @@
 		"content": "UVa 00837 - Y3K should be UVa 00893",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -486,7 +486,7 @@
 		"content": "Bitmask, point no 3... 'true if one of the bits is true'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -496,7 +496,7 @@
 		"content": "8 lines from top, 'left 4 times' should be 'left 2 times'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -506,7 +506,7 @@
 		"content": "Last paragraph about 'Heap' data structure. The default behavior of partial_sort is to sort in ascending order, not in descending order. So,'...dequeuing the maximum element...' should be '...dequeuing the minimum element...'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -516,7 +516,7 @@
 		"content": "A tighter analysis of segment tree build routine shown in this page actually runs in O(n).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -526,7 +526,7 @@
 		"content": "footnote 23 and definition of 'Segment [L, R] is larger than query range [i, j]' is not 100% accurate. Let's just say Segment [L, R] is larger than query range [i, j] if [L, R] is not outside query range (footnote 24) and not inside query range (footnote 25).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -536,7 +536,7 @@
 		"content": " 'In Figure 2.6, the ft_rsq(t, 6)...' should be 'In Figure 2.6, the ft_rsq(ft, 6)...'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -546,7 +546,7 @@
 		"content": "the iterative complete search solution presented for UVa 725 actually runs in 100K * 10 = 1M operations as we have to use another loop to check whether all 10 digits are different.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -556,7 +556,7 @@
 		"content": "Numbering error, Exercise 3.2.1.4 appears twice...",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -566,7 +566,7 @@
 		"content": "Numbering error, Exercise 3.2.1.4 appears twice...",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -576,7 +576,7 @@
 		"content": "Footnote 2 is technically incorrect, next_permutation in C++ STL algorithm is written iteratively.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -586,7 +586,7 @@
 		"content": "LIS(7) in this example should be 2, from {-7, 1}, not 4.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -596,7 +596,7 @@
 		"content": "'The dimension of the DP table must be the size of distinct sub-problems.' must be 'The size of the DP table must be the size of distinct sub-problems.'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -606,7 +606,7 @@
 		"content": " middle page, ' that's is, this is ...' should be ' that's it, this is ...'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -616,7 +616,7 @@
 		"content": "Forward\/Cross edge (1, 4) should be (1, 3)",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -626,7 +626,7 @@
 		"content": "first paragraph, '...can be used to solve various graph algorithms on top of...' should be '...can be used to solve various graph problems on top of...'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -636,7 +636,7 @@
 		"content": "two paragraphs above Figure 4.18, last two sentences. 'dist[1] = 988 and dist[1] = 946...' must be 'dist[2] = 988 and dist[1] = 946...'. Similarly in the next sentence, 'i.e. relaxing dist[1] = 946+15 = 961 < 988!' must be 'i.e. relaxing dist[2] = 946+15 = 961 < 988!'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -646,7 +646,7 @@
 		"content": "The arbitrage example (UVa 436) still uses French Franc (FRF), but this currency is already changed to Euro since 2002... We will change this in the 3rd edition (if Euro still used by then :).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -656,7 +656,7 @@
 		"content": "first paragraph, last sentence: '... of overlapping subproblem to covered earlier...' should be '... of overlapping subproblem covered earlier...'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -666,7 +666,7 @@
 		"content": "'we will never no longer encounter...' should be 'we will never encounter'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -676,7 +676,7 @@
 		"content": "LA4201 - Switch Bulbs is in the wrong category. This is just a BFS + bitmask (in page 94), similar to UVa 11974",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -686,7 +686,7 @@
 		"content": "first paragraph, last sentence. 'Answer: floor(sqrt(n))' should be 'Answer: floor(sqrt(X))'... I use X instead of n in the previous sentence. And if X is a square number, further reduce the answer by 1.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -696,7 +696,7 @@
 		"content": "Footnote 26: Change '% 10' to '\/ 10'...",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -706,7 +706,7 @@
 		"content": "'we have just find the first repetition...' should read 'we have just found the first repetition'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -716,7 +716,7 @@
 		"content": "remove 'tortoise = mu;' in the third part of floydCycleFinding function otherwise we will have an infinite loop.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -726,7 +726,7 @@
 		"content": "There are actually 285 UVa (+ 11 others) programming exercises in Chapter 5.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -736,7 +736,7 @@
 		"content": "the back table of 'SEVENTY SEVEN' stops at index 12, character 'N', with b[12] = 4. We need one more at index 13, character 'NULL', with b[13] = 5.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -746,7 +746,7 @@
 		"content": "LA4717 - In-cicles again should be LA4714",
 		"isFixed": "1",
 		"authorName": "Baochuan Lu",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -756,7 +756,7 @@
 		"content": "LA4717 - In-cicles again should be LA4714",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -766,7 +766,7 @@
 		"content": "Section 7.3.6 Cutting Polygon With a Straight Line.You fail to mention that for non-convex polygons such a cut may return more than one polygon.  Your code will return a weird degenerate polygon (with a 0-width line connecting polygons) when it should actually return a list of polygons.  Or you can just comment that the code should only be called for convex polygons.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -776,7 +776,7 @@
 		"content": "middle, '\/\/ notice that we does not sort P[0]' should be '\/\/ notice that we do not sort P[0]'",
 		"isFixed": "1",
 		"authorName": "Kip Irvine",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -786,7 +786,7 @@
 		"content": "bullet point 3: 'But if we slide tile 0 downwards, we have h(s+) = 0. This causes g(s+)+h(s+) = 0+0 = 0' should read 'This causes g(s+)+h(s+) = 1+0 = 1'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -796,7 +796,7 @@
 		"content": "'An edge (i,j) in Kn has weight according to the weight of the original edge (if it exists)' is incorrect; it should ALWAYS be the shortest path weight, regardless of whether there is already an edge connecting the two (eg the weight-6 edge in your K4 diagram should be weight 3).  Here is an example: \n0 <-> 1 weight 100\n0 <-> 2 weight 100\n0 <-> 3 weight 100\n1 <-> 2 weight 100\n1 <-> 3 weight 100\n2 <-> 3 weight 100\n0 <-> 4 weight 1\n4 <-> 1 weight 1\n1 <-> 5 weight 1\n5 <-> 2 weight 1\n2 <-> 6 weight 1\n6 <-> 3 weight 1\n3 <-> 7 weight 1\n7 <-> 0 weight 1\nThe best tour has weight 612, not 808.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -806,7 +806,7 @@
 		"content": "'Sub problem: The vertices adjacent to the current vertices' should be 'Sub problem: The vertices adjacent to the current vertex'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -816,7 +816,7 @@
 		"content": "on handling negative parameter values with offset technique, the smallest value that we can actually reach is 0 - 100 - 100 (29 times), or -2900, not -2800.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -826,7 +826,7 @@
 		"content": "Exercise 1.2.2, Sub question 4. The answers are now both O(V+E) Dynamic Programming and O((V+E) log V) Dijkstra's. Their performances are too hard to differentiate.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -836,7 +836,7 @@
 		"content": "Exercise 6.2.3, string vowel = 'abcde' should be string vowel ='aeiou'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -846,7 +846,7 @@
 		"content": "Exercise 7.2.1.1. The answer should be 5.0.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -856,7 +856,7 @@
 		"content": "Figure 2.6, The highlight for range [7..7] is not needed. What we intend to highlight is ft[6] (range [5..6]) + ft[4] (range [1..4])",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -866,7 +866,7 @@
 		"content": "Figure 4.2, The spanning tree is a bit 'wrong'. There is an edge between 40 and 60 and not between 55 and 60.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -876,7 +876,7 @@
 		"content": "Figure 4.13, The text refers to vertices that are 1-based, but the diagram is actually 0-based :(. Please take note.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -886,7 +886,7 @@
 		"content": "footnote 15. There is a potential tricky test case that can break the Max to Min heap conversion trick. What is that? Think first :)",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -896,7 +896,7 @@
 		"content": "O(M alpha(n)) complexity of UFDS is achievable with two strategies: Path Compression and Union by Rank. The one used in CP2 is UFDS that calls Path Compression occasionally (Exercise 2.3.2.2).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -906,7 +906,7 @@
 		"content": "Powers of Square Matrix (Section 5.9) is another example of Divide and Conquer principle.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -916,7 +916,7 @@
 		"content": "UVa 12024 - Hats is an example of Derangement problem.",
 		"isFixed": "0",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -926,7 +926,7 @@
 		"content": "The directed version of this Chinese Postman problem is MUCH more likely to show up in programming contests, since it reduces to Bipartite Matching rather than General Matching.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -936,7 +936,7 @@
 		"content": "additional problem authors that we have contacted: Howard Cheng, Christopher Chen, Bernard Blackham, Norman Hugh Anderson.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -946,7 +946,7 @@
 		"content": "Chapter 1, More fine-grained sub-categorization of Ad Hoc problems.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -956,7 +956,7 @@
 		"content": "Section 3.2.1, more detailed discussion of iterative complete search involving permutations and subsets.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -966,7 +966,7 @@
 		"content": "MAP LA 4995 to UVA 12250 Title Language Detection",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -976,7 +976,7 @@
 		"content": "MAP LA 3173 to UVA 1209 Title Wordfish",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -986,7 +986,7 @@
 		"content": "MAP LA 3135 to UVA 1203 Title Argus",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -996,7 +996,7 @@
 		"content": "MAP LA 4843 to UVA 1260 Title Sales",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1006,7 +1006,7 @@
 		"content": "MAP LA 4793 to UVA 1098 Title Robots on Ice",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1016,7 +1016,7 @@
 		"content": "MAP LA 3171 to UVA 1208 Title Oreon",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1026,7 +1026,7 @@
 		"content": "MAP LA 4138 to UVA 1235 Title Anti Brute Force Lock",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1036,7 +1036,7 @@
 		"content": "MAP LA 4408 to UVA 12160 Title Unlock the Lock",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1046,7 +1046,7 @@
 		"content": "MAP LA 4637 to UVA 1251 Title Repeat Substitution with Sed",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1056,7 +1056,7 @@
 		"content": "MAP LA 3126 to UVA 1201 Title Taxi Cab Scheme",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1066,7 +1066,7 @@
 		"content": "MAP LA 4104 to UVA 1230 Title MODEX",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1076,7 +1076,7 @@
 		"content": "MAP LA 3170 to UVA 1207 Title AGTC",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1086,7 +1086,7 @@
 		"content": "MAP LA 4601 to UVA 1249 Title Euclid",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1096,7 +1096,7 @@
 		"content": "MAP LA 3169 to UVA 1206 Title Boundary Points",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1106,7 +1106,7 @@
 		"content": "MAP LA 4445 to UVA 1079 Title A Careful Approach",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1116,7 +1116,7 @@
 		"content": "MAP LA 4407 to UVA 12159 Title Gun Fight",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1126,7 +1126,7 @@
 		"content": "MAP LA 4607 to UVA 1250 Title Robot Challenge",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1136,7 +1136,7 @@
 		"content": "MAP LA 4794 to UVA 1099 Title Sharing Chocolate",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1146,7 +1146,7 @@
 		"content": "MAP LA 3136 to UVA 1204 Title Fun Game",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1156,7 +1156,7 @@
 		"content": "MAP LA 4643 to UVA 1252 Title Twenty Questions",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1166,7 +1166,7 @@
 		"content": "MAP LA 4106 to UVA 1231 Title ACORN",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1176,7 +1176,7 @@
 		"content": "MAP LA 4143 to UVA 1238 Title Free Parentheses",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1186,7 +1186,7 @@
 		"content": "MAP LA 4146 to UVA 1240 Title ICPC Team Strategy",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "2"
 	},
 	{
@@ -1196,7 +1196,7 @@
 		"content": "Bellman Ford's code shown there has a minor bug (does not affect its correctness though). The correct one is: REP (i, 0, V - 2) \/\/ relax all E edges V-1 times, O(V)",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1206,7 +1206,7 @@
 		"content": "the intersect test is buggy, it cannot handle special cases (code dropped).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1216,7 +1216,7 @@
 		"content": "'Solutoin' -> 'Solution'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1226,7 +1226,7 @@
 		"content": "UVa 10001 should be UVa 10101.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1236,7 +1236,7 @@
 		"content": "UVa 11277 should be UVa 11227.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1246,7 +1246,7 @@
 		"content": "UVa 10401 should be UVa 11401.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1256,7 +1256,7 @@
 		"content": "Opening page should start with page number i, not ii.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1266,7 +1266,7 @@
 		"content": "Table 1.2: UVa 10911 discussed in the early part of Chapter 1 will be inserted in this table.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1276,7 +1276,7 @@
 		"content": "Question 2: The question must be rephrased, otherwise a trivial linear scan is already sufficient.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1286,7 +1286,7 @@
 		"content": "Figure 2.1; BST\/left. Node '20' must be changed to '50' as '20' does not satisfy the BST property... :(",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1296,7 +1296,7 @@
 		"content": "UVa 11790 is not in the sorted position.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1306,7 +1306,7 @@
 		"content": "UVa 507 and UVa 10684 are not in the sorted position.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1316,7 +1316,7 @@
 		"content": "Japan09 should be written as Tokyo09.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1326,7 +1326,7 @@
 		"content": "bottom: There is an unused white space.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1336,7 +1336,7 @@
 		"content": "Rephrase 'Standard Application (for MST)' to 'Kruskal's Standard Application (for MST)'",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1346,7 +1346,7 @@
 		"content": "UVa 11015 is not in the sorted position.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1356,7 +1356,7 @@
 		"content": "UVa 10029 is not in the sorted position.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1366,7 +1366,7 @@
 		"content": "Japan05 should be written as Tokyo05.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1376,7 +1376,7 @@
 		"content": "The name 'Fibonacci' should be in italic.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1386,7 +1386,7 @@
 		"content": "UVa 10551 and UVa 10814 are not in the sorted position.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1396,7 +1396,7 @@
 		"content": "UVa 10551 and UVa 10814 are not in the sorted position.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1406,7 +1406,7 @@
 		"content": "bottom: There is an unused white space.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1416,7 +1416,7 @@
 		"content": "UVa 11048 is not in the sorted position. ",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1426,7 +1426,7 @@
 		"content": "In various places: The term 'World Final' should be written as 'World Finals'.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1436,7 +1436,7 @@
 		"content": "We will add a figure to illustrate the discussion of UVa 10911.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1446,7 +1446,7 @@
 		"content": "Figure 3.13: This blurry figure will be enhanced.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1456,7 +1456,7 @@
 		"content": "Page 97, 111, and in many other pages with programming exercises: We will try to have one liner hints for each problem. The hints are from Steven's 'Methods to Solve' website (in progress, almost done).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1466,7 +1466,7 @@
 		"content": "Some examples in the first edition are using old programming problems. In the second edition, we will use more newer examples (if necessary).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1476,7 +1476,7 @@
 		"content": "Explanation of some data structures and algorithms will be expanded.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1486,7 +1486,7 @@
 		"content": "All example codes have more meaningful comments to help readers understand the code.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1496,7 +1496,7 @@
 		"content": "Existing figures in ch4\/6\/7 are re-drawn and enhanced. Many new figures are added.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1506,7 +1506,7 @@
 		"content": "The second edition is written with a more balanced ICPC and IOI viewpoint. After IOI 2010, both Steven and Felix can say that both have experienced IOI and ICPC World Finals.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1516,7 +1516,7 @@
 		"content": "Problem credits will be given to all problem authors that we manage to contact.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1526,7 +1526,7 @@
 		"content": "More information density per page: using single line spacing instead of one half line spacing on the same A4 sheet.\nMore number of pages for almost all chapters even though the line spacing is smaller.\nHere is the statistics of number of pages in the 1st edition versus the 2nd edition. <img src ='img\/CP1Content.jpg'>",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1536,7 +1536,7 @@
 		"content": "Much more programming exercises (more than 600 are new).\nThese are the programming exercises that Steven\/Felix have solved in UVa online judge within 9 August 2010 - publication date of the 2nd edition,\nincluding some problems from recent ICPC World Finals 2010 and IOI 2010-2011.\n(note: references to other online judges other than UVa\/LA\/SPOJ\/TopCoder are removed to keep the exercises focused).\nHere is the statistics of programming problems mentioned in 1st edition versus in 2nd edition (final). <img src ='img\/ExCP1.jpg'> Here is the current classification of programming problems in 2nd edition, not up to date... (click to enlarge) <img src ='img\/ontology.png'>",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1546,7 +1546,7 @@
 		"content": "Problem index. If you want to look for solution for a certain UVa online judge problem, just browse through the book's index page in binary search fashion :).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1556,7 +1556,7 @@
 		"content": "Java support is substantially enhanced. We will provide sample codes using both C++ (our default choice) and Java.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1566,7 +1566,7 @@
 		"content": "More usage of programming problems in UVa online judge that are inspired from real-life CS problems (to further promote CS to younger generations) (listed in ch1 Ad Hoc problems).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1576,7 +1576,7 @@
 		"content": "Profile of data structure\/algorithm inventors (done: Bayer, Adelson-Velskii, Landis, Fenwick, Kruskal, Prim, Jarnik, Tarjan, Hopcroft, Dijkstra, Bellman, Ford, Floyd, Warshall, Fulkerson, Edmonds, Karp, Fibonacci, Zeckendorf, Pascal, Catalan, Erasthotenes, Euler, Goldbach, Diophantus, Knuth, Morris, Pratt, Needleman, Wunsch, Smith, Waterman, Manber, Myers, Phytagoras, Euclid, Heron, Graham).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1586,7 +1586,7 @@
 		"content": "New sections Chapter 2: Fenwick Tree;",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1596,7 +1596,7 @@
 		"content": "New sections Chapter 3: New insights on bottom up DP technique, DP 0-1 Knapsack\/Subset Sum; DP TSP, More explanation on non classical DP problems.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1606,7 +1606,7 @@
 		"content": "New sections Chapter 4: Special Graph: New insights of DP and implicit DAG, Eulerian Graph; Alternating Path algorithm for Bipartite Matching.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1616,7 +1616,7 @@
 		"content": "New sections Chapter 5: New ad hoc section, enhanced Combinatorics section (Fibonacci\/Binomial Theorem\/Catalan Numbers), More Number Theory (Factorial\/Prime Factors\/Modulo Arithmetic); Probability Theory; Game Theory; Powers of a (Square) Matrix",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1626,7 +1626,7 @@
 		"content": "New sections Chapter 6: New basic string processing skills\/list of problems, String Matching (KMP), updated write up on Suffix Array and its applications.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1636,7 +1636,7 @@
 		"content": "New sections Chapter 7: Major update on geometric library routines.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1646,7 +1646,7 @@
 		"content": "New sections Chapter 8: More Advanced Techniques.",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
 		"version": "1"
 	},
 	{
@@ -1656,7 +1656,27 @@
 		"content": "More conceptual exercises throughout the book (a LOT of them) with hints\/short solutions as appendix (almost done).",
 		"isFixed": "1",
 		"authorName": "NULL",
-		"raise_time": "2015-04-14 21:56:08",
+		"raise_time": "2015-04-15 10:52:03",
+		"version": "1"
+	},
+	{
+		"severity": "2",
+		"type": "1",
+		"pageNum": "3",
+		"content": "2",
+		"isFixed": "0",
+		"authorName": "2",
+		"raise_time": "2015-05-07 06:35:34",
+		"version": "1"
+	},
+	{
+		"severity": "2",
+		"type": "3",
+		"pageNum": "12",
+		"content": "3",
+		"isFixed": "0",
+		"authorName": "21",
+		"raise_time": "2015-05-07 06:38:23",
 		"version": "1"
 	}
 ]
