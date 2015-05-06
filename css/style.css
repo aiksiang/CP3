@@ -251,11 +251,14 @@ p, a, li, dd, dl, input, label, form, .btn, .form-control {
 
 .testimonial img {
 	max-height: 110px;
-	float: right;
+	margin: auto;
 }
 
 .testimonialImage {
-	display:inline-block;
+	background: white;
+	display: flex;
+	border-radius: 5px;
+	overflow: hidden;
 	max-width: 19%;
 	width: 20%;
 	margin: 10px 0 10px 0;
@@ -591,14 +594,19 @@ div .backToTop:hover {
 	100% { -webkit-transform: scale(1.2); }
 }
 
-.admin-icon img:hover
-{
+.admin-icon {
+	color: black;
+	font-size: 20px;
+	opacity: 1;
+	border-radius: 3px;
+	padding: 4px;
+	float: right;
+}
+
+.admin-icon:hover {
 	cursor: pointer;
-	-webkit-animation-name: thumb;
-	-webkit-animation-duration: 500ms;
-	-webkit-transform-origin:50% 50%;
-	-webkit-animation-iteration-count: 100;
-	-webkit-animation-timing-function: linear;
+	background: rgb(21, 39, 55);
+	color: white;
 }
 
 .share-buttons {
@@ -607,4 +615,19 @@ div .backToTop:hover {
 	margin-right: 0;
 	padding-left: 130px !important;
     clear: left;
+}
+
+.testimonial-content {
+font-size: 17px !important;
+}
+
+.testimonial-author {
+font-size: 14px;
+width: 100%;
+}
+
+.testimonial-credit {
+font-size: 14px;
+font-style: italic;
+width: 100%;
 }

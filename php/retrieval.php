@@ -90,4 +90,16 @@ if ($_GET['action'] == 'getTestimonials') {
 	echo json_encode($result);
 }
 
+if ($_GET['action'] == 'getPendingTestimonials') {
+	global $db;
+	$query = "SELECT * FROM `TestimonialP` ORDER BY `id`";
+	$result = array();
+	if ($queryResult = $db->query($query)) {
+		while ($entry = $queryResult->fetch_assoc()) {
+			array_push($result, $entry);
+		}
+	}
+	echo json_encode($result);
+}
+
 ?>

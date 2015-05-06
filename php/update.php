@@ -102,6 +102,7 @@ function newDownloadRequest($id) {
 }
 //From admin page
 function approveErrata($entry_id) {
+	global $db;
 	$status = $_POST['status']; //either 0(not fixed) or 1 (fixed)
 	$status = $db->real_escape_string($status);
 	$id = $db->real_escape_string($entry_id);
@@ -125,6 +126,7 @@ function approveErrata($entry_id) {
 }
 //From the admin page
 function approveTestimonial($entry_id){
+	global $db;
 	$id = $db->real_escape_string($entry_id);
 	$sql = "INSERT INTO Testimonial(author,content,nationality,region,credit,imgURL) SELECT author,content,nationality,region,credit,imgURL FROM TestimonialP WHERE id =".$id.";";
 	normalRunSQL($sql);
@@ -134,8 +136,10 @@ function approveTestimonial($entry_id){
 }
 //From the admin page
 function removeEntry($table_id,$entry_id){
+	global $db, $tables;
 	$id = $db->real_escape_string($entry_id);
-	$sql = "DELETE FROM ".$tables[intval($table_id)]." WHERE id = ".$id.";";
+	$sql = "DELETE FROM ".$tables[$table_id]." WHERE id = ".$id.";";
+	echo $sql;
 	normalRunSQL($sql);
 }
 //From the admin page
@@ -217,7 +221,8 @@ function modifyErrataP($row,$id) {
 //Assumption 1 content entered from the admin should be harmful to the website and database
 //Assumption 2 id are passed internally so that there is no way to do SQL injection in id
 function modifyTestimonial($row,$id,$table_id) {
-	$sql = "UPDATE ".$tables[$table_id]." SET author = \"".$row['author']."\",content = \"".$row['content']."\",nationality = \"".$row['nationality']."\", region = \"".$row['region']."\",credit = \"".$row['credit']."\",imgURL = \"".$row['imgURL']."\" WHERE id = ".$id.";";
+	global $tables;
+	$sql = "UPDATE ".$tables[$table_id]." SET author = \"".$row['author']."\",content = \"".$row['content']."\",credit = \"".$row['credit']."\" WHERE id = ".$id.";";
 	normalRunSQL($sql);
 }
 //From the admin page
@@ -497,7 +502,7 @@ else if ($command == "approve") {
 //delete request done in the admin page
 else if ($command == "remove") {
 	$table_id = $_POST['table_id']; //0-6
-	$entry_id = $POST['entry_id'];
+	$entry_id = $_POST['entry_id'];
 	removeEntry($table_id,$entry_id);
 }
 //adding new content
